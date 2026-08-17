@@ -1,0 +1,3148 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aureza Labs — Digital Products &amp; Applied AI</title>
+    <meta
+      name="description"
+      content="Aureza Labs designs and builds mobile, web and platform applications, and multimodal AI systems — from first sketch to production."
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%230e7f72'/><path d='M10 22 16 9l6 13M12.5 17.5h7' stroke='white' stroke-width='2.4' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --ink: #0e1b19;
+        --mut: #5b6b68;
+        --teal: #0e7f72;
+        --teal-d: #0a6055;
+        --tint: #eef5f3;
+        --line: #e0e9e7;
+        --bg: #fff;
+        --dark: #0b1514;
+        --dark2: #122422;
+        --aod: #4cc0b0;
+        --sh: 0 1px 2px rgba(14, 27, 25, 0.06);
+        --sh2: 0 14px 34px -16px rgba(14, 27, 25, 0.22);
+        --disp: "Sora", sans-serif;
+        --body: "Inter", sans-serif;
+        --mono: "IBM Plex Mono", monospace;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font: 400 16px/1.65 var(--body);
+        color: var(--ink);
+        background: var(--bg);
+        -webkit-font-smoothing: antialiased;
+      }
+      img,
+      svg {
+        display: block;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      ul {
+        list-style: none;
+      }
+      button {
+        font-family: inherit;
+        cursor: pointer;
+      }
+      ::selection {
+        background: var(--teal);
+        color: #fff;
+      }
+      .container {
+        max-width: 1160px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+      section {
+        scroll-margin-top: 86px;
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: var(--disp);
+        line-height: 1.15;
+        letter-spacing: -0.01em;
+      }
+      .eyebrow {
+        font: 500 11px/1 var(--mono);
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--teal);
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .eyebrow::before {
+        content: "";
+        width: 22px;
+        height: 1px;
+        background: var(--teal);
+      }
+      .mut {
+        color: var(--mut);
+      }
+      .skip {
+        position: absolute;
+        left: -999px;
+        top: 0;
+        background: var(--teal);
+        color: #fff;
+        padding: 10px 16px;
+        z-index: 200;
+      }
+      .skip:focus {
+        left: 12px;
+        top: 12px;
+      }
+      /* buttons */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        background: var(--teal);
+        color: #fff !important;
+        border: 0;
+        border-radius: 999px;
+        padding: 12px 28px;
+        font: 600 14px var(--body);
+        transition: 0.25s;
+        box-shadow: var(--sh);
+        white-space: nowrap;
+        text-decoration: none;
+        line-height: 1.2;
+      }
+      .btn:hover,
+      .btn:focus,
+      .btn:active,
+      .btn:visited {
+        background: var(--teal-d);
+        color: #fff !important;
+        transform: translateY(-1px);
+        outline: none;
+      }
+      .btn.ghost {
+        background: transparent;
+        color: var(--ink) !important;
+        border: 1px solid var(--line);
+      }
+      .btn.ghost:hover {
+        border-color: var(--teal);
+        color: var(--teal) !important;
+      }
+      .link-u {
+        font: 600 14px var(--body);
+        color: var(--teal);
+        border-bottom: 1px solid currentColor;
+        padding-bottom: 2px;
+        display: inline-flex;
+        gap: 6px;
+        align-items: center;
+        transition: 0.2s;
+      }
+      .link-u:hover {
+        color: var(--teal-d);
+        gap: 10px;
+      }
+      /* svg art helpers */
+      .sf {
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 2.5;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      .st {
+        fill: none;
+        stroke: var(--teal);
+        stroke-width: 2.5;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      .fl {
+        fill: var(--teal);
+      }
+      .fc {
+        fill: currentColor;
+      }
+      .scribble {
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+        width: 100%;
+        height: 11px;
+        color: var(--teal);
+      }
+      .u {
+        position: relative;
+        display: inline-block;
+      }
+      /* ============ NAV ============ */
+      .nav {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: rgba(255, 255, 255, 0.94);
+        backdrop-filter: blur(8px);
+        border-bottom: 1px solid transparent;
+        transition: border-color 0.3s;
+      }
+      .nav.scrolled {
+        border-color: var(--line);
+      }
+      .nav-in {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 70px;
+        gap: 20px;
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font: 700 17px var(--disp);
+        cursor: pointer;
+      }
+      .logo small {
+        font: 500 12px var(--mono);
+        color: var(--teal);
+        letter-spacing: 0.08em;
+      }
+      .menu {
+        display: flex;
+        align-items: center;
+        gap: 28px;
+      }
+      .menu a {
+        font: 500 14px var(--body);
+        color: var(--mut);
+        position: relative;
+        padding: 4px 0;
+        transition: color 0.2s;
+        cursor: pointer;
+      }
+      .menu a.btn {
+        padding: 12px 30px;
+        border-top: 0;
+      }
+      .menu a:hover {
+        color: var(--ink);
+      }
+      .menu a.on {
+        color: var(--teal);
+      }
+      .menu a.on::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -2px;
+        height: 2px;
+        background: var(--teal);
+        border-radius: 2px;
+      }
+      .burger {
+        display: none;
+        background: none;
+        border: 0;
+        width: 40px;
+        height: 40px;
+        position: relative;
+      }
+      .burger span {
+        position: absolute;
+        left: 9px;
+        right: 9px;
+        height: 2px;
+        background: var(--ink);
+        border-radius: 2px;
+        transition: 0.3s;
+      }
+      .burger span:nth-child(1) {
+        top: 14px;
+      }
+      .burger span:nth-child(2) {
+        top: 20px;
+      }
+      .burger span:nth-child(3) {
+        top: 26px;
+      }
+      .nav.open .burger span:nth-child(1) {
+        top: 20px;
+        transform: rotate(45deg);
+      }
+      .nav.open .burger span:nth-child(2) {
+        opacity: 0;
+      }
+      .nav.open .burger span:nth-child(3) {
+        top: 20px;
+        transform: rotate(-45deg);
+      }
+      /* ============ HERO ============ */
+      .hero {
+        position: relative;
+        padding: 76px 0 70px;
+      }
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(
+          rgba(14, 127, 114, 0.13) 1px,
+          transparent 1px
+        );
+        background-size: 24px 24px;
+        mask-image: linear-gradient(#000 55%, transparent);
+        pointer-events: none;
+      }
+      .hero-grid {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1.08fr 0.92fr;
+        gap: 60px;
+        align-items: center;
+      }
+      .hero h1 {
+        font-size: clamp(2.3rem, 4.8vw, 3.55rem);
+        font-weight: 700;
+        margin: 22px 0 20px;
+      }
+      .hero h1 .soft {
+        color: #93a5a1;
+      }
+      .hero p.lead {
+        font-size: 16.5px;
+        color: var(--mut);
+        max-width: 52ch;
+        margin-bottom: 26px;
+      }
+      .hero p.lead strong {
+        color: var(--ink);
+        font-weight: 600;
+      }
+      .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 9px;
+      }
+      .chips li {
+        font: 500 12px var(--mono);
+        letter-spacing: 0.06em;
+        color: var(--teal-d);
+        background: var(--tint);
+        border: 1px solid #d8e7e3;
+        border-radius: 999px;
+        padding: 7px 13px;
+      }
+      /* form card */
+      .fcard {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 28px;
+        box-shadow: var(--sh2);
+      }
+      .fcard h3 {
+        font-size: 19px;
+        margin-bottom: 4px;
+      }
+      .fcard .fsub {
+        font-size: 13px;
+        color: var(--mut);
+        margin-bottom: 20px;
+      }
+      .frow {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+      .field {
+        margin-bottom: 12px;
+      }
+      .field label {
+        display: block;
+        font: 500 12px var(--body);
+        color: var(--mut);
+        margin-bottom: 6px;
+      }
+      .field input,
+      .field select,
+      .field textarea {
+        width: 100%;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #fbfdfc;
+        padding: 11px 12px;
+        font: 400 14px var(--body);
+        color: var(--ink);
+        transition: 0.2s;
+        outline: none;
+      }
+      .field textarea {
+        resize: vertical;
+        min-height: 96px;
+      }
+      .field input:focus,
+      .field select:focus,
+      .field textarea:focus {
+        border-color: var(--teal);
+        box-shadow: 0 0 0 3px rgba(14, 127, 114, 0.14);
+        background: #fff;
+      }
+      .field.err input,
+      .field.err textarea {
+        border-color: #c4574e;
+        box-shadow: 0 0 0 3px rgba(196, 87, 78, 0.12);
+      }
+      .fmsg {
+        font: 400 12px var(--body);
+        color: #c4574e;
+        min-height: 16px;
+        margin: 2px 0 8px;
+      }
+      .fcard .btn {
+        width: 100%;
+        justify-content: center;
+      }
+      .fnote {
+        font: 400 11.5px var(--mono);
+        color: var(--mut);
+        text-align: center;
+        margin-top: 12px;
+      }
+      .fsuccess {
+        display: none;
+        text-align: center;
+        padding: 34px 8px;
+      }
+      .fsuccess svg {
+        margin: 0 auto 16px;
+      }
+      .fsuccess h4 {
+        font: 600 18px var(--disp);
+        margin-bottom: 8px;
+      }
+      .fsuccess p {
+        font-size: 13.5px;
+        color: var(--mut);
+        margin-bottom: 18px;
+      }
+      .fcard.sent form {
+        display: none;
+      }
+      .fcard.sent .fsuccess {
+        display: block;
+      }
+      /* ============ ABOUT / REEL ============ */
+      .about {
+        padding: 30px 0 20px;
+      }
+      .sec-head {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 24px;
+        margin-bottom: 34px;
+        flex-wrap: wrap;
+      }
+      .sec-head h2 {
+        font-size: clamp(1.55rem, 2.8vw, 2.2rem);
+        margin-top: 14px;
+      }
+      .sec-head .side {
+        max-width: 44ch;
+        font-size: 14.5px;
+        color: var(--mut);
+      }
+      .reel {
+        background: var(--dark);
+        border-radius: 16px;
+        min-height: 380px;
+        display: grid;
+        place-items: center;
+        position: relative;
+        overflow: hidden;
+        color: #e9f3f1;
+      }
+      .reel::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(
+          rgba(76, 192, 176, 0.14) 1px,
+          transparent 1px
+        );
+        background-size: 26px 26px;
+        pointer-events: none;
+      }
+      .poster {
+        text-align: center;
+        padding: 40px 24px;
+        position: relative;
+        z-index: 1;
+      }
+      .playbtn {
+        width: 76px;
+        height: 76px;
+        border-radius: 50%;
+        border: 0;
+        background: var(--teal);
+        display: grid;
+        place-items: center;
+        margin: 0 auto 22px;
+        transition: 0.25s;
+        box-shadow: 0 0 0 12px rgba(255, 255, 255, 0.05);
+      }
+      .playbtn:hover {
+        transform: scale(1.06);
+        background: var(--teal-d);
+      }
+      .poster h3 {
+        font-size: clamp(1.7rem, 3.4vw, 2.6rem);
+        font-weight: 700;
+      }
+      .poster .scribble {
+        color: var(--aod);
+      }
+      .reelview {
+        display: none;
+        text-align: center;
+        padding: 40px 28px;
+        position: relative;
+        z-index: 1;
+        width: 100%;
+      }
+      .reel.playing .poster {
+        display: none;
+      }
+      .reel.playing .reelview {
+        display: block;
+      }
+      .reelview .rl {
+        font: 600 clamp(1.2rem, 2.6vw, 1.8rem)/1.35 var(--disp);
+        max-width: 26ch;
+        margin: 0 auto 30px;
+        min-height: 3.9em;
+        display: grid;
+        place-items: center;
+      }
+      .reelview .rl.fade {
+        animation: rlfade 0.5s ease;
+      }
+      @keyframes rlfade {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+      .rbar {
+        max-width: 340px;
+        margin: 0 auto;
+        height: 3px;
+        background: rgba(255, 255, 255, 0.14);
+        border-radius: 99px;
+        overflow: hidden;
+      }
+      .rbar i {
+        display: block;
+        height: 100%;
+        width: 0;
+        background: var(--aod);
+      }
+      .rcount {
+        font: 400 11px var(--mono);
+        letter-spacing: 0.15em;
+        color: rgba(233, 243, 241, 0.55);
+        margin-top: 14px;
+      }
+      .pausebtn {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        z-index: 2;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        color: #e9f3f1;
+        border-radius: 999px;
+        padding: 7px 14px;
+        font: 500 11px var(--mono);
+        letter-spacing: 0.1em;
+        display: none;
+      }
+      .reel.playing .pausebtn {
+        display: block;
+      }
+      /* strip */
+      .strip {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 30px;
+        flex-wrap: wrap;
+        border-block: 1px solid var(--line);
+        padding: 24px 0;
+        margin-top: 60px;
+      }
+      .strip p {
+        font-size: 14.5px;
+        color: var(--mut);
+        max-width: 46ch;
+      }
+      .strip p b {
+        color: var(--ink);
+        font-family: var(--disp);
+      }
+      .marks {
+        display: flex;
+        gap: 26px;
+        flex-wrap: wrap;
+      }
+      .marks span {
+        font: 500 12px var(--mono);
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: #9db0ac;
+      }
+      /* ============ SERVICES ============ */
+      .services {
+        padding: 84px 0 30px;
+      }
+      .sgrid {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 18px;
+      }
+      .scard {
+        grid-column: span 2;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        background: #fff;
+        overflow: hidden;
+        transition: 0.3s;
+        box-shadow: var(--sh);
+      }
+      .scard.wide {
+        grid-column: span 3;
+      }
+      .scard:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--sh2);
+        border-color: #c9ded9;
+      }
+      .sart {
+        height: 172px;
+        background: var(--tint);
+        display: grid;
+        place-items: center;
+        color: var(--ink);
+        border-bottom: 1px solid var(--line);
+      }
+      .sart svg {
+        width: 104px;
+        height: 104px;
+        transition: transform 0.35s;
+      }
+      .scard:hover .sart svg {
+        transform: translateY(-4px) scale(1.04);
+      }
+      .sbody {
+        padding: 20px 22px 24px;
+      }
+      .sbody .idx {
+        font: 500 11px var(--mono);
+        letter-spacing: 0.16em;
+        color: var(--teal);
+      }
+      .sbody h3 {
+        font-size: 17.5px;
+        margin: 8px 0 8px;
+      }
+      .sbody p {
+        font-size: 13.5px;
+        color: var(--mut);
+      }
+      .snote {
+        margin-top: 22px;
+        font: 400 12.5px var(--mono);
+        color: var(--mut);
+        border: 1px dashed var(--line);
+        border-radius: 10px;
+        padding: 14px 18px;
+      }
+      .snote b {
+        color: var(--teal-d);
+        font-weight: 500;
+      }
+      /* ============ PROCESS ============ */
+      .process {
+        padding: 70px 0 40px;
+      }
+      .pill {
+        display: inline-block;
+        font: 500 11px var(--mono);
+        letter-spacing: 0.16em;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 8px 14px;
+        color: var(--teal-d);
+        background: var(--tint);
+        margin-bottom: 16px;
+      }
+      .step {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 48px;
+        align-items: center;
+        padding: 34px 0;
+      }
+      .step + .step {
+        border-top: 1px dashed var(--line);
+      }
+      .step .art {
+        background: var(--tint);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        height: 225px;
+        display: grid;
+        place-items: center;
+        color: var(--ink);
+      }
+      .step .art svg {
+        width: 120px;
+        height: 120px;
+      }
+      .step:nth-of-type(even) .art {
+        order: 2;
+      }
+      .nchip {
+        display: inline-grid;
+        place-items: center;
+        min-width: 36px;
+        height: 32px;
+        padding: 0 8px;
+        border-radius: 8px;
+        background: var(--dark);
+        color: #fff;
+        font: 500 12px var(--mono);
+        letter-spacing: 0.1em;
+        margin-bottom: 14px;
+      }
+      .step h3 {
+        font-size: 19px;
+        margin-bottom: 10px;
+      }
+      .step p {
+        font-size: 14.5px;
+        color: var(--mut);
+        max-width: 46ch;
+      }
+      /* ============ FEATURED WORK ============ */
+      .work {
+        padding: 70px 0 30px;
+      }
+      .wgrid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+      .wcard {
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        overflow: hidden;
+        background: #fff;
+        transition: 0.3s;
+        box-shadow: var(--sh);
+      }
+      .wcard:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--sh2);
+        border-color: #c9ded9;
+      }
+      .wmedia {
+        background: var(--tint);
+        border-bottom: 1px solid var(--line);
+        padding: 30px 26px;
+        display: grid;
+        place-items: center;
+      }
+      .wbody {
+        padding: 20px 24px 24px;
+      }
+      .wbody .tag {
+        font: 500 10.5px var(--mono);
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--teal);
+      }
+      .wbody h3 {
+        font-size: 18px;
+        margin: 8px 0 6px;
+      }
+      .wbody p {
+        font-size: 13.5px;
+        color: var(--mut);
+        margin-bottom: 14px;
+      }
+      /* mini product mocks */
+      .mock {
+        width: 100%;
+        max-width: 340px;
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        box-shadow: 0 12px 26px -16px rgba(14, 27, 25, 0.3);
+        padding: 14px 16px;
+        font-size: 12px;
+      }
+      .mock-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font: 500 10.5px var(--mono);
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--mut);
+        margin-bottom: 8px;
+      }
+      .mrow {
+        display: flex;
+        justify-content: space-between;
+        padding: 7px 0;
+        border-top: 1px solid var(--line);
+      }
+      .mrow i {
+        font-style: normal;
+        color: var(--mut);
+      }
+      .mrow b {
+        font: 500 12px var(--mono);
+        color: var(--ink);
+      }
+      .chip {
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 2px 9px;
+        font: 500 10px var(--mono);
+        color: var(--mut);
+      }
+      .bignum {
+        font: 600 25px var(--disp);
+        letter-spacing: -0.02em;
+      }
+      .bignum em {
+        font: 500 11.5px var(--mono);
+        font-style: normal;
+        color: var(--teal);
+        margin-left: 8px;
+      }
+      .bars {
+        display: flex;
+        gap: 6px;
+        align-items: flex-end;
+        height: 62px;
+        margin-top: 10px;
+      }
+      .bars i {
+        flex: 1;
+        background: #dce8e5;
+        border-radius: 3px;
+      }
+      .bars i.hot {
+        background: var(--teal);
+      }
+      /* ============ PROOF ============ */
+      .proof {
+        padding: 70px 0;
+      }
+      .metrics {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+        margin-bottom: 44px;
+      }
+      .metric {
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        padding: 18px 20px;
+        background: #fff;
+      }
+      .metric b {
+        display: block;
+        font: 600 25px var(--disp);
+        letter-spacing: -0.02em;
+      }
+      .metric span {
+        font: 400 11px var(--mono);
+        letter-spacing: 0.08em;
+        color: var(--mut);
+      }
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .tags li {
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 9px 16px;
+        font: 500 13px var(--body);
+        color: var(--mut);
+        transition: 0.2s;
+        cursor: default;
+      }
+      .tags li:hover {
+        border-color: var(--teal);
+        color: var(--teal-d);
+      }
+      /* ============ CTA ============ */
+      .cta {
+        padding: 10px 0 90px;
+      }
+      .ctagrid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+      .ctacard {
+        border-radius: 16px;
+        padding: 38px 36px;
+        color: #eaf4f2;
+        position: relative;
+        overflow: hidden;
+        background: var(--dark);
+      }
+      .ctacard.solid {
+        background: var(--teal);
+      }
+      .ctacard::after {
+        content: "";
+        position: absolute;
+        right: -70px;
+        top: -70px;
+        width: 220px;
+        height: 220px;
+        border: 1.5px solid rgba(255, 255, 255, 0.14);
+        border-radius: 50%;
+      }
+      .ctacard::before {
+        content: "";
+        position: absolute;
+        right: -30px;
+        top: -30px;
+        width: 220px;
+        height: 220px;
+        border: 1.5px solid rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+      }
+      .ctacard .eyebrow {
+        color: var(--aod);
+      }
+      .ctacard .eyebrow::before {
+        background: var(--aod);
+      }
+      .ctacard.solid .eyebrow {
+        color: #dff2ee;
+      }
+      .ctacard.solid .eyebrow::before {
+        background: #dff2ee;
+      }
+      .ctacard h3 {
+        font-size: clamp(1.3rem, 2.2vw, 1.7rem);
+        margin: 16px 0 10px;
+        position: relative;
+        z-index: 1;
+      }
+      .ctacard p {
+        font-size: 14px;
+        color: rgba(234, 244, 242, 0.75);
+        max-width: 42ch;
+        margin-bottom: 26px;
+        position: relative;
+        z-index: 1;
+      }
+      .ctacard a.arrow {
+        font: 600 14.5px var(--body);
+        color: #fff;
+        border-bottom: 1.5px solid var(--aod);
+        padding-bottom: 3px;
+        position: relative;
+        z-index: 1;
+        display: inline-flex;
+        gap: 8px;
+        align-items: center;
+        transition: 0.2s;
+        cursor: pointer;
+      }
+      .ctacard.solid a.arrow {
+        border-color: #fff;
+      }
+      .ctacard a.arrow:hover {
+        gap: 12px;
+      }
+      /* ============ FOOTER ============ */
+      footer {
+        background: var(--dark);
+        color: #cfe0dc;
+      }
+      .f-top {
+        display: grid;
+        grid-template-columns: 1.4fr 1fr 1fr 1fr;
+        gap: 40px;
+        padding: 64px 0 50px;
+      }
+      .f-brand .logo {
+        color: #fff;
+      }
+      .f-brand p {
+        font-size: 13.5px;
+        color: rgba(207, 224, 220, 0.65);
+        margin: 16px 0 22px;
+        max-width: 34ch;
+      }
+      .socials {
+        display: flex;
+        gap: 10px;
+      }
+      .socials a {
+        width: 38px;
+        height: 38px;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        color: #cfe0dc;
+        transition: 0.2s;
+      }
+      .socials a:hover {
+        border-color: var(--aod);
+        color: var(--aod);
+        transform: translateY(-2px);
+      }
+      .f-col h4 {
+        font: 500 12px var(--mono);
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--aod);
+        margin-bottom: 18px;
+      }
+      .f-col a {
+        display: block;
+        font-size: 13.5px;
+        color: rgba(207, 224, 220, 0.75);
+        padding: 5px 0;
+        transition: 0.2s;
+        cursor: pointer;
+      }
+      .f-col a:hover {
+        color: #fff;
+        padding-left: 4px;
+      }
+      .f-bot {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 22px 0;
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        flex-wrap: wrap;
+        font: 400 12px var(--mono);
+        color: rgba(207, 224, 220, 0.5);
+      }
+      /* to-top */
+      .totop {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        border: 0;
+        background: var(--teal);
+        color: #fff;
+        display: grid;
+        place-items: center;
+        opacity: 0;
+        pointer-events: none;
+        transition: 0.3s;
+        box-shadow: var(--sh2);
+        z-index: 90;
+      }
+      .totop.show {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      .totop:hover {
+        background: var(--teal-d);
+      }
+      /* reveal */
+      .js .rv {
+        opacity: 0;
+        transform: translateY(16px);
+        transition:
+          opacity 0.6s ease,
+          transform 0.6s ease;
+      }
+      .js .rv.in {
+        opacity: 1;
+        transform: none;
+      }
+      /* ============ PORTFOLIO PAGE STYLES ============ */
+      .phead {
+        padding: 72px 0 20px;
+        position: relative;
+      }
+      .phead::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(
+          rgba(14, 127, 114, 0.13) 1px,
+          transparent 1px
+        );
+        background-size: 24px 24px;
+        mask-image: linear-gradient(#000 40%, transparent);
+        pointer-events: none;
+      }
+      .phead .container {
+        position: relative;
+      }
+      .phead h1 {
+        font-size: clamp(2.1rem, 4.4vw, 3.2rem);
+        margin: 20px 0 16px;
+        max-width: 22ch;
+      }
+      .phead p {
+        color: var(--mut);
+        max-width: 60ch;
+        font-size: 16px;
+      }
+      .tabs {
+        display: flex;
+        gap: 10px;
+        margin: 34px 0 8px;
+        flex-wrap: wrap;
+      }
+      .tab {
+        border: 1px solid var(--line);
+        background: #fff;
+        border-radius: 999px;
+        padding: 10px 18px;
+        font: 600 13px var(--body);
+        color: var(--mut);
+        transition: 0.2s;
+        cursor: pointer;
+      }
+      .tab:hover {
+        border-color: var(--teal);
+        color: var(--teal-d);
+      }
+      .tab.on {
+        background: var(--dark);
+        border-color: var(--dark);
+        color: #fff;
+      }
+      .tab em {
+        font: 400 11px var(--mono);
+        font-style: normal;
+        opacity: 0.6;
+        margin-left: 6px;
+      }
+      .pgroup {
+        padding: 52px 0 10px;
+      }
+      .ghead {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 20px;
+        flex-wrap: wrap;
+        border-bottom: 1px solid var(--line);
+        padding-bottom: 18px;
+        margin-bottom: 26px;
+      }
+      .ghead h2 {
+        font-size: clamp(1.35rem, 2.4vw, 1.8rem);
+      }
+      .ghead .cnt {
+        font: 500 12px var(--mono);
+        letter-spacing: 0.14em;
+        color: var(--teal);
+      }
+      .ghead p {
+        width: 100%;
+        font-size: 14px;
+        color: var(--mut);
+        max-width: 70ch;
+      }
+      .pgrid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+      .pcard {
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        background: #fff;
+        padding: 26px 26px 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 13px;
+        transition: 0.3s;
+        box-shadow: var(--sh);
+      }
+      .pcard:hover {
+        transform: translateY(-4px);
+        border-color: #c9ded9;
+        box-shadow: var(--sh2);
+      }
+      .pcard.pop {
+        animation: pop 0.45s ease;
+      }
+      @keyframes pop {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+      .ptop {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .ptop .idx {
+        font: 500 11px var(--mono);
+        letter-spacing: 0.16em;
+        color: var(--teal);
+      }
+      .ptop .grp {
+        font: 500 10px var(--mono);
+        letter-spacing: 0.12em;
+        color: var(--mut);
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 3px 10px;
+        text-transform: uppercase;
+      }
+      .pcard h3 {
+        font-size: 19px;
+      }
+      .pquote {
+        font: 500 13px var(--body);
+        color: var(--teal-d);
+      }
+      .pdesc {
+        font-size: 13.5px;
+        color: var(--mut);
+      }
+      .ptags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7px;
+      }
+      .ptags li {
+        font: 500 11px var(--mono);
+        color: var(--teal-d);
+        background: var(--tint);
+        border: 1px solid #d8e7e3;
+        border-radius: 999px;
+        padding: 4px 10px;
+      }
+      .caps {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 7px 16px;
+        border-top: 1px dashed var(--line);
+        padding-top: 14px;
+      }
+      .caps li {
+        font-size: 12.5px;
+        color: var(--mut);
+        padding-left: 14px;
+        position: relative;
+      }
+      .caps li::before {
+        content: "+";
+        position: absolute;
+        left: 0;
+        color: var(--teal);
+        font-weight: 600;
+      }
+      .pstat {
+        margin-top: auto;
+        border-top: 1px solid var(--line);
+        padding-top: 12px;
+        font: 500 11.5px var(--mono);
+        letter-spacing: 0.06em;
+        color: var(--teal-d);
+      }
+      .band {
+        margin: 80px 0 90px;
+        background: var(--dark);
+        border-radius: 16px;
+        color: #eaf4f2;
+        padding: 44px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 28px;
+        flex-wrap: wrap;
+        position: relative;
+        overflow: hidden;
+      }
+      .band::after {
+        content: "";
+        position: absolute;
+        right: -70px;
+        top: -70px;
+        width: 220px;
+        height: 220px;
+        border: 1.5px solid rgba(255, 255, 255, 0.12);
+        border-radius: 50%;
+      }
+      .band h2 {
+        font-size: clamp(1.3rem, 2.4vw, 1.8rem);
+        margin-bottom: 8px;
+      }
+      .band p {
+        color: rgba(234, 244, 242, 0.7);
+        font-size: 14px;
+        max-width: 52ch;
+      }
+      .band .btn {
+        background: var(--aod);
+        color: var(--dark) !important;
+      }
+      .band .btn:hover {
+        background: #6fd2c3;
+        color: var(--dark) !important;
+      }
+      /* ============ RESPONSIVE ============ */
+      @media (max-width: 1000px) {
+        .hero-grid {
+          grid-template-columns: 1fr;
+          gap: 44px;
+        }
+        .sgrid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .scard,
+        .scard.wide {
+          grid-column: span 1;
+        }
+        .metrics {
+          grid-template-columns: 1fr 1fr;
+        }
+        .f-top {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media (max-width: 960px) {
+        .burger {
+          display: block;
+        }
+        .menu {
+          position: absolute;
+          top: 70px;
+          left: 0;
+          right: 0;
+          background: #fff;
+          border-bottom: 1px solid var(--line);
+          flex-direction: column;
+          align-items: stretch;
+          gap: 0;
+          padding: 10px 24px 20px;
+          display: none;
+        }
+        .nav.open .menu {
+          display: flex;
+        }
+        .menu a {
+          padding: 13px 0;
+          border-top: 1px solid var(--line);
+          font-size: 15px;
+        }
+        .menu a.on::after {
+          display: none;
+        }
+        .menu .btn {
+          margin-top: 14px;
+          justify-content: center;
+        }
+        .step {
+          grid-template-columns: 1fr;
+          gap: 22px;
+        }
+        .step:nth-of-type(even) .art {
+          order: 0;
+        }
+        .wgrid,
+        .ctagrid {
+          grid-template-columns: 1fr;
+        }
+      }
+      @media (max-width: 900px) {
+        .pgrid {
+          grid-template-columns: 1fr;
+        }
+      }
+      @media (max-width: 620px) {
+        .sgrid {
+          grid-template-columns: 1fr;
+        }
+        .frow {
+          grid-template-columns: 1fr;
+        }
+        .metrics {
+          grid-template-columns: 1fr 1fr;
+        }
+        .f-top {
+          grid-template-columns: 1fr;
+          gap: 30px;
+        }
+        .hero {
+          padding-top: 52px;
+        }
+        .caps {
+          grid-template-columns: 1fr;
+        }
+        .band {
+          padding: 32px 26px;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+        .js .rv {
+          opacity: 1;
+          transform: none;
+          transition: none;
+        }
+        * {
+          animation-duration: 0.01ms !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+
+    <!-- NAV -->
+    <header class="nav" id="nav">
+      <div class="container nav-in">
+        <a class="logo" href="#top" aria-label="Aureza Labs home">
+          <svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true">
+            <rect width="32" height="32" rx="7" fill="#0e7f72" />
+            <path
+              d="M10 22 16 9l6 13M12.5 17.5h7"
+              stroke="#fff"
+              stroke-width="2.4"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+          Aureza&nbsp;<small>.labs</small>
+        </a>
+        <nav class="menu" id="menu" aria-label="Primary">
+          <a href="#top" class="on" data-nav="home" data-scroll="top">Home</a>
+          <a href="#services" data-scroll="services" data-nav="home"
+            >Services</a
+          >
+          <a href="#process" data-scroll="process" data-nav="home">Process</a>
+          <a href="#portfolio" data-nav="portfolio">Portfolio</a>
+          <a href="#about" data-scroll="about" data-nav="home">About</a>
+          <a href="#contact" class="btn" data-scroll="contact" data-nav="home"
+            >Contact us</a
+          >
+        </nav>
+        <button
+          class="burger"
+          id="burger"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- ================= HOME VIEW ================= -->
+      <div data-view="home">
+        <!-- HERO -->
+        <section class="hero" id="top">
+          <div class="container hero-grid">
+            <div class="rv">
+              <span class="eyebrow">Product engineering · Applied AI</span>
+              <h1>
+                Your technology partner for
+                <span class="soft">digital products &amp;</span>
+                <span class="u"
+                  >applied&nbsp;AI<svg
+                    class="scribble"
+                    viewBox="0 0 140 12"
+                    preserveAspectRatio="none"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M3 9c24-6 47-6 66-4 22 2 45 2 68-3"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="3.5"
+                      stroke-linecap="round"
+                    /></svg
+                ></span>
+              </h1>
+              <p class="lead">
+                Aureza Labs designs and builds
+                <strong>mobile, web and platform applications</strong> — and
+                multimodal AI systems that connect what happened with
+                <strong>why it happened</strong>. From first sketch to
+                production.
+              </p>
+              <ul class="chips">
+                <li>Mobile</li>
+                <li>Web</li>
+                <li>SaaS</li>
+                <li>Enterprise</li>
+                <li>AI &amp; Vision</li>
+                <li>Blockchain</li>
+              </ul>
+            </div>
+
+            <div class="fcard rv" id="contact">
+              <h3>Tell us about your project</h3>
+              <p class="fsub">
+                Share a few details — we'll get back to you within two business
+                days.
+              </p>
+              <form id="pform" novalidate>
+                <div class="frow">
+                  <div class="field">
+                    <label for="fname">Name</label
+                    ><input
+                      id="fname"
+                      name="name"
+                      type="text"
+                      autocomplete="name"
+                      placeholder="Jane Cooper"
+                    />
+                  </div>
+                  <div class="field">
+                    <label for="femail">Email</label
+                    ><input
+                      id="femail"
+                      name="email"
+                      type="email"
+                      autocomplete="email"
+                      placeholder="jane@company.com"
+                    />
+                  </div>
+                </div>
+                <div class="field">
+                  <label for="ftype">What do you need?</label>
+                  <select id="ftype" name="type">
+                    <option>Mobile application</option>
+                    <option>Web application</option>
+                    <option>SaaS platform</option>
+                    <option>AI / vision system</option>
+                    <option>Blockchain product</option>
+                    <option>Not sure yet</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="fmsg">Project description</label
+                  ><textarea
+                    id="fmsg"
+                    name="msg"
+                    placeholder="The problem, the users, the timeline…"
+                  ></textarea>
+                </div>
+                <p class="fmsg" id="ferr" role="alert"></p>
+                <button class="btn" type="submit">
+                  Submit
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.4"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M5 12h14M13 6l6 6-6 6" />
+                  </svg>
+                </button>
+                <p class="fnote">No retainers required · NDA on request</p>
+              </form>
+              <div class="fsuccess">
+                <svg
+                  width="52"
+                  height="52"
+                  viewBox="0 0 52 52"
+                  aria-hidden="true"
+                >
+                  <circle
+                    cx="26"
+                    cy="26"
+                    r="25"
+                    fill="none"
+                    stroke="#0e7f72"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M16 27l7 7 14-15"
+                    fill="none"
+                    stroke="#0e7f72"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <h4>Brief received.</h4>
+                <p>
+                  Thanks — we'll review it and reply within two business days.
+                </p>
+                <button class="btn ghost" id="fagain" type="button">
+                  Send another
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section class="about container" id="about">
+          <div class="sec-head rv">
+            <div>
+              <span class="eyebrow">About Aureza Labs</span>
+              <h2>One team, from sketch to production</h2>
+            </div>
+            <p class="side">
+              We build software that solves operational, financial and
+              communication problems — and AI that explains causes, not just
+              detects events.
+            </p>
+          </div>
+
+          <div class="reel rv" id="reel">
+            <button class="pausebtn" id="pausebtn" type="button">
+              PAUSE ▮
+            </button>
+            <div class="poster">
+              <button
+                class="playbtn"
+                id="playbtn"
+                type="button"
+                aria-label="Play studio reel"
+              >
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="#fff"
+                  aria-hidden="true"
+                >
+                  <path d="M8 5.5v13l11-6.5z" />
+                </svg>
+              </button>
+              <h3>
+                <span class="u"
+                  >We are Aureza Labs<svg
+                    class="scribble"
+                    viewBox="0 0 140 12"
+                    preserveAspectRatio="none"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M3 9c24-6 47-6 66-4 22 2 45 2 68-3"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="3.5"
+                      stroke-linecap="round"
+                    /></svg
+                ></span>
+              </h3>
+            </div>
+            <div class="reelview" aria-live="polite">
+              <p class="rl" id="rline">
+                Mobile, web &amp; platform engineering
+              </p>
+              <div class="rbar"><i id="rfill"></i></div>
+              <p class="rcount" id="rcount">01 / 04</p>
+            </div>
+          </div>
+
+          <div class="strip rv">
+            <p>
+              <b>15 products shipped</b> across manufacturing, healthcare,
+              logistics, finance, recruitment and public infrastructure.
+            </p>
+            <div class="marks">
+              <span>LineTrace</span><span>Kilwa</span><span>Razor ERP</span
+              ><span>ChainMail</span><span>SafePredict</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- SERVICES -->
+        <section class="services container" id="services">
+          <div class="sec-head rv">
+            <div>
+              <span class="eyebrow">What we build</span>
+              <h2>Our services</h2>
+            </div>
+            <p class="side">
+              Eight disciplines under one roof — so nothing gets lost between
+              agencies.
+            </p>
+          </div>
+          <div class="sgrid">
+            <article class="scard rv">
+              <div class="sart">
+                <svg viewBox="0 0 96 96" aria-hidden="true">
+                  <rect
+                    x="31"
+                    y="12"
+                    width="34"
+                    height="70"
+                    rx="7"
+                    class="sf"
+                  />
+                  <line x1="31" y1="24" x2="65" y2="24" class="sf" />
+                  <line x1="42" y1="74" x2="54" y2="74" class="sf" />
+                  <rect
+                    x="39"
+                    y="33"
+                    width="18"
+                    height="11"
+                    rx="3"
+                    class="st"
+                  />
+                  <line x1="39" y1="52" x2="57" y2="52" class="sf" />
+                  <line x1="39" y1="60" x2="51" y2="60" class="sf" />
+                </svg>
+              </div>
+              <div class="sbody">
+                <span class="idx">01</span>
+                <h3>Mobile Applications</h3>
+                <p>
+                  Native-quality iOS &amp; Android apps built for the field, the
+                  floor and the warehouse.
+                </p>
+              </div>
+            </article>
+            <article class="scard rv">
+              <div class="sart">
+                <svg viewBox="0 0 96 96" aria-hidden="true">
+                  <rect
+                    x="14"
+                    y="20"
+                    width="68"
+                    height="54"
+                    rx="7"
+                    class="sf"
+                  />
+                  <line x1="14" y1="32" x2="82" y2="32" class="sf" />
+                  <circle cx="22" cy="26" r="1.8" class="fl" />
+                  <circle cx="29" cy="26" r="1.8" class="fc" />
+                  <rect
+                    x="22"
+                    y="40"
+                    width="24"
+                    height="26"
+                    rx="4"
+                    class="st"
+                  />
+                  <line x1="54" y1="44" x2="74" y2="44" class="sf" />
+                  <line x1="54" y1="52" x2="70" y2="52" class="sf" />
+                  <line x1="54" y1="60" x2="74" y2="60" class="sf" />
+                </svg>
+              </div>
+              <div class="sbody">
+                <span class="idx">02</span>
+                <h3>Web Applications</h3>
+                <p>
+                  Fast, accessible web apps — dashboards, portals and
+                  customer-facing product.
+                </p>
+              </div>
+            </article>
+            <article class="scard rv">
+              <div class="sart">
+                <svg viewBox="0 0 96 96" aria-hidden="true">
+                  <circle cx="48" cy="46" r="9" class="fl" />
+                  <circle cx="24" cy="28" r="5" class="sf" />
+                  <circle cx="72" cy="28" r="5" class="sf" />
+                  <circle cx="26" cy="66" r="5" class="sf" />
+                  <circle cx="70" cy="66" r="5" class="sf" />
+                  <path
+                    d="M29 31l11 9M67 31l-11 9M31 62l9-8M65 62l-9-8"
+                    class="sf"
+                  />
+                  <path d="M24 33v28M72 33v28" class="st" />
+                </svg>
+              </div>
+              <div class="sbody">
+                <span class="idx">03</span>
+                <h3>AI-Powered Products</h3>
+                <p>
+                  Vision, document intelligence and root-cause engines that ship
+                  with evidence, not guesses.
+                </p>
+              </div>
+            </article>
+            <article class="scard wide rv">
+              <div class="sart">
+                <svg viewBox="0 0 96 96" aria-hidden="true">
+                  <rect
+                    x="16"
+                    y="18"
+                    width="26"
+                    height="20"
+                    rx="5"
+                    class="sf"
+                  />
+                  <rect
+                    x="54"
+                    y="38"
+                    width="26"
+                    height="20"
+                    rx="5"
+                    class="st"
+                  />
+                  <rect
+                    x="16"
+                    y="58"
+                    width="26"
+                    height="20"
+                    rx="5"
+                    class="sf"
+                  />
+                  <path
+                    d="M42 28h6a6 6 0 0 1 6 6v4M54 68h-6a6 6 0 0 1-6-6v-4"
+                    class="sf"
+                  />
+                </svg>
+              </div>
+              <div class="sbody">
+                <span class="idx">04</span>
+                <h3>Blockchain Applications</h3>
+                <p>
+                  Wallet-based identity, encrypted messaging and on-chain
+                  records — used where they actually help, not as a gimmick.
+                </p>
+              </div>
+            </article>
+            <article class="scard wide rv">
+              <div class="sart">
+                <svg viewBox="0 0 96 96" aria-hidden="true">
+                  <ellipse cx="40" cy="26" rx="20" ry="8" class="sf" />
+                  <path
+                    d="M20 26v38c0 4.4 9 8 20 8s20-3.6 20-8V26"
+                    class="sf"
+                  />
+                  <path d="M20 45c0 4.4 9 8 20 8s20-3.6 20-8" class="sf" />
+                  <path d="M62 70h16m0 0-6-6m6 6-6 6" class="st" />
+                </svg>
+              </div>
+              <div class="sbody">
+                <span class="idx">05</span>
+                <h3>SaaS &amp; Enterprise Platforms</h3>
+                <p>
+                  Multi-tenant platforms with roles, billing, analytics and the
+                  integrations your operation already runs on.
+                </p>
+              </div>
+            </article>
+          </div>
+          <p class="snote rv">
+            <b>Also in-house —</b> enterprise systems · data &amp; analytics ·
+            API &amp; system integrations · cloud &amp; edge deployment.
+          </p>
+        </section>
+
+        <!-- PROCESS -->
+        <section class="process container" id="process">
+          <div class="sec-head rv">
+            <div>
+              <span class="pill">FIRST SKETCH → PRODUCTION</span>
+              <h2>Our process</h2>
+            </div>
+            <p class="side">
+              A structured, transparent process that keeps you in the loop at
+              every stage.
+            </p>
+          </div>
+
+          <div class="step rv">
+            <div class="art">
+              <svg viewBox="0 0 96 96" aria-hidden="true">
+                <path d="M18 62l30 12 30-12M18 50l30 12 30-12" class="sf" />
+                <path d="M18 38l30-12 30 12-30 12z" class="st" />
+                <circle cx="63" cy="57" r="11" class="sf" />
+                <path d="M71 65l9 9" class="sf" />
+              </svg>
+            </div>
+            <div>
+              <span class="nchip">01</span>
+              <h3>Discovery</h3>
+              <p>
+                We map the operational problem, the users and the success
+                metrics — and cut the scope to what actually ships.
+              </p>
+            </div>
+          </div>
+          <div class="step rv">
+            <div class="art">
+              <svg viewBox="0 0 96 96" aria-hidden="true">
+                <rect x="16" y="20" width="44" height="30" rx="5" class="sf" />
+                <rect x="32" y="48" width="44" height="28" rx="5" class="st" />
+                <path d="M64 20l12 12-14 14-12-12z" class="sf" />
+                <path d="M50 34l-3 12 12-3" class="st" />
+              </svg>
+            </div>
+            <div>
+              <span class="nchip">02</span>
+              <h3>UX/UI Design</h3>
+              <p>
+                Complete flows and screens for every user type — prototyped and
+                tested before a line of code.
+              </p>
+            </div>
+          </div>
+          <div class="step rv">
+            <div class="art">
+              <svg viewBox="0 0 96 96" aria-hidden="true">
+                <rect x="16" y="22" width="64" height="52" rx="7" class="sf" />
+                <line x1="16" y1="34" x2="80" y2="34" class="sf" />
+                <path d="M40 48l-8 8 8 8M56 48l8 8-8 8" class="st" />
+                <line x1="50" y1="46" x2="46" y2="66" class="sf" />
+              </svg>
+            </div>
+            <div>
+              <span class="nchip">03</span>
+              <h3>Frontend &amp; Mobile</h3>
+              <p>
+                Designs become real interactive product — web and native,
+                previewed on real devices from week one.
+              </p>
+            </div>
+          </div>
+          <div class="step rv">
+            <div class="art">
+              <svg viewBox="0 0 96 96" aria-hidden="true">
+                <rect x="26" y="18" width="44" height="16" rx="4" class="sf" />
+                <rect x="26" y="40" width="44" height="16" rx="4" class="sf" />
+                <rect x="26" y="62" width="44" height="16" rx="4" class="st" />
+                <circle cx="34" cy="26" r="2" class="fl" />
+                <circle cx="34" cy="48" r="2" class="fl" />
+                <circle cx="34" cy="70" r="2" class="fc" />
+                <line x1="48" y1="34" x2="48" y2="40" class="sf" />
+                <line x1="48" y1="56" x2="48" y2="62" class="sf" />
+              </svg>
+            </div>
+            <div>
+              <span class="nchip">04</span>
+              <h3>Backend &amp; Platform</h3>
+              <p>
+                APIs, data models, auth and integrations — built for scale and
+                reviewed for security.
+              </p>
+            </div>
+          </div>
+          <div class="step rv">
+            <div class="art">
+              <svg viewBox="0 0 96 96" aria-hidden="true">
+                <path
+                  d="M48 14l26 9v18c0 16-11 28-26 35C33 69 22 57 22 41V23z"
+                  class="sf"
+                />
+                <path d="M37 45l8 8 16-16" class="st" />
+              </svg>
+            </div>
+            <div>
+              <span class="nchip">05</span>
+              <h3>Testing &amp; Hardening</h3>
+              <p>
+                End-to-end tests across real devices and environments. Bugs are
+                fixed before you ever see them.
+              </p>
+            </div>
+          </div>
+          <div class="step rv">
+            <div class="art">
+              <svg viewBox="0 0 96 96" aria-hidden="true">
+                <path d="M48 66V28" class="st" />
+                <path d="M34 40l14-14 14 14" class="st" />
+                <path d="M26 74h44" class="sf" />
+                <path d="M34 62v6M62 62v6" class="sf" />
+              </svg>
+            </div>
+            <div>
+              <span class="nchip">06</span>
+              <h3>Launch</h3>
+              <p>
+                App stores, cloud or on-prem — deployed with monitoring,
+                alerting and a rollback plan.
+              </p>
+            </div>
+          </div>
+          <div class="step rv">
+            <div class="art">
+              <svg viewBox="0 0 96 96" aria-hidden="true">
+                <circle cx="48" cy="48" r="12" class="sf" />
+                <circle cx="48" cy="48" r="5" class="st" />
+                <path
+                  d="M48 28v-8M48 76v-8M28 48h-8M76 48h-8M34 34l-6-6M62 62l6 6M62 34l6-6M34 62l-6 6"
+                  class="sf"
+                />
+              </svg>
+            </div>
+            <div>
+              <span class="nchip">07</span>
+              <h3>Maintenance &amp; Upgrades</h3>
+              <p>
+                Hosting, updates, fixes and new features — so the product keeps
+                getting better after launch.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- FEATURED WORK -->
+        <section class="work container" id="work">
+          <div class="sec-head rv">
+            <div>
+              <span class="eyebrow">Selected work</span>
+              <h2>Recently shipped</h2>
+            </div>
+            <a class="link-u" href="#portfolio" data-trigger="portfolio"
+              >View full portfolio
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M5 12h14M13 6l6 6-6 6" /></svg
+            ></a>
+          </div>
+          <div class="wgrid">
+            <article class="wcard rv">
+              <div class="wmedia">
+                <div class="mock">
+                  <div class="mock-top">
+                    <span>Warehouse bins</span><span class="chip">LIVE</span>
+                  </div>
+                  <div class="mrow"><i>A-12 · Circuit boards</i><b>240</b></div>
+                  <div class="mrow"><i>B-04 · Batteries</i><b>88</b></div>
+                  <div class="mrow"><i>C-01 · Cabling</i><b>512</b></div>
+                </div>
+              </div>
+              <div class="wbody">
+                <span class="tag">Warehouse · Mobile ERP</span>
+                <h3>Razor ERP</h3>
+                <p>
+                  Mobile ERP for warehouse and e-waste operations — one
+                  connected system instead of spreadsheets.
+                </p>
+                <a class="link-u" href="#portfolio" data-trigger="portfolio"
+                  >Open project →</a
+                >
+              </div>
+            </article>
+
+            <article class="wcard rv">
+              <div class="wmedia">
+                <div class="mock">
+                  <div class="mock-top">
+                    <span>Portfolio</span><span class="chip">NEUTRAL</span>
+                  </div>
+                  <div class="bignum">$2.41M<em>+3.2% today</em></div>
+                  <svg
+                    viewBox="0 0 300 60"
+                    width="100%"
+                    height="52"
+                    aria-hidden="true"
+                  >
+                    <polyline
+                      points="0,42 30,38 60,44 90,30 120,34 150,24 180,28 210,18 240,22 270,12 300,16"
+                      fill="none"
+                      stroke="#0e7f72"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div class="wbody">
+                <span class="tag">Finance · AI Platform</span>
+                <h3>Kilwa</h3>
+                <p>
+                  Market data, sentiment and research in one AI
+                  investment-intelligence platform.
+                </p>
+                <a class="link-u" href="#portfolio" data-trigger="portfolio"
+                  >Open project →</a
+                >
+              </div>
+            </article>
+
+            <article class="wcard rv">
+              <div class="wmedia">
+                <div class="mock">
+                  <div class="mock-top">
+                    <span>Defect ↔ event</span><span class="chip">T-12s</span>
+                  </div>
+                  <div class="bars">
+                    <i style="height: 30%"></i><i style="height: 42%"></i
+                    ><i style="height: 36%"></i><i style="height: 55%"></i
+                    ><i class="hot" style="height: 92%"></i
+                    ><i style="height: 48%"></i><i style="height: 38%"></i
+                    ><i style="height: 30%"></i>
+                  </div>
+                  <div class="mrow">
+                    <i>Extruder temp deviation</i><b>FLAGGED</b>
+                  </div>
+                </div>
+              </div>
+              <div class="wbody">
+                <span class="tag">Manufacturing · Industrial AI</span>
+                <h3>LineTrace</h3>
+                <p>
+                  Connects what happened on the production line with why it
+                  happened — video, telemetry, batches.
+                </p>
+                <a class="link-u" href="#portfolio" data-trigger="portfolio"
+                  >Open project →</a
+                >
+              </div>
+            </article>
+
+            <article class="wcard rv">
+              <div class="wmedia">
+                <div class="mock">
+                  <div class="mock-top">
+                    <span>Inbox</span><span class="chip">ENCRYPTED</span>
+                  </div>
+                  <div class="mrow"><i>0x4F2a…9B1c</i><b>2m</b></div>
+                  <div class="mrow"><i>0x7C88…31Ad</i><b>41m</b></div>
+                  <div class="mrow"><i>0x1A0e…77Fd</i><b>2h</b></div>
+                </div>
+              </div>
+              <div class="wbody">
+                <span class="tag">Web3 · Secure Comms</span>
+                <h3>ChainMail</h3>
+                <p>
+                  Encrypted email built on wallet-based identity — no passwords,
+                  on-chain records.
+                </p>
+                <a class="link-u" href="#portfolio" data-trigger="portfolio"
+                  >Open project →</a
+                >
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- PROOF -->
+        <section class="proof container">
+          <div class="sec-head rv">
+            <div>
+              <span class="eyebrow">Live from our products</span>
+              <h2>Built for the real world</h2>
+            </div>
+            <p class="side">
+              Numbers straight from product dashboards — the kind of software we
+              ship.
+            </p>
+          </div>
+          <div class="metrics rv">
+            <div class="metric">
+              <b>1,284</b><span>SKUS LIVE-TRACKED · RAZOR ERP</span>
+            </div>
+            <div class="metric">
+              <b>$2.41M</b><span>PORTFOLIO UNDER ANALYSIS · KILWA</span>
+            </div>
+            <div class="metric">
+              <b>246</b><span>CANDIDATES IN PIPELINE · THE WALT</span>
+            </div>
+            <div class="metric">
+              <b>21d</b><span>AVG TIME-TO-HIRE · THE WALT</span>
+            </div>
+          </div>
+          <ul class="tags rv">
+            <li>Manufacturing</li>
+            <li>Healthcare</li>
+            <li>Logistics &amp; Freight</li>
+            <li>Finance</li>
+            <li>Warehousing</li>
+            <li>Oil &amp; Gas</li>
+            <li>Pharmaceutical</li>
+            <li>Public Infrastructure</li>
+            <li>Recruitment</li>
+            <li>Web3</li>
+          </ul>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta container">
+          <div class="ctagrid">
+            <div class="ctacard rv">
+              <span class="eyebrow">Start here</span>
+              <h3>Have an idea? Scope it with us.</h3>
+              <p>
+                A 30-minute discovery call — we'll tell you what we'd build,
+                what it costs, and what we'd cut.
+              </p>
+              <a
+                class="arrow"
+                href="mailto:hello@aurezalabs.com?subject=Discovery%20call"
+                >Book a discovery call
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.4"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M5 12h14M13 6l6 6-6 6" /></svg
+              ></a>
+            </div>
+            <div class="ctacard solid rv">
+              <span class="eyebrow">AI systems</span>
+              <h3>Need AI that explains why?</h3>
+              <p>
+                Ten production-grade intelligence systems across manufacturing,
+                infrastructure and healthcare.
+              </p>
+              <a class="arrow" href="#portfolio" data-trigger="portfolio"
+                >Explore the AI portfolio
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.4"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M5 12h14M13 6l6 6-6 6" /></svg
+              ></a>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- ================= PORTFOLIO VIEW ================= -->
+      <div data-view="portfolio" style="display: none">
+        <section class="phead" id="portfolio">
+          <div class="container">
+            <span class="eyebrow">Portfolio</span>
+            <h1>Fifteen products, built for the real world.</h1>
+            <p>
+              Two practices, one standard. Product engineering for mobile, web
+              and platform — and multimodal AI that connects what happened with
+              why it happened.
+            </p>
+            <div class="tabs" role="tablist" aria-label="Filter projects">
+              <button class="tab on" data-f="all">All work<em>15</em></button>
+              <button class="tab" data-f="product">
+                Product engineering<em>5</em>
+              </button>
+              <button class="tab" data-f="ai">AI systems<em>10</em></button>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="pgroup container"
+          id="product-engineering"
+          data-group="product"
+        >
+          <div class="ghead">
+            <h2>Product Engineering</h2>
+            <span class="cnt">05 PROJECTS</span>
+            <p>
+              Mobile, web and platform applications — taken from early concept
+              through to production-ready software.
+            </p>
+          </div>
+          <div class="pgrid">
+            <article class="pcard" id="razor-erp" data-group="product">
+              <div class="ptop">
+                <span class="idx">PROJECT 01</span
+                ><span class="grp">Product</span>
+              </div>
+              <h3>Razor ERP</h3>
+              <p class="pquote">Warehouse Mobile ERP</p>
+              <p class="pdesc">
+                Mobile ERP for warehouse and e-waste operations, replacing
+                manual spreadsheets and paper tracking with one connected
+                system.
+              </p>
+              <ul class="ptags">
+                <li>Recycling</li>
+                <li>E-waste</li>
+                <li>Warehousing</li>
+                <li>IT Asset Management</li>
+              </ul>
+              <ul class="caps">
+                <li>Inventory management</li>
+                <li>Warehouse bins &amp; zones</li>
+                <li>Barcode &amp; QR scanning</li>
+                <li>Live stock tracking</li>
+                <li>Batch management</li>
+                <li>Logistics tracking</li>
+              </ul>
+              <p class="pstat">1,284 SKUs · 36 BINS · 12 LOW-STOCK ALERTS</p>
+            </article>
+            <article class="pcard" id="kilwa" data-group="product">
+              <div class="ptop">
+                <span class="idx">PROJECT 02</span
+                ><span class="grp">Product</span>
+              </div>
+              <h3>Kilwa</h3>
+              <p class="pquote">AI Investment Intelligence Platform</p>
+              <p class="pdesc">
+                An AI-powered platform that brings market data, sentiment and
+                research together for investment teams.
+              </p>
+              <ul class="ptags">
+                <li>Investment</li>
+                <li>Finance</li>
+                <li>Asset Management</li>
+                <li>Market Research</li>
+              </ul>
+              <ul class="caps">
+                <li>Investment dashboard</li>
+                <li>AI research assistant</li>
+                <li>Sentiment analysis</li>
+                <li>Country &amp; market analysis</li>
+                <li>Investment insights</li>
+                <li>Real-time indicators</li>
+              </ul>
+              <p class="pstat">
+                $2.41M PORTFOLIO · +3.2% TODAY · LIVE SENTIMENT
+              </p>
+            </article>
+            <article class="pcard" id="the-walt" data-group="product">
+              <div class="ptop">
+                <span class="idx">PROJECT 03</span
+                ><span class="grp">Product</span>
+              </div>
+              <h3>The Walt</h3>
+              <p class="pquote">Recruitment Analytics Platform</p>
+              <p class="pdesc">
+                A recruitment analytics platform that gives hiring teams
+                visibility into where candidates move — and where they stall.
+              </p>
+              <ul class="ptags">
+                <li>HR Tech</li>
+                <li>Recruitment</li>
+                <li>Talent Acquisition</li>
+                <li>Enterprise HR</li>
+              </ul>
+              <ul class="caps">
+                <li>Recruitment dashboard</li>
+                <li>Hiring funnel</li>
+                <li>Candidate pipeline</li>
+                <li>Stage analytics</li>
+                <li>AI insights</li>
+                <li>Bottleneck detection</li>
+              </ul>
+              <p class="pstat">18 OPEN ROLES · 246 IN PIPELINE · 21D TO HIRE</p>
+            </article>
+            <article class="pcard" id="lyfe-languages" data-group="product">
+              <div class="ptop">
+                <span class="idx">PROJECT 04</span
+                ><span class="grp">Product</span>
+              </div>
+              <h3>Lyfe Languages</h3>
+              <p class="pquote">Healthcare Translation Platform</p>
+              <p class="pdesc">
+                A translation platform built for healthcare, helping clinicians
+                and patients communicate accurately across language barriers.
+              </p>
+              <ul class="ptags">
+                <li>Healthcare</li>
+                <li>Clinical Communication</li>
+                <li>Patient Services</li>
+              </ul>
+              <ul class="caps">
+                <li>Language selection</li>
+                <li>Medical translation</li>
+                <li>Audio translation</li>
+                <li>Healthcare dictionary</li>
+                <li>Translation review</li>
+                <li>Community validation</li>
+              </ul>
+              <p class="pstat">EN → ES AUDIO · VERIFIED CLINICAL DICTIONARY</p>
+            </article>
+            <article class="pcard" id="chainmail" data-group="product">
+              <div class="ptop">
+                <span class="idx">PROJECT 05</span
+                ><span class="grp">Product</span>
+              </div>
+              <h3>ChainMail</h3>
+              <p class="pquote">Web3 Encrypted Email Platform</p>
+              <p class="pdesc">
+                An encrypted email platform built on wallet-based identity, for
+                secure communication without a traditional account.
+              </p>
+              <ul class="ptags">
+                <li>Web3</li>
+                <li>Blockchain</li>
+                <li>Secure Communications</li>
+              </ul>
+              <ul class="caps">
+                <li>Wallet login</li>
+                <li>Encrypted inbox</li>
+                <li>Encrypted composition</li>
+                <li>Wallet-to-wallet messaging</li>
+                <li>Blockchain records</li>
+                <li>Secure attachments</li>
+              </ul>
+              <p class="pstat">END-TO-END ENCRYPTED · ON-CHAIN RECORD</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="pgroup container" id="ai-systems" data-group="ai">
+          <div class="ghead">
+            <h2>AI Intelligence Systems</h2>
+            <span class="cnt">10 PROJECTS</span>
+            <p>
+              Multimodal AI that correlates video, telemetry, documents and
+              historical records to turn raw signals into evidence-linked
+              answers.
+            </p>
+          </div>
+          <div class="pgrid">
+            <article class="pcard" id="linetrace" data-group="ai">
+              <div class="ptop">
+                <span class="idx">PROJECT 01</span><span class="grp">AI</span>
+              </div>
+              <h3>LineTrace</h3>
+              <p class="pquote">“From defect detection to defect causality.”</p>
+              <p class="pdesc">
+                Connects what happened on the production line with why it
+                happened — correlating video, telemetry, batch data, operator
+                actions and quality failures.
+              </p>
+              <ul class="ptags">
+                <li>Manufacturing</li>
+                <li>Production</li>
+                <li>Quality</li>
+                <li>Industrial AI</li>
+              </ul>
+              <ul class="caps">
+                <li>Multimodal monitoring</li>
+                <li>Defect-to-event correlation</li>
+                <li>Temporal root-cause analysis</li>
+                <li>Batch intelligence</li>
+                <li>Machine behavior modeling</li>
+                <li>Explainable investigation</li>
+              </ul>
+              <p class="pstat">VIDEO · PLC/SCADA · QC RECORDS, ONE VIEW</p>
+            </article>
+            <article class="pcard" id="netcause" data-group="ai">
+              <div class="ptop">
+                <span class="idx">PROJECT 02</span><span class="grp">AI</span>
+              </div>
+              <h3>NetCause</h3>
+              <p class="pquote">
+                “Not alarm detection — failure hypothesis reduction.”
+              </p>
+              <p class="pdesc">
+                Correlates topology, telemetry and alarm streams to identify the
+                probable root cause of a network incident.
+              </p>
+              <ul class="ptags">
+                <li>Telecommunications</li>
+                <li>Network Operations</li>
+              </ul>
+              <ul class="caps">
+                <li>Real-time alarm ingestion</li>
+                <li>Topology modeling</li>
+                <li>Alarm correlation</li>
+                <li>Root-cause ranking</li>
+                <li>Fault propagation modeling</li>
+                <li>Automated incident summaries</li>
+              </ul>
+              <p class="pstat">ALARM STREAMS → RANKED FAILURE HYPOTHESES</p>
+            </article>
+            <article class="pcard" id="pipeintegrity" data-group="ai">
+              <div class="ptop">
+                <span class="idx">PROJECT 03</span><span class="grp">AI</span>
+              </div>
+              <h3>PipeIntegrity</h3>
+              <p class="pquote">
+                “From single inspection to longitudinal integrity.”
+              </p>
+              <p class="pdesc">
+                Detects, localizes and tracks pipeline deterioration across
+                inspection cycles, turning imagery into asset integrity
+                intelligence.
+              </p>
+              <ul class="ptags">
+                <li>Oil &amp; Gas</li>
+                <li>Energy</li>
+                <li>Asset Integrity</li>
+              </ul>
+              <ul class="caps">
+                <li>Drone/robot ingestion</li>
+                <li>Corrosion &amp; crack detection</li>
+                <li>GPS localization</li>
+                <li>Historical comparison</li>
+                <li>Defect progression tracking</li>
+                <li>Maintenance prioritization</li>
+              </ul>
+              <p class="pstat">DEFECTS TRACKED ACROSS INSPECTION CYCLES</p>
+            </article>
+            <article class="pcard" id="batchresolve" data-group="ai">
+              <div class="ptop">
+                <span class="idx">PROJECT 04</span><span class="grp">AI</span>
+              </div>
+              <h3>BatchResolve</h3>
+              <p class="pquote">“From deviation to evidence.”</p>
+              <p class="pdesc">
+                Connects batch records, equipment data, visual inspection
+                results, SOPs and historical deviations to accelerate
+                pharmaceutical quality investigations.
+              </p>
+              <ul class="ptags">
+                <li>Pharmaceutical</li>
+                <li>Quality Assurance</li>
+                <li>Regulated Manufacturing</li>
+              </ul>
+              <ul class="caps">
+                <li>Batch record analysis</li>
+                <li>SOP retrieval</li>
+                <li>Equipment telemetry correlation</li>
+                <li>Root-cause hypotheses</li>
+                <li>Historical deviation search</li>
+                <li>Complete audit trail</li>
+              </ul>
+              <p class="pstat">EVIDENCE-LINKED · FULLY AUDITABLE</p>
+            </article>
+            <article class="pcard" id="safepredict" data-group="ai">
+              <div class="ptop">
+                <span class="idx">PROJECT 05</span><span class="grp">AI</span>
+              </div>
+              <h3>SafePredict</h3>
+              <p class="pquote">
+                “From incident detection to incident prevention.”
+              </p>
+              <p class="pdesc">
+                Models interactions between workers, machinery, restricted zones
+                and operating conditions to identify emerging workplace risks
+                before they become incidents.
+              </p>
+              <ul class="ptags">
+                <li>Industrial Safety</li>
+                <li>Manufacturing</li>
+                <li>Warehousing</li>
+              </ul>
+              <ul class="caps">
+                <li>Worker &amp; machinery tracking</li>
+                <li>Restricted-zone monitoring</li>
+                <li>Trajectory prediction</li>
+                <li>Interaction analysis</li>
+                <li>Near-miss detection</li>
+                <li>Real-time risk scoring</li>
+              </ul>
+              <p class="pstat">CLOSE CALLS CAPTURED, NOT JUST INCIDENTS</p>
+            </article>
+            <article class="pcard" id="complianceiq" data-group="ai">
+              <div class="ptop">
+                <span class="idx">PROJECT 06</span><span class="grp">AI</span>
+              </div>
+              <h3>ComplianceIQ</h3>
+              <p class="pquote">
+                “From document summary to document-to-document verification.”
+              </p>
+              <p class="pdesc">
+                Cross-checks contracts, policies, procedures and regulatory
+                requirements to identify inconsistencies, missing evidence and
+                compliance gaps.
+              </p>
+              <ul class="ptags">
+                <li>Enterprise</li>
+                <li>Legal &amp; Compliance</li>
+                <li>Regulated Industries</li>
+              </ul>
+              <ul class="caps">
+                <li>Multi-format ingestion</li>
+                <li>Clause extraction</li>
+                <li>Policy &amp; regulatory mapping</li>
+                <li>Cross-document verification</li>
+                <li>Contradiction &amp; gap detection</li>
+                <li>Citation-linked findings</li>
+              </ul>
+              <p class="pstat">EVERY FINDING BACKED BY SOURCE PASSAGE</p>
+            </article>
+            <article class="pcard" id="cargoinspect" data-group="ai">
+              <div class="ptop">
+                <span class="idx">PROJECT 07</span><span class="grp">AI</span>
+              </div>
+              <h3>CargoInspect</h3>
+              <p class="pquote">
+                “From inspection image to defensible damage evidence.”
+              </p>
+              <p class="pdesc">
+                Evaluates cargo and container condition using visual evidence,
+                historical inspections and structured damage classification.
+              </p>
+              <ul class="ptags">
+                <li>Logistics</li>
+                <li>Freight &amp; Shipping</li>
+                <li>Insurance</li>
+              </ul>
+              <ul class="caps">
+                <li>Multi-camera inspection</li>
+                <li>Damage detection &amp; segmentation</li>
+                <li>Severity assessment</li>
+                <li>Before/after comparison</li>
+                <li>Report generation</li>
+                <li>Insurance evidence package</li>
+              </ul>
+              <p class="pstat">ENTRY vs EXIT CONDITION, AUTO-REPORTED</p>
+            </article>
+            <article class="pcard" id="stockreconcile" data-group="ai">
+              <div class="ptop">
+                <span class="idx">PROJECT 08</span><span class="grp">AI</span>
+              </div>
+              <h3>StockReconcile</h3>
+              <p class="pquote">
+                “From box counting to continuous reconciliation.”
+              </p>
+              <p class="pdesc">
+                Continuously reconciles warehouse activity against WMS/ERP
+                records to identify missing, misplaced and inconsistent
+                inventory.
+              </p>
+              <ul class="ptags">
+                <li>Warehousing</li>
+                <li>Retail</li>
+                <li>Supply Chain</li>
+              </ul>
+              <ul class="caps">
+                <li>Pallet &amp; SKU recognition</li>
+                <li>Multi-camera tracking</li>
+                <li>WMS integration</li>
+                <li>Physical-vs-digital reconciliation</li>
+                <li>Misplacement detection</li>
+                <li>Unauthorized movement alerts</li>
+              </ul>
+              <p class="pstat">SHELF vs SYSTEM, CONTINUOUSLY COMPARED</p>
+            </article>
+            <article class="pcard" id="roadcondition" data-group="ai">
+              <div class="ptop">
+                <span class="idx">PROJECT 09</span><span class="grp">AI</span>
+              </div>
+              <h3>RoadCondition</h3>
+              <p class="pquote">
+                “From road condition to maintenance priority.”
+              </p>
+              <p class="pdesc">
+                Converts road survey imagery into condition scores,
+                deterioration trends and maintenance priorities.
+              </p>
+              <ul class="ptags">
+                <li>Government</li>
+                <li>Public Infrastructure</li>
+                <li>Transportation</li>
+              </ul>
+              <ul class="caps">
+                <li>Vehicle-mounted imagery ingestion</li>
+                <li>Crack &amp; pothole detection</li>
+                <li>Deterioration scoring</li>
+                <li>GIS integration</li>
+                <li>Historical comparison &amp; prediction</li>
+                <li>Repair prioritization</li>
+              </ul>
+              <p class="pstat">SEGMENTS RANKED BY URGENCY &amp; COST</p>
+            </article>
+            <article class="pcard" id="clinicalinsight" data-group="ai">
+              <div class="ptop">
+                <span class="idx">PROJECT 10</span><span class="grp">AI</span>
+              </div>
+              <h3>ClinicalInsight</h3>
+              <p class="pquote">
+                “From image finding to evidence-linked insight.”
+              </p>
+              <p class="pdesc">
+                Combines medical imaging, patient history and trusted medical
+                literature to provide evidence-linked findings for clinician
+                review.
+              </p>
+              <ul class="ptags">
+                <li>Healthcare</li>
+                <li>Clinical Imaging</li>
+                <li>Diagnostics Support</li>
+              </ul>
+              <ul class="caps">
+                <li>Medical image ingestion</li>
+                <li>Anatomical segmentation</li>
+                <li>Abnormality detection</li>
+                <li>Longitudinal comparison</li>
+                <li>Literature retrieval</li>
+                <li>Clinician review workflow</li>
+              </ul>
+              <p class="pstat">HUMAN IN THE LOOP · FULL AUDIT TRAIL</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="container">
+          <div class="band">
+            <div>
+              <h2>Don't see your industry?</h2>
+              <p>
+                The patterns repeat — operational data, visual evidence,
+                documents and history, correlated into answers. Tell us what you
+                run, and we'll tell you what we'd build.
+              </p>
+            </div>
+            <a class="btn" href="#contact" data-trigger="home-contact"
+              >Start a project</a
+            >
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="container">
+        <div class="f-top">
+          <div class="f-brand">
+            <a class="logo" href="#top" aria-label="Aureza Labs home"
+              ><svg
+                width="30"
+                height="30"
+                viewBox="0 0 32 32"
+                aria-hidden="true"
+              >
+                <rect width="32" height="32" rx="7" fill="#0e7f72" />
+                <path
+                  d="M10 22 16 9l6 13M12.5 17.5h7"
+                  stroke="#fff"
+                  stroke-width="2.4"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                /></svg
+              >Aureza&nbsp;<small>.labs</small></a
+            >
+            <p>
+              Digital products and multimodal AI systems — from first sketch to
+              production.
+            </p>
+            <div class="socials">
+              <a href="#" aria-label="LinkedIn"
+                ><svg
+                  width="15"
+                  height="15"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M4.98 3.5a2.5 2.5 0 1 1-.02 5 2.5 2.5 0 0 1 .02-5zM3 9h4v12H3zM9 9h3.8v1.7h.06c.53-1 1.83-2.2 3.77-2.2 4.03 0 4.77 2.65 4.77 6.1V21h-4v-5.6c0-1.34-.02-3.06-1.87-3.06-1.87 0-2.16 1.46-2.16 2.96V21H9z"
+                  /></svg
+              ></a>
+              <a href="#" aria-label="X"
+                ><svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M17.8 2h3l-7.4 8.5L22 22h-6.6l-5-6.5L4.6 22h-3l7.9-9.1L1.5 2h6.8l4.5 6z"
+                  /></svg
+              ></a>
+              <a href="mailto:hello@aurezalabs.com" aria-label="Email"
+                ><svg
+                  width="15"
+                  height="15"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  aria-hidden="true"
+                >
+                  <rect x="2" y="4" width="20" height="16" rx="3" />
+                  <path d="m3 6 9 7 9-7" /></svg
+              ></a>
+            </div>
+          </div>
+          <div class="f-col">
+            <h4>Company</h4>
+            <a href="#about" data-scroll="about" data-nav="home">About</a
+            ><a href="#process" data-scroll="process" data-nav="home">Process</a
+            ><a href="#services" data-scroll="services" data-nav="home"
+              >Services</a
+            ><a href="#contact" data-scroll="contact" data-nav="home"
+              >Contact</a
+            >
+          </div>
+          <div class="f-col">
+            <h4>Work</h4>
+            <a href="#portfolio" data-trigger="portfolio">All projects</a
+            ><a href="#portfolio" data-trigger="portfolio"
+              >Product engineering</a
+            ><a href="#portfolio" data-trigger="portfolio">AI systems</a>
+          </div>
+          <div class="f-col">
+            <h4>Contact</h4>
+            <a href="mailto:hello@aurezalabs.com">hello@aurezalabs.com</a
+            ><a href="#contact" data-scroll="contact" data-nav="home"
+              >Project brief form</a
+            ><a href="#">Remote · worldwide</a>
+          </div>
+        </div>
+        <div class="f-bot">
+          <span
+            >© <span id="yr">2026</span> Aureza Labs. All rights reserved.</span
+          ><span>Mobile · Web · Platform · AI</span>
+        </div>
+      </div>
+    </footer>
+
+    <button class="totop" id="totop" aria-label="Back to top">
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2.6"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M12 19V5M6 11l6-6 6 6" />
+      </svg>
+    </button>
+
+    <script>
+      document.documentElement.classList.add("js");
+      var nav = document.getElementById("nav"),
+        burger = document.getElementById("burger");
+      burger.addEventListener("click", function () {
+        var o = nav.classList.toggle("open");
+        burger.setAttribute("aria-expanded", o);
+      });
+
+      window.addEventListener(
+        "scroll",
+        function () {
+          nav.classList.toggle("scrolled", scrollY > 10);
+          document
+            .getElementById("totop")
+            .classList.toggle("show", scrollY > 600);
+        },
+        { passive: true },
+      );
+      document.getElementById("totop").addEventListener("click", function () {
+        scrollTo({ top: 0, behavior: "smooth" });
+      });
+      document.getElementById("yr").textContent = new Date().getFullYear();
+
+      /* reveal on scroll */
+      var io = new IntersectionObserver(
+        function (es) {
+          es.forEach(function (e) {
+            if (e.isIntersecting) {
+              e.target.classList.add("in");
+              io.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.12 },
+      );
+      document.querySelectorAll(".rv").forEach(function (el) {
+        io.observe(el);
+      });
+
+      /* ========= SPA ROUTING (SINGLE FILE) ========= */
+      function switchView(view) {
+        const homeEls = document.querySelectorAll('[data-view="home"]');
+        const portEls = document.querySelectorAll('[data-view="portfolio"]');
+
+        if (view === "portfolio") {
+          homeEls.forEach((el) => (el.style.display = "none"));
+          portEls.forEach((el) => (el.style.display = ""));
+          document
+            .querySelectorAll(".menu a[data-nav]")
+            .forEach((a) => a.classList.remove("on"));
+          const pLink = document.querySelector('.menu a[data-nav="portfolio"]');
+          if (pLink) pLink.classList.add("on");
+        } else {
+          portEls.forEach((el) => (el.style.display = "none"));
+          homeEls.forEach((el) => (el.style.display = ""));
+          document
+            .querySelectorAll(".menu a[data-nav]")
+            .forEach((a) => a.classList.remove("on"));
+          const hLink = document.querySelector('.menu a[data-nav="home"]');
+          if (hLink) hLink.classList.add("on");
+        }
+        window.scrollTo({ top: 0, behavior: "instant" });
+
+        // Re-trigger reveal observer for newly visible elements
+        document.querySelectorAll(".rv:not(.in)").forEach(function (el) {
+          io.observe(el);
+        });
+      }
+
+      document.querySelectorAll(".menu a").forEach((link) => {
+        link.addEventListener("click", function (e) {
+          const navType = this.getAttribute("data-nav");
+          const scrollTarget = this.getAttribute("data-scroll");
+
+          if (navType === "portfolio") {
+            e.preventDefault();
+            switchView("portfolio");
+          } else if (navType === "home") {
+            const isHomeHidden =
+              document.querySelector('[data-view="home"]').style.display ===
+              "none";
+            if (isHomeHidden) {
+              e.preventDefault();
+              switchView("home");
+              setTimeout(() => {
+                if (scrollTarget)
+                  document
+                    .getElementById(scrollTarget)
+                    .scrollIntoView({ behavior: "smooth" });
+                else window.scrollTo({ top: 0, behavior: "smooth" });
+              }, 50);
+            } else {
+              if (
+                this.classList.contains("btn") ||
+                this.getAttribute("href").startsWith("#")
+              ) {
+                e.preventDefault();
+                if (scrollTarget)
+                  document
+                    .getElementById(scrollTarget)
+                    .scrollIntoView({ behavior: "smooth" });
+                else window.scrollTo({ top: 0, behavior: "smooth" });
+              }
+            }
+          }
+          nav.classList.remove("open");
+          burger.setAttribute("aria-expanded", "false");
+        });
+      });
+
+      document.querySelector(".logo").addEventListener("click", function (e) {
+        e.preventDefault();
+        switchView("home");
+      });
+
+      document.querySelectorAll('[data-trigger="portfolio"]').forEach((el) => {
+        el.addEventListener("click", function (e) {
+          e.preventDefault();
+          switchView("portfolio");
+        });
+      });
+
+      const homeContactBtn = document.querySelector(
+        '[data-trigger="home-contact"]',
+      );
+      if (homeContactBtn) {
+        homeContactBtn.addEventListener("click", function (e) {
+          e.preventDefault();
+          switchView("home");
+          setTimeout(() => {
+            document
+              .getElementById("contact")
+              .scrollIntoView({ behavior: "smooth" });
+          }, 50);
+        });
+      }
+
+      /* Footer links routing */
+      document.querySelectorAll(".f-col a[data-nav]").forEach((link) => {
+        link.addEventListener("click", function (e) {
+          const scrollTarget = this.getAttribute("data-scroll");
+          const isHomeHidden =
+            document.querySelector('[data-view="home"]').style.display ===
+            "none";
+          if (isHomeHidden) {
+            e.preventDefault();
+            switchView("home");
+            setTimeout(() => {
+              if (scrollTarget)
+                document
+                  .getElementById(scrollTarget)
+                  .scrollIntoView({ behavior: "smooth" });
+            }, 50);
+          } else {
+            e.preventDefault();
+            if (scrollTarget)
+              document
+                .getElementById(scrollTarget)
+                .scrollIntoView({ behavior: "smooth" });
+          }
+        });
+      });
+
+      /* form */
+      var fc = document.getElementById("pform");
+      fc.addEventListener("submit", function (ev) {
+        ev.preventDefault();
+        var n = document.getElementById("fname"),
+          e = document.getElementById("femail"),
+          m = document.getElementById("fmsg"),
+          err = document.getElementById("ferr"),
+          ok = true;
+        [n, e, m].forEach(function (i) {
+          i.closest(".field").classList.remove("err");
+        });
+        if (!n.value.trim()) {
+          n.closest(".field").classList.add("err");
+          ok = false;
+        }
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e.value)) {
+          e.closest(".field").classList.add("err");
+          ok = false;
+        }
+        if (m.value.trim().length < 10) {
+          m.closest(".field").classList.add("err");
+          ok = false;
+        }
+        if (!ok) {
+          err.textContent =
+            "Please add your name, a valid email and a short description (10+ characters).";
+          return;
+        }
+        err.textContent = "";
+        document.getElementById("contact").classList.add("sent");
+      });
+      document.getElementById("fagain").addEventListener("click", function () {
+        fc.reset();
+        document.getElementById("contact").classList.remove("sent");
+      });
+
+      /* studio reel */
+      var reel = document.getElementById("reel"),
+        lines = [
+          "Mobile, web & platform engineering",
+          "Multimodal AI that explains why, not just what",
+          "Vision, documents, telemetry — correlated",
+          "From first sketch to production",
+        ],
+        li = 0,
+        rt = null;
+      var rl = document.getElementById("rline"),
+        rc = document.getElementById("rcount"),
+        rf = document.getElementById("rfill");
+      function tick() {
+        li = (li + 1) % lines.length;
+        rl.classList.remove("fade");
+        void rl.offsetWidth;
+        rl.textContent = lines[li];
+        rl.classList.add("fade");
+        rc.textContent = "0" + (li + 1) + " / 04";
+        rf.style.transition = "none";
+        rf.style.width = "0";
+        requestAnimationFrame(function () {
+          requestAnimationFrame(function () {
+            rf.style.transition = "width 2.5s linear";
+            rf.style.width = "100%";
+          });
+        });
+      }
+      document.getElementById("playbtn").addEventListener("click", function () {
+        reel.classList.add("playing");
+        rl.textContent = lines[0];
+        rc.textContent = "01 / 04";
+        rf.style.transition = "width 2.5s linear";
+        rf.style.width = "100%";
+        rt = setInterval(tick, 2600);
+      });
+      document
+        .getElementById("pausebtn")
+        .addEventListener("click", function () {
+          reel.classList.remove("playing");
+          clearInterval(rt);
+        });
+
+      /* portfolio filter */
+      var tabs = document.querySelectorAll(".tab");
+      tabs.forEach(function (t) {
+        t.addEventListener("click", function () {
+          tabs.forEach(function (x) {
+            x.classList.remove("on");
+          });
+          t.classList.add("on");
+          var f = t.getAttribute("data-f");
+          document.querySelectorAll(".pcard").forEach(function (c) {
+            var show = f === "all" || c.getAttribute("data-group") === f;
+            c.style.display = show ? "" : "none";
+            if (show) {
+              c.classList.remove("pop");
+              void c.offsetWidth;
+              c.classList.add("pop");
+            }
+          });
+          document.querySelectorAll(".pgroup").forEach(function (g) {
+            g.style.display =
+              f === "all" || g.getAttribute("data-group") === f ? "" : "none";
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
