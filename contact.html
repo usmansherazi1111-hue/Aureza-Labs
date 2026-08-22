@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Contact — Aureza Labs</title>
+  <meta name="description" content="Send a project brief. We read every one ourselves and reply within two business days with a view, not a calendar link.">
+  <meta name="theme-color" content="#0e7f72" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#060d0c" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='11' fill='%230e7f72'/%3E%3Cpath d='M11 29.5 20 10.5l9 19' stroke='white' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M15.4 23.2h7.4' stroke='white' stroke-width='3' stroke-linecap='round'/%3E%3Ccircle cx='27.4' cy='23.2' r='1.9' fill='%236fe3cf'/%3E%3C/svg%3E">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Aureza Labs">
+  <meta property="og:title" content="Contact — Aureza Labs">
+  <meta property="og:description" content="Send a project brief. We read every one ourselves and reply within two business days with a view, not a calendar link.">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&amp;family=Inter:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500&amp;display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+
+  <script>
+    /* Apply the stored theme before first paint to avoid a flash. */
+    (function () {
+      try {
+        var t = localStorage.getItem("aureza-theme");
+        if (t === "dark" || t === "light") document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="logo " href="index.html" aria-label="Aureza Labs — home">
+        <svg class="logo__mark" width="34" height="34" viewBox="0 0 40 40" fill="none" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="lmh-g" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#12a08f"/><stop offset="1" stop-color="#0a5a51"/>
+    </linearGradient>
+  </defs>
+  <rect width="40" height="40" rx="11" fill="url(#lmh-g)"/>
+  <path d="M11 29.5 20 10.5l9 19" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M15.4 23.2h7.4" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".92"/>
+  <circle cx="27.4" cy="23.2" r="1.9" fill="#6fe3cf"/>
+</svg>
+        <span class="logo__type">
+          <span class="logo__name">Aureza Labs</span>
+          <span class="logo__sub">Product &amp; Applied AI</span>
+        </span>
+      </a>
+      <nav class="nav__menu" id="primary-menu" aria-label="Primary">
+          <a class="nav__link" href="index.html">Home</a>
+          <a class="nav__link" href="services.html">Services</a>
+          <a class="nav__link" href="work.html">Work</a>
+          <a class="nav__link" href="process.html">Process</a>
+          <a class="nav__link" href="about.html">About</a>
+      </nav>
+      <div class="nav__actions">
+        <button class="theme-toggle" data-theme-toggle type="button" aria-label="Switch colour theme">
+          <svg class="icon-sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6"/></svg>
+          <svg class="icon-moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.2A8.4 8.4 0 0 1 9.8 4a8.6 8.6 0 1 0 10.2 10.2z"/></svg>
+        </button>
+        <a class="btn btn--sm" href="contact.html">Start a project</a>
+        <button class="burger" data-burger type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <div class="scroll-progress" aria-hidden="true"></div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="page-head">
+      <div class="container">
+        <span class="eyebrow">Contact</span>
+        <h1>Tell us what you run.</h1>
+        <p class="lead">
+          A paragraph is enough to start. We read every brief ourselves and reply within two business days — with a
+          view, not a calendar link.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="contact-grid">
+          <div data-reveal="left">
+            <h2 class="t-h3">What happens next</h2>
+            <ol class="timeline mt-6">
+              <li class="tl-item"><span class="tl-item__when">Day 0</span><div class="tl-item__body"><h4>You send a brief</h4><p>The problem, who lives with it, and any constraint you already know about. Rough is fine.</p></div></li>
+              <li class="tl-item"><span class="tl-item__when">Within 2 days</span><div class="tl-item__body"><h4>We reply with a view</h4><p>What we think you should build, what we would cut, and whether we are the right team for it.</p></div></li>
+              <li class="tl-item"><span class="tl-item__when">Week 1</span><div class="tl-item__body"><h4>A 30-minute call</h4><p>No deck. We ask about the environment, the systems already in place, and what happens if nothing changes.</p></div></li>
+              <li class="tl-item"><span class="tl-item__when">Week 2</span><div class="tl-item__body"><h4>Scoped proposal</h4><p>Discovery scope, timeline and price — fixed, with a written output you keep regardless of what follows.</p></div></li>
+            </ol>
+
+            <div class="contact-list">
+              <a class="contact-item" href="mailto:hello@aurezalabs.com">
+                <span class="contact-item__icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="3"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></svg></span>
+                <span class="contact-item__body"><b>Email us directly</b><span>hello@aurezalabs.com</span></span>
+              </a>
+              <div class="contact-item">
+                <span class="contact-item__icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5.4l3.4 2"/></svg></span>
+                <span class="contact-item__body"><b>Response time</b><span>Within two business days, every brief</span></span>
+              </div>
+              <div class="contact-item">
+                <span class="contact-item__icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 6 3.8 9S14.5 21.3 12 21c-2.5-.3-3.8-6-3.8-9S9.5 5.7 12 3z"/></svg></span>
+                <span class="contact-item__body"><b>Where we work</b><span>Remote, worldwide — overlapping hours agreed up front</span></span>
+              </div>
+              <div class="contact-item">
+                <span class="contact-item__icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg></span>
+                <span class="contact-item__body"><b>Confidentiality</b><span>NDA on request, signed before anything is shared</span></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-card" data-reveal="right">
+            <div class="contact-card__intro">
+              <span class="badge"><span class="badge__dot"></span>Accepting projects</span>
+              <h2 class="t-h3 mt-4">Project brief</h2>
+              <p class="soft mt-2 t-base">The fields marked required are the only ones we actually need.</p>
+            </div>
+
+            <form class="form" data-contact-form novalidate>
+              <div class="form__row">
+                <div class="field">
+                  <label for="f-name">Name <span>Required</span></label>
+                  <input class="input" id="f-name" name="name" type="text" autocomplete="name" placeholder="Jane Cooper">
+                  <p class="field__error" role="alert"></p>
+                </div>
+                <div class="field">
+                  <label for="f-email">Email <span>Required</span></label>
+                  <input class="input" id="f-email" name="email" type="email" autocomplete="email" placeholder="jane@company.com">
+                  <p class="field__error" role="alert"></p>
+                </div>
+              </div>
+
+              <div class="form__row">
+                <div class="field">
+                  <label for="f-company">Company</label>
+                  <input class="input" id="f-company" name="company" type="text" autocomplete="organization" placeholder="Northwind Logistics">
+                </div>
+                <div class="field">
+                  <label for="f-budget">Budget range</label>
+                  <select class="select" id="f-budget" name="budget">
+                    <option value="discovery">Discovery first</option>
+                    <option value="under-50">Under $50k</option>
+                    <option value="50-150">$50k - $150k</option>
+                    <option value="150-400">$150k - $400k</option>
+                    <option value="400-plus">$400k+</option>
+                  </select>
+                </div>
+              </div>
+
+              <fieldset class="field fieldset-reset">
+                <legend class="field-legend">What do you need?</legend>
+                <div class="chips-input">
+                  <input type="radio" name="project-type" id="t-mobile" value="mobile" checked><label for="t-mobile">Mobile application</label>
+                  <input type="radio" name="project-type" id="t-web" value="web"><label for="t-web">Web application</label>
+                  <input type="radio" name="project-type" id="t-saas" value="saas"><label for="t-saas">SaaS platform</label>
+                  <input type="radio" name="project-type" id="t-ai-vision" value="ai-vision"><label for="t-ai-vision">AI / vision system</label>
+                  <input type="radio" name="project-type" id="t-data" value="data"><label for="t-data">Data &amp; analytics</label>
+                  <input type="radio" name="project-type" id="t-blockchain" value="blockchain"><label for="t-blockchain">Blockchain product</label>
+                  <input type="radio" name="project-type" id="t-unsure" value="unsure"><label for="t-unsure">Not sure yet</label>
+                </div>
+              </fieldset>
+
+              <div class="field">
+                <label for="f-message">Project description <span>Required</span></label>
+                <textarea class="textarea" id="f-message" name="message" placeholder="The operational problem, who lives with it, the systems already in place, and the timeline you are working to."></textarea>
+                <p class="field__error" role="alert"></p>
+              </div>
+
+              <p class="form__status" data-form-status role="alert"></p>
+              <button class="btn btn--lg" type="submit">Send brief <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+              <p class="form__note">No retainers required &middot; NDA on request &middot; We reply to every brief</p>
+            </form>
+
+            <div class="form-success">
+              <svg class="form-success__icon" width="56" height="56" viewBox="0 0 56 56" fill="none" aria-hidden="true">
+                <circle cx="28" cy="28" r="26" stroke="currentColor" stroke-width="2" opacity=".35"/>
+                <path d="M17 29l7.5 7.5L39 21" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <h3>Brief received.</h3>
+              <p>Thanks — we read every one ourselves. You will hear back within two business days.</p>
+              <button class="btn btn--ghost" type="button" data-form-reset>Send another</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--sunk" id="faq">
+      <div class="container container--narrow">
+        <h2 class="center">Working with us</h2>
+        <div class="accordion mt-10" data-single data-reveal>
+          <div class="accordion__item">
+            <button class="accordion__btn" type="button" aria-expanded="true">
+              What should I put in the brief?<span class="accordion__icon" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span>
+            </button>
+            <div class="accordion__panel"><div class="accordion__inner"><div>The operational problem in plain language, who lives with it day to day, what systems are already in place, and what happens if nothing changes. You do not need a specification — if you had one, you would need us less.</div></div></div>
+          </div>
+          <div class="accordion__item">
+            <button class="accordion__btn" type="button" aria-expanded="false">
+              Do you sign NDAs?<span class="accordion__icon" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span>
+            </button>
+            <div class="accordion__panel"><div class="accordion__inner"><div>Yes, on request and before anything substantive is shared. Send the brief at whatever level of detail you are comfortable with, ask for an NDA in it, and we will have one back to you the same day.</div></div></div>
+          </div>
+          <div class="accordion__item">
+            <button class="accordion__btn" type="button" aria-expanded="false">
+              Do you take on small projects?<span class="accordion__icon" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span>
+            </button>
+            <div class="accordion__panel"><div class="accordion__inner"><div>Sometimes. If the work is genuinely small we will often say so and point you at a simpler answer, including one that does not involve hiring us. Discovery is the honest starting point for anything either side is unsure about.</div></div></div>
+          </div>
+          <div class="accordion__item">
+            <button class="accordion__btn" type="button" aria-expanded="false">
+              Can you work with our in-house team?<span class="accordion__icon" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span>
+            </button>
+            <div class="accordion__panel"><div class="accordion__inner"><div>Yes. We run as an embedded team alongside client engineers on roughly half our projects. Where your team will own the result afterwards, handover and training go into the schedule rather than getting bolted on at the end.</div></div></div>
+          </div>
+          <div class="accordion__item">
+            <button class="accordion__btn" type="button" aria-expanded="false">
+              What if we already started and it is going badly?<span class="accordion__icon" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span>
+            </button>
+            <div class="accordion__panel"><div class="accordion__inner"><div>That is a common first conversation. We will review what exists and tell you honestly whether it is worth continuing, refactoring or replacing — including when the answer is that your existing team should finish it.</div></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a class="logo logo--footer" href="index.html" aria-label="Aureza Labs — home">
+        <svg class="logo__mark" width="34" height="34" viewBox="0 0 40 40" fill="none" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="lmh-g" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#12a08f"/><stop offset="1" stop-color="#0a5a51"/>
+    </linearGradient>
+  </defs>
+  <rect width="40" height="40" rx="11" fill="url(#lmh-g)"/>
+  <path d="M11 29.5 20 10.5l9 19" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M15.4 23.2h7.4" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".92"/>
+  <circle cx="27.4" cy="23.2" r="1.9" fill="#6fe3cf"/>
+</svg>
+        <span class="logo__type">
+          <span class="logo__name">Aureza Labs</span>
+          <span class="logo__sub">Product &amp; Applied AI</span>
+        </span>
+      </a>
+          <p class="footer__blurb">Digital products and multimodal AI systems — from first sketch to production. Remote, working worldwide.</p>
+          <div class="socials">
+            <a href="https://www.linkedin.com" aria-label="Aureza Labs on LinkedIn" rel="noopener"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1-.02 5 2.5 2.5 0 0 1 .02-5zM3 9h4v12H3zM9 9h3.8v1.7h.06c.53-1 1.83-2.2 3.77-2.2 4.03 0 4.77 2.65 4.77 6.1V21h-4v-5.6c0-1.34-.02-3.06-1.87-3.06-1.87 0-2.16 1.46-2.16 2.96V21H9z"/></svg></a>
+            <a href="https://x.com" aria-label="Aureza Labs on X" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.8 2h3l-7.4 8.5L22 22h-6.6l-5-6.5L4.6 22h-3l7.9-9.1L1.5 2h6.8l4.5 6z"/></svg></a>
+            <a href="https://github.com" aria-label="Aureza Labs on GitHub" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg></a>
+            <a href="mailto:hello@aurezalabs.com" aria-label="Email Aureza Labs"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="3"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></svg></a>
+          </div>
+        </div>
+        <div class="footer__col">
+          <h4>Company</h4>
+          <a href="about.html">About</a>
+          <a href="process.html">How we work</a>
+          <a href="services.html">Services</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer__col">
+          <h4>Work</h4>
+          <a href="work.html">All projects</a>
+          <a href="work.html?filter=product">Product engineering</a>
+          <a href="work.html?filter=ai">AI systems</a>
+          <a href="work/linetrace.html">Featured: LineTrace</a>
+        </div>
+        <div class="footer__col">
+          <h4>Contact</h4>
+          <a href="mailto:hello@aurezalabs.com">hello@aurezalabs.com</a>
+          <a href="contact.html">Project brief form</a>
+          <a href="contact.html#faq">Working with us</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; <span data-year>2026</span> Aureza Labs. All rights reserved.</span>
+        <span>Mobile &middot; Web &middot; Platform &middot; AI</span>
+      </div>
+    </div>
+  </footer>
+
+  <button class="to-top" data-to-top type="button" aria-label="Back to top">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+  </button>
+
+  <div class="toast" data-toast role="status" aria-live="polite">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>
+    <span></span>
+  </div>
+
+  <script src="assets/js/app.js" defer></script>
+</body>
+</html>

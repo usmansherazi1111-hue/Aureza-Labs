@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Lyfe Languages interface artwork">
+  <title>Lyfe Languages</title>
+  <defs>
+    <linearGradient id="lyfelanguages-ground" x1="0" y1="0" x2="800" y2="600" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0b1614"/>
+      <stop offset=".55" stop-color="#0e7f72" stop-opacity=".92"/>
+      <stop offset="1" stop-color="#04231f"/>
+    </linearGradient>
+    <radialGradient id="lyfelanguages-glow" cx="0" cy="0" r="1" gradientTransform="translate(620 110) rotate(128) scale(520 470)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3f9f92" stop-opacity=".62"/>
+      <stop offset="1" stop-color="#3f9f92" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="lyfelanguages-glow2" cx="0" cy="0" r="1" gradientTransform="translate(120 540) rotate(-42) scale(420 380)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4ecdb9" stop-opacity=".34"/>
+      <stop offset="1" stop-color="#4ecdb9" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="lyfelanguages-rule" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0v40" fill="none" stroke="#fff" stroke-opacity=".05" stroke-width="1"/>
+    </pattern>
+    <filter id="lyfelanguages-grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.86" numOctaves="4" stitchTiles="stitch" result="n"/>
+      <feColorMatrix type="saturate" values="0" in="n" result="g"/>
+      <feComponentTransfer in="g" result="t"><feFuncA type="linear" slope="0.13"/></feComponentTransfer>
+      <feBlend in="SourceGraphic" in2="t" mode="overlay"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#lyfelanguages-grain)">
+    <rect width="800" height="600" fill="url(#lyfelanguages-ground)"/>
+    <rect width="800" height="600" fill="url(#lyfelanguages-rule)"/>
+    <rect width="800" height="600" fill="url(#lyfelanguages-glow)"/>
+    <rect width="800" height="600" fill="url(#lyfelanguages-glow2)"/>
+    <rect x="90" y="284.76" width="7" height="30.47" rx="3.5"
+        fill="#fff" fill-opacity="0.24"/><rect x="109" y="261.87" width="7" height="76.25" rx="3.5"
+        fill="#fff" fill-opacity="0.24"/><rect x="128" y="250.66" width="7" height="98.68" rx="3.5"
+        fill="#fff" fill-opacity="0.24"/><rect x="147" y="237.72" width="7" height="124.55" rx="3.5"
+        fill="#fff" fill-opacity="0.24"/><rect x="166" y="235.55" width="7" height="128.9" rx="3.5"
+        fill="#fff" fill-opacity="0.24"/><rect x="185" y="236.91" width="7" height="126.18" rx="3.5"
+        fill="#fff" fill-opacity="0.24"/><rect x="204" y="256.43" width="7" height="87.13" rx="3.5"
+        fill="#fff" fill-opacity="0.24"/><rect x="223" y="269.46" width="7" height="61.08" rx="3.5"
+        fill="#fff" fill-opacity="0.24"/><rect x="242" y="273.05" width="7" height="53.89" rx="3.5"
+        fill="#fff" fill-opacity="0.24"/><rect x="261" y="255.94" width="7" height="88.12" rx="3.5"
+        fill="#fff" fill-opacity="0.24"/><rect x="280" y="241.27" width="7" height="117.46" rx="3.5"
+        fill="#fff" fill-opacity="0.24"/><rect x="299" y="236.26" width="7" height="127.47" rx="3.5"
+        fill="#fff" fill-opacity="0.24"/><rect x="318" y="239.25" width="7" height="121.5" rx="3.5"
+        fill="#fff" fill-opacity="0.24"/><rect x="337" y="239.92" width="7" height="120.15" rx="3.5"
+        fill="#fff" fill-opacity="0.24"/><rect x="356" y="260.63" width="7" height="78.73" rx="3.5"
+        fill="#fff" fill-opacity="0.24"/><rect x="375" y="280.83" width="7" height="38.35" rx="3.5"
+        fill="#fff" fill-opacity="0.24"/><rect x="394" y="265.54" width="7" height="68.91" rx="3.5"
+        fill="#3f9f92" fill-opacity="0.95"/><rect x="413" y="249.55" width="7" height="100.9" rx="3.5"
+        fill="#3f9f92" fill-opacity="0.95"/><rect x="432" y="229.37" width="7" height="141.27" rx="3.5"
+        fill="#3f9f92" fill-opacity="0.95"/><rect x="451" y="231.83" width="7" height="136.33" rx="3.5"
+        fill="#3f9f92" fill-opacity="0.95"/><rect x="470" y="244.61" width="7" height="110.79" rx="3.5"
+        fill="#fff" fill-opacity="0.24"/><rect x="489" y="260.62" width="7" height="78.75" rx="3.5"
+        fill="#fff" fill-opacity="0.24"/><rect x="508" y="279.99" width="7" height="40.02" rx="3.5"
+        fill="#fff" fill-opacity="0.24"/><rect x="527" y="269.06" width="7" height="61.87" rx="3.5"
+        fill="#fff" fill-opacity="0.24"/><rect x="546" y="255.09" width="7" height="89.81" rx="3.5"
+        fill="#fff" fill-opacity="0.24"/><rect x="565" y="241.8" width="7" height="116.39" rx="3.5"
+        fill="#fff" fill-opacity="0.24"/><rect x="584" y="228.85" width="7" height="142.3" rx="3.5"
+        fill="#fff" fill-opacity="0.24"/><rect x="603" y="235.04" width="7" height="129.92" rx="3.5"
+        fill="#fff" fill-opacity="0.24"/><rect x="622" y="245.25" width="7" height="109.49" rx="3.5"
+        fill="#fff" fill-opacity="0.24"/><rect x="641" y="261.56" width="7" height="76.87" rx="3.5"
+        fill="#fff" fill-opacity="0.24"/><rect x="660" y="282.84" width="7" height="34.33" rx="3.5"
+        fill="#fff" fill-opacity="0.24"/><rect x="679" y="259.44" width="7" height="81.11" rx="3.5"
+        fill="#fff" fill-opacity="0.24"/><rect x="698" y="250.54" width="7" height="98.92" rx="3.5"
+        fill="#fff" fill-opacity="0.24"/><rect x="717" y="237.83" width="7" height="124.35" rx="3.5"
+        fill="#fff" fill-opacity="0.24"/><circle cx="400" cy="300" r="52" fill="none" stroke="#3f9f92" stroke-width="3" stroke-opacity=".55"/>
+  </g>
+</svg>

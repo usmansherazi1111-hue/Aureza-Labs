@@ -1,0 +1,221 @@
+/* ============================================================
+   Aureza Labs — Design Tokens
+   Single source of truth for colour, type, space, motion.
+   ============================================================ */
+
+:root {
+  /* ---- Brand ramp: Teal (heritage #0E7F72 sits at 600) ---- */
+  --teal-50:  #eef7f5;
+  --teal-100: #d3ebe6;
+  --teal-200: #a7d7cf;
+  --teal-300: #71bdb1;
+  --teal-400: #3f9f92;
+  --teal-500: #1a8a7c;
+  --teal-600: #0e7f72;
+  --teal-700: #0a655c;
+  --teal-800: #084f48;
+  --teal-900: #073c37;
+  --teal-950: #04231f;
+
+  /* ---- Accent ramp: Ember. Used sparingly for data + emphasis ---- */
+  --ember-100: #fdefdc;
+  --ember-300: #f3c684;
+  --ember-500: #e19334;
+  --ember-600: #c97a1f;
+  --ember-700: #a45f16;
+
+  /* ---- Support hues for charts / status ---- */
+  --violet-500: #6d5ce0;
+  --violet-300: #b3a8f2;
+  --rose-500:   #d1495b;
+  --rose-300:   #efa3ad;
+  --sky-500:    #3a86b5;
+  --sky-300:    #9ecbe3;
+
+  /* ---- Neutral ramp: green-shifted greys, never pure grey ---- */
+  --ink-950: #060d0c;
+  --ink-900: #0b1614;
+  --ink-800: #13221f;
+  --ink-700: #1d302c;
+  --ink-600: #334742;
+  --ink-500: #4e6560;
+  --ink-400: #6d8480;
+  --ink-300: #97aaa6;
+  --ink-200: #c4d2ce;
+  --ink-100: #e2eae7;
+  --ink-50:  #f1f6f4;
+  --paper:   #fcfdfc;
+
+  /* ---- Semantic (light is the default document theme) ---- */
+  --bg:            var(--paper);
+  --bg-sunk:       var(--ink-50);
+  --bg-raised:     #ffffff;
+  --bg-inverse:    var(--ink-950);
+  --surface-tint:  var(--teal-50);
+
+  --text:          var(--ink-900);
+  --text-soft:     var(--ink-500);
+  --text-faint:    var(--ink-400);
+  --text-inverse:  #f4faf8;
+  --text-inverse-soft: rgba(244, 250, 248, 0.66);
+
+  --brand:         var(--teal-600);
+  --brand-hover:   var(--teal-700);
+  --brand-soft:    var(--teal-50);
+  --brand-on-dark: #4ecdb9;
+  --accent:        var(--ember-600);
+  --accent-soft:   var(--ember-100);
+
+  --line:          #dfe9e6;
+  --line-strong:   #c6d6d2;
+  --line-inverse:  rgba(255, 255, 255, 0.12);
+
+  --focus:         var(--teal-500);
+
+  /* ---- Elevation. Layered, tinted — not black blur ---- */
+  --shadow-xs: 0 1px 2px rgba(6, 13, 12, .05);
+  --shadow-sm: 0 1px 2px rgba(6, 13, 12, .05), 0 2px 6px -2px rgba(6, 13, 12, .06);
+  --shadow-md: 0 2px 4px rgba(6, 13, 12, .04), 0 10px 24px -10px rgba(6, 13, 12, .13);
+  --shadow-lg: 0 4px 8px rgba(6, 13, 12, .04), 0 24px 48px -20px rgba(6, 13, 12, .20);
+  --shadow-xl: 0 8px 16px rgba(6, 13, 12, .05), 0 44px 88px -32px rgba(6, 13, 12, .26);
+  --shadow-brand: 0 12px 32px -12px rgba(14, 127, 114, .42);
+
+  /* ---- Radii ---- */
+  --r-xs: 5px;
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 18px;
+  --r-xl: 26px;
+  --r-2xl: 36px;
+  --r-pill: 999px;
+
+  /* ---- Type ---- */
+  --font-display: "Bricolage Grotesque", "Sora", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --font-editorial: "Newsreader", ui-serif, Georgia, serif;
+
+  /* Fluid scale — 320px → 1440px viewport */
+  --t-xs:   0.75rem;
+  --t-sm:   0.8125rem;
+  --t-base: 0.9375rem;
+  --t-md:   1rem;
+  --t-lg:   clamp(1.0625rem, 0.99rem + 0.36vw, 1.1875rem);
+  --t-xl:   clamp(1.1875rem, 1.09rem + 0.49vw, 1.375rem);
+  --t-h4:   clamp(1.25rem, 1.14rem + 0.55vw, 1.5rem);
+  --t-h3:   clamp(1.4375rem, 1.24rem + 0.98vw, 1.875rem);
+  --t-h2:   clamp(1.875rem, 1.49rem + 1.93vw, 2.9375rem);
+  --t-h1:   clamp(2.375rem, 1.72rem + 3.27vw, 4rem);
+  --t-hero: clamp(2.75rem, 1.72rem + 5.15vw, 5.25rem);
+
+  --lh-tight: 1.06;
+  --lh-snug: 1.18;
+  --lh-base: 1.62;
+  --lh-loose: 1.75;
+
+  --tr-tight: -0.028em;
+  --tr-snug: -0.018em;
+  --tr-wide: 0.16em;
+
+  /* ---- Space (4px base) ---- */
+  --s-1: 4px;   --s-2: 8px;   --s-3: 12px;  --s-4: 16px;
+  --s-5: 20px;  --s-6: 24px;  --s-8: 32px;  --s-10: 40px;
+  --s-12: 48px; --s-16: 64px; --s-20: 80px; --s-24: 96px;
+  --s-32: 128px;
+
+  --section-y: clamp(72px, 8vw, 136px);
+  --container: 1240px;
+  --container-narrow: 820px;
+  --gutter: clamp(20px, 4vw, 40px);
+
+  /* ---- Motion ---- */
+  --ease-out: cubic-bezier(.22, 1, .36, 1);
+  --ease-in-out: cubic-bezier(.65, 0, .35, 1);
+  --ease-spring: cubic-bezier(.34, 1.56, .64, 1);
+  --dur-fast: 140ms;
+  --dur: 260ms;
+  --dur-slow: 520ms;
+
+  --z-base: 1;
+  --z-sticky: 40;
+  --z-nav: 60;
+  --z-overlay: 80;
+  --z-top: 100;
+
+  color-scheme: light;
+}
+
+/* ============================================================
+   Dark theme — explicit opt-in and system preference.
+   Only semantic tokens are redefined; ramps stay constant.
+   ============================================================ */
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg:           var(--ink-950);
+    --bg-sunk:      #040a09;
+    --bg-raised:    var(--ink-900);
+    --bg-inverse:   var(--ink-50);
+    --surface-tint: rgba(14, 127, 114, .10);
+
+    --text:         #e8f2ef;
+    --text-soft:    #9db0ac;
+    --text-faint:   #748b86;
+    --text-inverse: var(--ink-950);
+    --text-inverse-soft: rgba(6, 13, 12, .68);
+
+    --brand:        #35b5a2;
+    --brand-hover:  #4ecdb9;
+    --brand-soft:   rgba(14, 127, 114, .14);
+    --accent:       var(--ember-300);
+    --accent-soft:  rgba(225, 147, 52, .14);
+
+    --line:         rgba(255, 255, 255, .09);
+    --line-strong:  rgba(255, 255, 255, .17);
+    --line-inverse: rgba(6, 13, 12, .12);
+
+    --focus:        #4ecdb9;
+
+    --shadow-xs: 0 1px 2px rgba(0, 0, 0, .5);
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, .5), 0 2px 6px -2px rgba(0, 0, 0, .5);
+    --shadow-md: 0 2px 4px rgba(0, 0, 0, .4), 0 10px 24px -10px rgba(0, 0, 0, .7);
+    --shadow-lg: 0 4px 8px rgba(0, 0, 0, .4), 0 24px 48px -20px rgba(0, 0, 0, .8);
+    --shadow-xl: 0 8px 16px rgba(0, 0, 0, .4), 0 44px 88px -32px rgba(0, 0, 0, .85);
+    --shadow-brand: 0 12px 32px -12px rgba(53, 181, 162, .34);
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg:           var(--ink-950);
+  --bg-sunk:      #040a09;
+  --bg-raised:    var(--ink-900);
+  --bg-inverse:   var(--ink-50);
+  --surface-tint: rgba(14, 127, 114, .10);
+
+  --text:         #e8f2ef;
+  --text-soft:    #9db0ac;
+  --text-faint:   #748b86;
+  --text-inverse: var(--ink-950);
+  --text-inverse-soft: rgba(6, 13, 12, .68);
+
+  --brand:        #35b5a2;
+  --brand-hover:  #4ecdb9;
+  --brand-soft:   rgba(14, 127, 114, .14);
+  --accent:       var(--ember-300);
+  --accent-soft:  rgba(225, 147, 52, .14);
+
+  --line:         rgba(255, 255, 255, .09);
+  --line-strong:  rgba(255, 255, 255, .17);
+  --line-inverse: rgba(6, 13, 12, .12);
+
+  --focus:        #4ecdb9;
+
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, .5);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, .5), 0 2px 6px -2px rgba(0, 0, 0, .5);
+  --shadow-md: 0 2px 4px rgba(0, 0, 0, .4), 0 10px 24px -10px rgba(0, 0, 0, .7);
+  --shadow-lg: 0 4px 8px rgba(0, 0, 0, .4), 0 24px 48px -20px rgba(0, 0, 0, .8);
+  --shadow-xl: 0 8px 16px rgba(0, 0, 0, .4), 0 44px 88px -32px rgba(0, 0, 0, .85);
+  --shadow-brand: 0 12px 32px -12px rgba(53, 181, 162, .34);
+}

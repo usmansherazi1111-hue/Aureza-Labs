@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Kilwa interface artwork">
+  <title>Kilwa</title>
+  <defs>
+    <linearGradient id="kilwa-ground" x1="0" y1="0" x2="800" y2="600" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0b1614"/>
+      <stop offset=".55" stop-color="#0a655c" stop-opacity=".92"/>
+      <stop offset="1" stop-color="#04231f"/>
+    </linearGradient>
+    <radialGradient id="kilwa-glow" cx="0" cy="0" r="1" gradientTransform="translate(620 110) rotate(128) scale(520 470)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1a8a7c" stop-opacity=".62"/>
+      <stop offset="1" stop-color="#1a8a7c" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="kilwa-glow2" cx="0" cy="0" r="1" gradientTransform="translate(120 540) rotate(-42) scale(420 380)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4ecdb9" stop-opacity=".34"/>
+      <stop offset="1" stop-color="#4ecdb9" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="kilwa-rule" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0v40" fill="none" stroke="#fff" stroke-opacity=".05" stroke-width="1"/>
+    </pattern>
+    <filter id="kilwa-grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.86" numOctaves="4" stitchTiles="stitch" result="n"/>
+      <feColorMatrix type="saturate" values="0" in="n" result="g"/>
+      <feComponentTransfer in="g" result="t"><feFuncA type="linear" slope="0.13"/></feComponentTransfer>
+      <feBlend in="SourceGraphic" in2="t" mode="overlay"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#kilwa-grain)">
+    <rect width="800" height="600" fill="url(#kilwa-ground)"/>
+    <rect width="800" height="600" fill="url(#kilwa-rule)"/>
+    <rect width="800" height="600" fill="url(#kilwa-glow)"/>
+    <rect width="800" height="600" fill="url(#kilwa-glow2)"/>
+    <rect x="75" y="437.67" width="10" height="29.05" rx="3" fill="#fff" fill-opacity=".10"/><rect x="105" y="382.58" width="10" height="56.34" rx="3" fill="#fff" fill-opacity=".10"/><rect x="135" y="397.09" width="10" height="48.6" rx="3" fill="#fff" fill-opacity=".10"/><rect x="165" y="361.85" width="10" height="28.87" rx="3" fill="#fff" fill-opacity=".10"/><rect x="195" y="340.9" width="10" height="71.74" rx="3" fill="#fff" fill-opacity=".10"/><rect x="225" y="328.41" width="10" height="32.12" rx="3" fill="#fff" fill-opacity=".10"/><rect x="255" y="346.54" width="10" height="46.09" rx="3" fill="#fff" fill-opacity=".10"/><rect x="285" y="337.53" width="10" height="101.14" rx="3" fill="#fff" fill-opacity=".10"/><rect x="315" y="331.38" width="10" height="101.64" rx="3" fill="#fff" fill-opacity=".10"/><rect x="345" y="330.72" width="10" height="59.56" rx="3" fill="#fff" fill-opacity=".10"/><rect x="375" y="312.47" width="10" height="89.17" rx="3" fill="#fff" fill-opacity=".10"/><rect x="405" y="285.93" width="10" height="92.46" rx="3" fill="#fff" fill-opacity=".10"/><rect x="435" y="273.15" width="10" height="60.75" rx="3" fill="#fff" fill-opacity=".10"/><rect x="465" y="310.25" width="10" height="30.52" rx="3" fill="#fff" fill-opacity=".10"/><rect x="495" y="290.41" width="10" height="34.34" rx="3" fill="#fff" fill-opacity=".10"/><rect x="525" y="250.7" width="10" height="98.96" rx="3" fill="#fff" fill-opacity=".10"/><rect x="555" y="268.07" width="10" height="47.01" rx="3" fill="#fff" fill-opacity=".10"/><rect x="585" y="241.05" width="10" height="90.2" rx="3" fill="#fff" fill-opacity=".10"/><rect x="615" y="219.1" width="10" height="109.57" rx="3" fill="#fff" fill-opacity=".10"/><rect x="645" y="219.5" width="10" height="76.91" rx="3" fill="#fff" fill-opacity=".10"/><rect x="675" y="205.38" width="10" height="44.1" rx="3" fill="#fff" fill-opacity=".10"/><rect x="705" y="221.26" width="10" height="76.39" rx="3" fill="#fff" fill-opacity=".10"/><polyline points="80,417.67 110,362.58 140,377.09 170,341.85 200,320.9 230,308.41 260,326.54 290,317.53 320,311.38 350,310.72 380,292.47 410,265.93 440,253.15 470,290.25 500,270.41 530,230.7 560,248.07 590,221.05 620,199.1 650,199.5 680,185.38 710,201.26" fill="none" stroke="#1a8a7c" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="710" cy="201.26" r="9" fill="#1a8a7c"/><circle cx="710" cy="201.26" r="17" fill="#1a8a7c" fill-opacity=".26"/>
+  </g>
+</svg>

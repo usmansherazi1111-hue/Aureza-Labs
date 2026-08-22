@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="SafePredict interface artwork">
+  <title>SafePredict</title>
+  <defs>
+    <linearGradient id="safepredict-ground" x1="0" y1="0" x2="800" y2="600" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0b1614"/>
+      <stop offset=".55" stop-color="#0e7f72" stop-opacity=".92"/>
+      <stop offset="1" stop-color="#04231f"/>
+    </linearGradient>
+    <radialGradient id="safepredict-glow" cx="0" cy="0" r="1" gradientTransform="translate(620 110) rotate(128) scale(520 470)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#d1495b" stop-opacity=".62"/>
+      <stop offset="1" stop-color="#d1495b" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="safepredict-glow2" cx="0" cy="0" r="1" gradientTransform="translate(120 540) rotate(-42) scale(420 380)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4ecdb9" stop-opacity=".34"/>
+      <stop offset="1" stop-color="#4ecdb9" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="safepredict-rule" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0v40" fill="none" stroke="#fff" stroke-opacity=".05" stroke-width="1"/>
+    </pattern>
+    <filter id="safepredict-grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.86" numOctaves="4" stitchTiles="stitch" result="n"/>
+      <feColorMatrix type="saturate" values="0" in="n" result="g"/>
+      <feComponentTransfer in="g" result="t"><feFuncA type="linear" slope="0.13"/></feComponentTransfer>
+      <feBlend in="SourceGraphic" in2="t" mode="overlay"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#safepredict-grain)">
+    <rect width="800" height="600" fill="url(#safepredict-ground)"/>
+    <rect width="800" height="600" fill="url(#safepredict-rule)"/>
+    <rect width="800" height="600" fill="url(#safepredict-glow)"/>
+    <rect width="800" height="600" fill="url(#safepredict-glow2)"/>
+    <rect x="250" y="190" width="300" height="220" rx="16" fill="#d1495b" fill-opacity=".16" stroke="#d1495b" stroke-width="2.4" stroke-dasharray="10 8"/><path d="M90 500C200 470 300 420 380 330" fill="none" stroke="#fff" stroke-opacity=".7" stroke-width="3.4" stroke-linecap="round"/><path d="M720 140C620 190 520 240 430 300" fill="none" stroke="#d1495b" stroke-width="3.8" stroke-linecap="round"/><circle cx="380" cy="330" r="17" fill="#fff" fill-opacity=".9"/><rect x="412" y="282" width="42" height="30" rx="7" fill="#d1495b"/><circle cx="404" cy="316" r="18" fill="none" stroke="#d1495b" stroke-width="3"/><circle cx="404" cy="316" r="36" fill="none" stroke="#d1495b" stroke-width="2" stroke-opacity=".5"/><circle cx="404" cy="316" r="58" fill="none" stroke="#d1495b" stroke-width="1.5" stroke-opacity=".25"/>
+  </g>
+</svg>

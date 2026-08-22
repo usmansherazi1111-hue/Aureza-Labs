@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="ComplianceIQ interface artwork">
+  <title>ComplianceIQ</title>
+  <defs>
+    <linearGradient id="complianceiq-ground" x1="0" y1="0" x2="800" y2="600" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0b1614"/>
+      <stop offset=".55" stop-color="#0a655c" stop-opacity=".92"/>
+      <stop offset="1" stop-color="#04231f"/>
+    </linearGradient>
+    <radialGradient id="complianceiq-glow" cx="0" cy="0" r="1" gradientTransform="translate(620 110) rotate(128) scale(520 470)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6d5ce0" stop-opacity=".62"/>
+      <stop offset="1" stop-color="#6d5ce0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="complianceiq-glow2" cx="0" cy="0" r="1" gradientTransform="translate(120 540) rotate(-42) scale(420 380)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4ecdb9" stop-opacity=".34"/>
+      <stop offset="1" stop-color="#4ecdb9" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="complianceiq-rule" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0v40" fill="none" stroke="#fff" stroke-opacity=".05" stroke-width="1"/>
+    </pattern>
+    <filter id="complianceiq-grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.86" numOctaves="4" stitchTiles="stitch" result="n"/>
+      <feColorMatrix type="saturate" values="0" in="n" result="g"/>
+      <feComponentTransfer in="g" result="t"><feFuncA type="linear" slope="0.13"/></feComponentTransfer>
+      <feBlend in="SourceGraphic" in2="t" mode="overlay"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#complianceiq-grain)">
+    <rect width="800" height="600" fill="url(#complianceiq-ground)"/>
+    <rect width="800" height="600" fill="url(#complianceiq-rule)"/>
+    <rect width="800" height="600" fill="url(#complianceiq-glow)"/>
+    <rect width="800" height="600" fill="url(#complianceiq-glow2)"/>
+    <rect x="150" y="110" width="200" height="380" rx="14" fill="#fff" fill-opacity=".07" stroke="#fff" stroke-opacity=".24" stroke-width="1.5"/><rect x="172" y="145" width="140.16" height="10" rx="5"
+          fill="#fff" fill-opacity="0.22"/><rect x="172" y="187" width="149.17" height="10" rx="5"
+          fill="#fff" fill-opacity="0.22"/><rect x="172" y="229" width="98.5" height="10" rx="5"
+          fill="#fff" fill-opacity="0.22"/><rect x="172" y="271" width="109.18" height="10" rx="5"
+          fill="#fff" fill-opacity="0.22"/><rect x="172" y="313" width="115.6" height="10" rx="5"
+          fill="#6d5ce0" fill-opacity="0.95"/><rect x="172" y="355" width="107.48" height="10" rx="5"
+          fill="#fff" fill-opacity="0.22"/><rect x="172" y="397" width="90.55" height="10" rx="5"
+          fill="#fff" fill-opacity="0.22"/><rect x="172" y="439" width="132.87" height="10" rx="5"
+          fill="#fff" fill-opacity="0.22"/><rect x="450" y="110" width="200" height="380" rx="14" fill="#fff" fill-opacity=".07" stroke="#fff" stroke-opacity=".24" stroke-width="1.5"/><rect x="472" y="145" width="118.78" height="10" rx="5"
+          fill="#fff" fill-opacity="0.22"/><rect x="472" y="187" width="124.11" height="10" rx="5"
+          fill="#fff" fill-opacity="0.22"/><rect x="472" y="229" width="96.27" height="10" rx="5"
+          fill="#fff" fill-opacity="0.22"/><rect x="472" y="271" width="104.55" height="10" rx="5"
+          fill="#fff" fill-opacity="0.22"/><rect x="472" y="313" width="148.04" height="10" rx="5"
+          fill="#6d5ce0" fill-opacity="0.95"/><rect x="472" y="355" width="154.45" height="10" rx="5"
+          fill="#fff" fill-opacity="0.22"/><rect x="472" y="397" width="98.54" height="10" rx="5"
+          fill="#fff" fill-opacity="0.22"/><rect x="472" y="439" width="114.48" height="10" rx="5"
+          fill="#fff" fill-opacity="0.22"/><path d="M352 318h96" stroke="#6d5ce0" stroke-width="4" stroke-linecap="round"/><circle cx="400" cy="318" r="27" fill="#6d5ce0"/><path d="M391 309l18 18M409 309l-18 18" stroke="#0b1614" stroke-width="3.4" stroke-linecap="round"/>
+  </g>
+</svg>

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="ClinicalInsight interface artwork">
+  <title>ClinicalInsight</title>
+  <defs>
+    <linearGradient id="clinicalinsight-ground" x1="0" y1="0" x2="800" y2="600" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0b1614"/>
+      <stop offset=".55" stop-color="#0e7f72" stop-opacity=".92"/>
+      <stop offset="1" stop-color="#04231f"/>
+    </linearGradient>
+    <radialGradient id="clinicalinsight-glow" cx="0" cy="0" r="1" gradientTransform="translate(620 110) rotate(128) scale(520 470)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3a86b5" stop-opacity=".62"/>
+      <stop offset="1" stop-color="#3a86b5" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="clinicalinsight-glow2" cx="0" cy="0" r="1" gradientTransform="translate(120 540) rotate(-42) scale(420 380)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4ecdb9" stop-opacity=".34"/>
+      <stop offset="1" stop-color="#4ecdb9" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="clinicalinsight-rule" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0v40" fill="none" stroke="#fff" stroke-opacity=".05" stroke-width="1"/>
+    </pattern>
+    <filter id="clinicalinsight-grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.86" numOctaves="4" stitchTiles="stitch" result="n"/>
+      <feColorMatrix type="saturate" values="0" in="n" result="g"/>
+      <feComponentTransfer in="g" result="t"><feFuncA type="linear" slope="0.13"/></feComponentTransfer>
+      <feBlend in="SourceGraphic" in2="t" mode="overlay"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#clinicalinsight-grain)">
+    <rect width="800" height="600" fill="url(#clinicalinsight-ground)"/>
+    <rect width="800" height="600" fill="url(#clinicalinsight-rule)"/>
+    <rect width="800" height="600" fill="url(#clinicalinsight-glow)"/>
+    <rect width="800" height="600" fill="url(#clinicalinsight-glow2)"/>
+    <circle cx="400" cy="300" r="188" fill="#fff" fill-opacity=".07" stroke="#fff" stroke-opacity=".26" stroke-width="1.8"/><circle cx="400" cy="300" r="132" fill="#fff" fill-opacity=".05" stroke="#fff" stroke-opacity=".18" stroke-width="1.4"/><line x1="588" y1="300" x2="602" y2="300" stroke="#fff" stroke-opacity=".26" stroke-width="2"/><line x1="581.59" y1="348.66" x2="595.12" y2="352.28" stroke="#fff" stroke-opacity=".26" stroke-width="2"/><line x1="562.81" y1="394" x2="574.94" y2="401" stroke="#fff" stroke-opacity=".26" stroke-width="2"/><line x1="532.94" y1="432.94" x2="542.84" y2="442.84" stroke="#fff" stroke-opacity=".26" stroke-width="2"/><line x1="494" y1="462.81" x2="501" y2="474.94" stroke="#fff" stroke-opacity=".26" stroke-width="2"/><line x1="448.66" y1="481.59" x2="452.28" y2="495.12" stroke="#fff" stroke-opacity=".26" stroke-width="2"/><line x1="400" y1="488" x2="400" y2="502" stroke="#fff" stroke-opacity=".26" stroke-width="2"/><line x1="351.34" y1="481.59" x2="347.72" y2="495.12" stroke="#fff" stroke-opacity=".26" stroke-width="2"/><line x1="306" y1="462.81" x2="299" y2="474.94" stroke="#fff" stroke-opacity=".26" stroke-width="2"/><line x1="267.06" y1="432.94" x2="257.16" y2="442.84" stroke="#fff" stroke-opacity=".26" stroke-width="2"/><line x1="237.19" y1="394" x2="225.06" y2="401" stroke="#fff" stroke-opacity=".26" stroke-width="2"/><line x1="218.41" y1="348.66" x2="204.88" y2="352.28" stroke="#fff" stroke-opacity=".26" stroke-width="2"/><line x1="212" y1="300" x2="198" y2="300" stroke="#fff" stroke-opacity=".26" stroke-width="2"/><line x1="218.41" y1="251.34" x2="204.88" y2="247.72" stroke="#fff" stroke-opacity=".26" stroke-width="2"/><line x1="237.19" y1="206" x2="225.06" y2="199" stroke="#fff" stroke-opacity=".26" stroke-width="2"/><line x1="267.06" y1="167.06" x2="257.16" y2="157.16" stroke="#fff" stroke-opacity=".26" stroke-width="2"/><line x1="306" y1="137.19" x2="299" y2="125.06" stroke="#fff" stroke-opacity=".26" stroke-width="2"/><line x1="351.34" y1="118.41" x2="347.72" y2="104.88" stroke="#fff" stroke-opacity=".26" stroke-width="2"/><line x1="400" y1="112" x2="400" y2="98" stroke="#fff" stroke-opacity=".26" stroke-width="2"/><line x1="448.66" y1="118.41" x2="452.28" y2="104.88" stroke="#fff" stroke-opacity=".26" stroke-width="2"/><line x1="494" y1="137.19" x2="501" y2="125.06" stroke="#fff" stroke-opacity=".26" stroke-width="2"/><line x1="532.94" y1="167.06" x2="542.84" y2="157.16" stroke="#fff" stroke-opacity=".26" stroke-width="2"/><line x1="562.81" y1="206" x2="574.94" y2="199" stroke="#fff" stroke-opacity=".26" stroke-width="2"/><line x1="581.59" y1="251.34" x2="595.12" y2="247.72" stroke="#fff" stroke-opacity=".26" stroke-width="2"/><circle cx="472" cy="242" r="26" fill="#3a86b5" fill-opacity=".95"/><circle cx="472" cy="242" r="46" fill="none" stroke="#3a86b5" stroke-width="2.4"/><circle cx="472" cy="242" r="19" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="2" stroke-dasharray="5 5"/><rect x="150" y="486" width="120" height="10" rx="5" fill="#fff" fill-opacity=".3"/><rect x="286" y="486" width="168" height="10" rx="5" fill="#3a86b5" fill-opacity=".85"/>
+  </g>
+</svg>

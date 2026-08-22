@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="The Walt interface artwork">
+  <title>The Walt</title>
+  <defs>
+    <linearGradient id="thewalt-ground" x1="0" y1="0" x2="800" y2="600" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0b1614"/>
+      <stop offset=".55" stop-color="#1a8a7c" stop-opacity=".92"/>
+      <stop offset="1" stop-color="#04231f"/>
+    </linearGradient>
+    <radialGradient id="thewalt-glow" cx="0" cy="0" r="1" gradientTransform="translate(620 110) rotate(128) scale(520 470)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0e7f72" stop-opacity=".62"/>
+      <stop offset="1" stop-color="#0e7f72" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="thewalt-glow2" cx="0" cy="0" r="1" gradientTransform="translate(120 540) rotate(-42) scale(420 380)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4ecdb9" stop-opacity=".34"/>
+      <stop offset="1" stop-color="#4ecdb9" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="thewalt-rule" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0v40" fill="none" stroke="#fff" stroke-opacity=".05" stroke-width="1"/>
+    </pattern>
+    <filter id="thewalt-grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.86" numOctaves="4" stitchTiles="stitch" result="n"/>
+      <feColorMatrix type="saturate" values="0" in="n" result="g"/>
+      <feComponentTransfer in="g" result="t"><feFuncA type="linear" slope="0.13"/></feComponentTransfer>
+      <feBlend in="SourceGraphic" in2="t" mode="overlay"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#thewalt-grain)">
+    <rect width="800" height="600" fill="url(#thewalt-ground)"/>
+    <rect width="800" height="600" fill="url(#thewalt-rule)"/>
+    <rect width="800" height="600" fill="url(#thewalt-glow)"/>
+    <rect width="800" height="600" fill="url(#thewalt-glow2)"/>
+    <rect x="140" y="120" width="520" height="56" rx="10"
+        fill="#fff" fill-opacity="0.13"
+        stroke="#fff" stroke-opacity=".22" stroke-width="1.5"/><rect x="202" y="194" width="396" height="56" rx="10"
+        fill="#fff" fill-opacity="0.13"
+        stroke="#fff" stroke-opacity=".22" stroke-width="1.5"/><rect x="264" y="268" width="272" height="56" rx="10"
+        fill="#0e7f72" fill-opacity="0.9"
+        stroke="#fff" stroke-opacity=".22" stroke-width="1.5"/><rect x="282" y="290" width="120" height="10" rx="5" fill="#0b1614" fill-opacity=".45"/><rect x="326" y="342" width="148" height="56" rx="10"
+        fill="#fff" fill-opacity="0.13"
+        stroke="#fff" stroke-opacity=".22" stroke-width="1.5"/><rect x="388" y="416" width="24" height="56" rx="10"
+        fill="#fff" fill-opacity="0.13"
+        stroke="#fff" stroke-opacity=".22" stroke-width="1.5"/>
+  </g>
+</svg>

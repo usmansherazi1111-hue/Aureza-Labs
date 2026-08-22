@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="BatchResolve interface artwork">
+  <title>BatchResolve</title>
+  <defs>
+    <linearGradient id="batchresolve-ground" x1="0" y1="0" x2="800" y2="600" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0b1614"/>
+      <stop offset=".55" stop-color="#0e7f72" stop-opacity=".92"/>
+      <stop offset="1" stop-color="#04231f"/>
+    </linearGradient>
+    <radialGradient id="batchresolve-glow" cx="0" cy="0" r="1" gradientTransform="translate(620 110) rotate(128) scale(520 470)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6d5ce0" stop-opacity=".62"/>
+      <stop offset="1" stop-color="#6d5ce0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="batchresolve-glow2" cx="0" cy="0" r="1" gradientTransform="translate(120 540) rotate(-42) scale(420 380)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4ecdb9" stop-opacity=".34"/>
+      <stop offset="1" stop-color="#4ecdb9" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="batchresolve-rule" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0v40" fill="none" stroke="#fff" stroke-opacity=".05" stroke-width="1"/>
+    </pattern>
+    <filter id="batchresolve-grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.86" numOctaves="4" stitchTiles="stitch" result="n"/>
+      <feColorMatrix type="saturate" values="0" in="n" result="g"/>
+      <feComponentTransfer in="g" result="t"><feFuncA type="linear" slope="0.13"/></feComponentTransfer>
+      <feBlend in="SourceGraphic" in2="t" mode="overlay"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#batchresolve-grain)">
+    <rect width="800" height="600" fill="url(#batchresolve-ground)"/>
+    <rect width="800" height="600" fill="url(#batchresolve-rule)"/>
+    <rect width="800" height="600" fill="url(#batchresolve-glow)"/>
+    <rect width="800" height="600" fill="url(#batchresolve-glow2)"/>
+    <rect x="130" y="120" width="380" height="400" rx="14" fill="#0b1614" fill-opacity="0.18" stroke="#fff" stroke-opacity=".22" stroke-width="1.5"/><rect x="170" y="144" width="380" height="400" rx="14" fill="#0b1614" fill-opacity="0.3" stroke="#fff" stroke-opacity=".22" stroke-width="1.5"/><rect x="210" y="168" width="380" height="400" rx="14" fill="#0b1614" fill-opacity="0.42" stroke="#fff" stroke-opacity=".22" stroke-width="1.5"/><rect x="240" y="190" width="264.28" height="11" rx="5.5"
+        fill="#fff" fill-opacity="0.24"/><rect x="240" y="224" width="192.46" height="11" rx="5.5"
+        fill="#fff" fill-opacity="0.24"/><rect x="240" y="258" width="170.35" height="11" rx="5.5"
+        fill="#fff" fill-opacity="0.24"/><rect x="240" y="292" width="213.76" height="11" rx="5.5"
+        fill="#fff" fill-opacity="0.24"/><rect x="240" y="326" width="260" height="11" rx="5.5"
+        fill="#6d5ce0" fill-opacity="0.95"/><rect x="240" y="360" width="236.19" height="11" rx="5.5"
+        fill="#fff" fill-opacity="0.24"/><rect x="240" y="394" width="264.97" height="11" rx="5.5"
+        fill="#fff" fill-opacity="0.24"/><rect x="240" y="428" width="163.3" height="11" rx="5.5"
+        fill="#fff" fill-opacity="0.24"/><rect x="240" y="462" width="166.15" height="11" rx="5.5"
+        fill="#fff" fill-opacity="0.24"/><circle cx="600" cy="331" r="19" fill="#6d5ce0"/><path d="M593 195.5l5 5 9-10" stroke="#0b1614" stroke-width="3.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

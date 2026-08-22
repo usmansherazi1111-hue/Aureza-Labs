@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="RoadCondition interface artwork">
+  <title>RoadCondition</title>
+  <defs>
+    <linearGradient id="roadcondition-ground" x1="0" y1="0" x2="800" y2="600" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0b1614"/>
+      <stop offset=".55" stop-color="#0a655c" stop-opacity=".92"/>
+      <stop offset="1" stop-color="#04231f"/>
+    </linearGradient>
+    <radialGradient id="roadcondition-glow" cx="0" cy="0" r="1" gradientTransform="translate(620 110) rotate(128) scale(520 470)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#e19334" stop-opacity=".62"/>
+      <stop offset="1" stop-color="#e19334" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="roadcondition-glow2" cx="0" cy="0" r="1" gradientTransform="translate(120 540) rotate(-42) scale(420 380)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4ecdb9" stop-opacity=".34"/>
+      <stop offset="1" stop-color="#4ecdb9" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="roadcondition-rule" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0v40" fill="none" stroke="#fff" stroke-opacity=".05" stroke-width="1"/>
+    </pattern>
+    <filter id="roadcondition-grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.86" numOctaves="4" stitchTiles="stitch" result="n"/>
+      <feColorMatrix type="saturate" values="0" in="n" result="g"/>
+      <feComponentTransfer in="g" result="t"><feFuncA type="linear" slope="0.13"/></feComponentTransfer>
+      <feBlend in="SourceGraphic" in2="t" mode="overlay"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#roadcondition-grain)">
+    <rect width="800" height="600" fill="url(#roadcondition-ground)"/>
+    <rect width="800" height="600" fill="url(#roadcondition-rule)"/>
+    <rect width="800" height="600" fill="url(#roadcondition-glow)"/>
+    <rect width="800" height="600" fill="url(#roadcondition-glow2)"/>
+    <path d="M300 560 L360 140 L440 140 L500 560 Z" fill="#fff" fill-opacity=".09" stroke="#fff" stroke-opacity=".24" stroke-width="1.6"/><rect x="380" y="540" width="40" height="26" rx="4" fill="#fff" fill-opacity=".42"/><rect x="381.57" y="482" width="36.86" height="24.29" rx="4" fill="#fff" fill-opacity=".42"/><rect x="383.14" y="424" width="33.71" height="22.57" rx="4" fill="#fff" fill-opacity=".42"/><rect x="384.71" y="366" width="30.57" height="20.86" rx="4" fill="#fff" fill-opacity=".42"/><rect x="386.29" y="308" width="27.43" height="19.14" rx="4" fill="#fff" fill-opacity=".42"/><rect x="387.86" y="250" width="24.29" height="17.43" rx="4" fill="#fff" fill-opacity=".42"/><rect x="389.43" y="192" width="21.14" height="15.71" rx="4" fill="#fff" fill-opacity=".42"/><rect x="560" y="150" width="195" height="40" rx="8"
+        fill="#e19334" fill-opacity="0.9"/><rect x="560" y="224" width="112.5" height="40" rx="8"
+        fill="#fff" fill-opacity="0.18"/><rect x="560" y="298" width="90" height="40" rx="8"
+        fill="#fff" fill-opacity="0.18"/><rect x="560" y="372" width="172.5" height="40" rx="8"
+        fill="#e19334" fill-opacity="0.9"/><rect x="560" y="446" width="102" height="40" rx="8"
+        fill="#fff" fill-opacity="0.18"/><circle cx="180" cy="220" r="34" fill="none" stroke="#e19334" stroke-width="3"/><path d="M180 200v20l14 8" stroke="#e19334" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

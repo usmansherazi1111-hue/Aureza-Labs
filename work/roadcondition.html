@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>RoadCondition — Government &amp; Public Infrastructure — Aureza Labs</title>
+  <meta name="description" content="A survey system that converts vehicle-mounted road imagery into per-segment condition scores, deterioration trends and a maintenance programme ranked by cost of deferral rather than by complaint volume.">
+  <meta name="theme-color" content="#0e7f72" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#060d0c" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='11' fill='%230e7f72'/%3E%3Cpath d='M11 29.5 20 10.5l9 19' stroke='white' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M15.4 23.2h7.4' stroke='white' stroke-width='3' stroke-linecap='round'/%3E%3Ccircle cx='27.4' cy='23.2' r='1.9' fill='%236fe3cf'/%3E%3C/svg%3E">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Aureza Labs">
+  <meta property="og:title" content="RoadCondition — Government &amp; Public Infrastructure — Aureza Labs">
+  <meta property="og:description" content="A survey system that converts vehicle-mounted road imagery into per-segment condition scores, deterioration trends and a maintenance programme ranked by cost of deferral rather than by complaint volume.">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&amp;family=Inter:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500&amp;display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/pages.css">
+
+  <script>
+    /* Apply the stored theme before first paint to avoid a flash. */
+    (function () {
+      try {
+        var t = localStorage.getItem("aureza-theme");
+        if (t === "dark" || t === "light") document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="logo " href="../index.html" aria-label="Aureza Labs — home">
+        <svg class="logo__mark" width="34" height="34" viewBox="0 0 40 40" fill="none" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="lmf-g" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#12a08f"/><stop offset="1" stop-color="#0a5a51"/>
+    </linearGradient>
+  </defs>
+  <rect width="40" height="40" rx="11" fill="url(#lmf-g)"/>
+  <path d="M11 29.5 20 10.5l9 19" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M15.4 23.2h7.4" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".92"/>
+  <circle cx="27.4" cy="23.2" r="1.9" fill="#6fe3cf"/>
+</svg>
+        <span class="logo__type">
+          <span class="logo__name">Aureza Labs</span>
+          <span class="logo__sub">Product &amp; Applied AI</span>
+        </span>
+      </a>
+      <nav class="nav__menu" id="primary-menu" aria-label="Primary">
+          <a class="nav__link" href="../index.html">Home</a>
+          <a class="nav__link" href="../services.html">Services</a>
+          <a class="nav__link" href="../work.html" aria-current="page">Work</a>
+          <a class="nav__link" href="../process.html">Process</a>
+          <a class="nav__link" href="../about.html">About</a>
+      </nav>
+      <div class="nav__actions">
+        <button class="theme-toggle" data-theme-toggle type="button" aria-label="Switch colour theme">
+          <svg class="icon-sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6"/></svg>
+          <svg class="icon-moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.2A8.4 8.4 0 0 1 9.8 4a8.6 8.6 0 1 0 10.2 10.2z"/></svg>
+        </button>
+        <a class="btn btn--sm" href="../contact.html">Start a project</a>
+        <button class="burger" data-burger type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <div class="scroll-progress" aria-hidden="true"></div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="proj-hero">
+      <div class="container">
+        <nav class="crumbs" aria-label="Breadcrumb">
+          <a href="../index.html">Home</a> <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+          <a href="../work.html">Work</a> <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+          <a href="../work.html?filter=ai">AI systems</a> <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+          <span aria-current="page">RoadCondition</span>
+        </nav>
+
+        <div class="proj-hero__grid">
+          <div data-reveal="left">
+            <span class="badge">AI intelligence system</span>
+            <h1>RoadCondition</h1>
+            <p class="proj-hero__tagline">From road condition to maintenance priority.</p>
+            <p class="proj-hero__summary">A survey system that converts vehicle-mounted road imagery into per-segment condition scores, deterioration trends and a maintenance programme ranked by cost of deferral rather than by complaint volume.</p>
+            <div class="taglist proj-hero__tags">
+              <span class="tag">Government</span>
+              <span class="tag">Public Infrastructure</span>
+              <span class="tag">Transportation</span>
+              <span class="tag">Computer Vision</span>
+              <span class="tag">GIS</span>
+            </div>
+            <dl class="proj-facts">
+              <div><dt>Sector</dt><dd>Government &amp; Public Infrastructure</dd></div>
+              <div><dt>Year</dt><dd>2024</dd></div>
+              <div><dt>Duration</dt><dd>8 months</dd></div>
+              <div><dt>Team</dt><dd>6 people</dd></div>
+              <div><dt>Platforms</dt><dd>Vehicle capture · Web GIS</dd></div>
+              <div><dt>Status</dt><dd>In production</dd></div>
+            </dl>
+          </div>
+          <div data-reveal="right">
+            <img src="../assets/img/cover-roadcondition.svg" alt="RoadCondition — visual identity for the case study"
+                 width="800" height="600" class="cover-figure">
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section section--tight section--sunk">
+      <div class="container">
+        <div class="stats" data-reveal>
+          <div class="stat">
+            <b>4,000km</b>
+            <span>Network covered</span>
+            <span class="stat__note">Continuous, not sampled</span>
+          </div>
+          <div class="stat">
+            <b>Per-segment</b>
+            <span>Scoring granularity</span>
+            <span class="stat__note">Matched to maintenance units</span>
+          </div>
+          <div class="stat">
+            <b>Cost of deferral</b>
+            <span>Ranking basis</span>
+            <span class="stat__note">Not complaint volume</span>
+          </div>
+          <div class="stat">
+            <b>Opportunistic</b>
+            <span>Capture model</span>
+            <span class="stat__note">Vehicles already on the network</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="narrative flush" data-reveal>
+          <p class="narrative__label">01 — The problem</p>
+          <div class="narrative__body">
+            <p>The authority maintained four thousand kilometres of road on a maintenance programme driven largely by public complaints. Roads in visible, vocal areas were resurfaced while quieter segments deteriorated past the point where surface treatment would have been enough.</p>
+            <p>Formal condition surveys existed but were manual, expensive and infrequent. By the time a survey was processed, the programme it informed was already a year behind the road.</p>
+          </div>
+        </div>
+
+        <div class="narrative" data-reveal>
+          <p class="narrative__label">02 — What we did</p>
+          <div class="narrative__body">
+            <p>We made survey capture cheap enough to repeat. Cameras mounted on vehicles already driving the network — inspection vans, gritters, refuse trucks — produce continuous imagery with no dedicated survey run.</p>
+            <p>The scoring model was tuned to the decision, not the defect. Individual cracks matter far less than the segment-level trajectory, so the system reports condition per maintainable segment and ranks by projected cost of deferral, which is the number an engineer builds a programme from.</p>
+            <blockquote class="pullquote">The cheapest repair is the one done before the segment needs rebuilding.</blockquote>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section section--tight">
+      <div class="container">
+        <div class="sec-head" data-reveal>
+          <div class="sec-head__title">
+            <span class="eyebrow">Interface</span>
+            <h2>What it looks like in use</h2>
+          </div>
+          <p class="sec-head__aside">Two of the screens that carry the most weight in daily use, rebuilt here from the production design system.</p>
+        </div>
+        <div class="screens" data-reveal-group="90">
+          <div data-reveal>
+            <div class="device device--browser ">
+  <div class="device__bar">
+    <span class="device__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+    <span class="device__url">roadcondition.aurezalabs.com/programme</span>
+  </div>
+  <div class="device__screen">
+    <div class="ui">
+<div class="ui__head"><span class="ui__title">Maintenance programme &middot; FY26</span><span class="ui__pill">4,012 KM</span></div>
+<div class="ui__row ui__row--hot"><i>A-road seg 118 &middot; surface window closing</i><b>DEFER +$412k</b></div>
+<div class="ui__row"><i>B-road seg 44 &middot; steady decline</i><b>DEFER +$88k</b></div>
+<div class="ui__row"><i>Urban seg 902 &middot; stable</i><b>DEFER +$11k</b></div>
+<div class="ui__meter"><i style="width:62%"></i></div>
+<div class="ui__legend"><span>62% of budget allocated</span></div>
+</div>
+  </div>
+</div>
+            <p class="screen-note"><b>Ranked by cost of deferral</b>Segments are ordered by what waiting will cost, which is the number an engineer actually builds a programme from.</p>
+          </div>
+          <div data-reveal>
+            <div class="device device--browser ">
+  <div class="device__bar">
+    <span class="device__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+    <span class="device__url">roadcondition.aurezalabs.com/coverage</span>
+  </div>
+  <div class="device__screen">
+    <div class="ui">
+<div class="ui__head"><span class="ui__title">Network coverage</span><span class="ui__pill">OPPORTUNISTIC</span></div>
+<div class="ui__row"><i>Surveyed under 30 days</i><b>2,880 km</b></div>
+<div class="ui__row"><i>Surveyed 30&ndash;90 days</i><b>901 km</b></div>
+<div class="ui__row ui__row--hot"><i>No recent pass</i><b>231 km</b></div>
+<div class="ui__bars"><i style="height:70%"></i><i style="height:78%"></i><i style="height:66%"></i><i class="is-strong" style="height:88%"></i><i style="height:74%"></i><i style="height:59%"></i></div>
+<div class="ui__legend"><span><i></i>Weekly km captured</span></div>
+</div>
+  </div>
+</div>
+            <p class="screen-note"><b>Survey without survey runs</b>Cameras on gritters and refuse trucks provide continuous coverage, so the network is measured rather than sampled.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section section--sunk">
+      <div class="container">
+        <div class="sec-head" data-reveal>
+          <div class="sec-head__title">
+            <span class="eyebrow">Capabilities</span>
+            <h2>What the system does</h2>
+          </div>
+          <p class="sec-head__aside">Grouped by the job each set of capabilities exists to do, rather than by which team built it.</p>
+        </div>
+        <div class="fgroups">
+          <div data-reveal>
+            <div class="fgroup__head">
+              <h3>Capture</h3>
+              <span>01 &middot; Survey without survey runs</span>
+            </div>
+            <div class="flist" data-reveal-group="50">
+              <article class="fitem" data-reveal>
+                <span class="fitem__icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg></span>
+                <h4>Vehicle-mounted ingestion</h4>
+                <p>Imagery from cameras on operational vehicles with GPS and IMU logged alongside every frame.</p>
+              </article>
+              <article class="fitem" data-reveal>
+                <span class="fitem__icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg></span>
+                <h4>Automatic segment matching</h4>
+                <p>Frames matched to the authority's maintainable segment definitions rather than to arbitrary distances.</p>
+              </article>
+              <article class="fitem" data-reveal>
+                <span class="fitem__icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg></span>
+                <h4>Coverage tracking</h4>
+                <p>Network coverage and recency mapped so gaps are visible and routable.</p>
+              </article>
+              <article class="fitem" data-reveal>
+                <span class="fitem__icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg></span>
+                <h4>Condition-aware quality control</h4>
+                <p>Poor light, rain and speed effects detected and excluded rather than scored badly.</p>
+              </article>
+            </div>
+          </div>
+          <div data-reveal>
+            <div class="fgroup__head">
+              <h3>Assessment</h3>
+              <span>02 &middot; What the road is doing</span>
+            </div>
+            <div class="flist" data-reveal-group="50">
+              <article class="fitem" data-reveal>
+                <span class="fitem__icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg></span>
+                <h4>Crack and pothole detection</h4>
+                <p>Surface defect detection and classification aligned to the national condition standard.</p>
+              </article>
+              <article class="fitem" data-reveal>
+                <span class="fitem__icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg></span>
+                <h4>Deterioration scoring</h4>
+                <p>Segment-level condition scores computed from defect density, type and extent.</p>
+              </article>
+              <article class="fitem" data-reveal>
+                <span class="fitem__icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg></span>
+                <h4>Historical comparison</h4>
+                <p>Scores tracked across survey passes so trajectory, not just current state, is known.</p>
+              </article>
+              <article class="fitem" data-reveal>
+                <span class="fitem__icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg></span>
+                <h4>Prediction</h4>
+                <p>Projected condition at horizon, with the point at which treatment options narrow made explicit.</p>
+              </article>
+            </div>
+          </div>
+          <div data-reveal>
+            <div class="fgroup__head">
+              <h3>Programme planning</h3>
+              <span>03 &middot; The output that matters</span>
+            </div>
+            <div class="flist" data-reveal-group="50">
+              <article class="fitem" data-reveal>
+                <span class="fitem__icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg></span>
+                <h4>GIS integration</h4>
+                <p>Scores and defects published into the authority's existing GIS rather than a separate map nobody opens.</p>
+              </article>
+              <article class="fitem" data-reveal>
+                <span class="fitem__icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg></span>
+                <h4>Repair prioritisation</h4>
+                <p>Segments ranked by projected cost of deferral, balancing current condition against deterioration rate.</p>
+              </article>
+              <article class="fitem" data-reveal>
+                <span class="fitem__icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg></span>
+                <h4>Treatment matching</h4>
+                <p>Appropriate intervention suggested per segment, since a surface dressing and a rebuild are not interchangeable.</p>
+              </article>
+              <article class="fitem" data-reveal>
+                <span class="fitem__icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg></span>
+                <h4>Budget scenarios</h4>
+                <p>Programme outcomes modelled against different budget envelopes to support funding cases.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="sec-head" data-reveal>
+          <div class="sec-head__title">
+            <span class="eyebrow">Architecture</span>
+            <h2>How it is put together</h2>
+          </div>
+          <p class="sec-head__aside">Layer by layer, with the reason each one exists — because the reason is usually the interesting part.</p>
+        </div>
+        <div class="layers" data-reveal>
+          <div class="layer">
+            <div class="layer__name"><span class="layer__no">01</span>Capture kit</div>
+            <p>Low-cost vehicle units logging imagery with synchronised GPS and IMU, uploading opportunistically over cellular.</p>
+            <ul class="layer__tech"><li>Vehicle cameras</li><li>GPS/IMU</li><li>Cellular upload</li></ul>
+          </div>
+          <div class="layer">
+            <div class="layer__name"><span class="layer__no">02</span>Map matching</div>
+            <p>Trajectory snapping to the road network and association of frames with maintainable segments.</p>
+            <ul class="layer__tech"><li>Map matching</li><li>PostGIS</li></ul>
+          </div>
+          <div class="layer">
+            <div class="layer__name"><span class="layer__no">03</span>Detection models</div>
+            <p>Surface defect detection aligned to the national standard, robust to varying capture conditions.</p>
+            <ul class="layer__tech"><li>PyTorch</li><li>Detection</li><li>Condition robustness</li></ul>
+          </div>
+          <div class="layer">
+            <div class="layer__name"><span class="layer__no">04</span>Scoring and prediction</div>
+            <p>Segment score aggregation with deterioration modelling across survey history.</p>
+            <ul class="layer__tech"><li>Scoring model</li><li>Trend projection</li></ul>
+          </div>
+          <div class="layer">
+            <div class="layer__name"><span class="layer__no">05</span>Planning console</div>
+            <p>GIS-integrated workspace with prioritised programme, treatment matching and budget scenarios.</p>
+            <ul class="layer__tech"><li>React</li><li>MapLibre</li><li>GIS export</li></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section section--tight">
+      <div class="container">
+        <div class="narrative" data-reveal>
+          <p class="narrative__label">Technology</p>
+          <div class="narrative__body narrative__body--wide">
+            <div class="stack-grid">
+              <div class="stack-col">
+                <h4>Vision</h4>
+                <ul><li>PyTorch</li><li>Detection models</li><li>Image quality gating</li></ul>
+              </div>
+              <div class="stack-col">
+                <h4>Geospatial</h4>
+                <ul><li>PostGIS</li><li>Map matching</li><li>MapLibre</li><li>GDAL</li></ul>
+              </div>
+              <div class="stack-col">
+                <h4>Backend</h4>
+                <ul><li>Python</li><li>FastAPI</li><li>PostgreSQL</li><li>Celery</li></ul>
+              </div>
+              <div class="stack-col">
+                <h4>Platform</h4>
+                <ul><li>S3</li><li>Kubernetes</li><li>GPU batch</li><li>Airflow</li></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section section--sunk">
+      <div class="container">
+        <div class="split">
+          <div data-reveal="left">
+            <span class="eyebrow">Outcome</span>
+            <h2 class="mt-5">What changed</h2>
+            <p class="soft mt-5 measure-sm">
+              Measured against how the operation ran before, not against a benchmark chosen after the fact.
+            </p>
+          </div>
+          <div data-reveal="right">
+            <ul class="outcomes">
+              <li class="outcome">
+                <span class="outcome__check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg></span>
+                <p><strong>The programme stopped following complaints.</strong> Prioritisation is driven by condition trajectory and cost of deferral.</p>
+              </li>
+              <li class="outcome">
+                <span class="outcome__check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg></span>
+                <p><strong>Survey became continuous.</strong> Vehicles already on the network provide coverage without dedicated runs.</p>
+              </li>
+              <li class="outcome">
+                <span class="outcome__check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg></span>
+                <p><strong>Deterioration is visible before it is expensive.</strong> Segments are treated while surface options still exist.</p>
+              </li>
+              <li class="outcome">
+                <span class="outcome__check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg></span>
+                <p><strong>Funding cases got evidence.</strong> Budget scenarios model programme outcomes rather than asserting need.</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="narrative flush" data-reveal>
+          <p class="narrative__label">How it ran</p>
+          <div class="narrative__body narrative__body--wide">
+            <ol class="timeline">
+              <li class="tl-item">
+                <span class="tl-item__when">Months 1-2</span>
+                <div class="tl-item__body"><h4>Standards alignment</h4><p>Mapped model outputs onto the national condition standard and the authority segment definitions.</p></div>
+              </li>
+              <li class="tl-item">
+                <span class="tl-item__when">Months 3-4</span>
+                <div class="tl-item__body"><h4>Capture and matching</h4><p>Vehicle kits, upload pipeline and trajectory-to-segment map matching.</p></div>
+              </li>
+              <li class="tl-item">
+                <span class="tl-item__when">Months 5-6</span>
+                <div class="tl-item__body"><h4>Detection and scoring</h4><p>Defect models with condition robustness and segment score aggregation.</p></div>
+              </li>
+              <li class="tl-item">
+                <span class="tl-item__when">Months 7-8</span>
+                <div class="tl-item__body"><h4>Planning tools</h4><p>Deterioration modelling, prioritisation, treatment matching and budget scenarios.</p></div>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section section--tight section--sunk">
+      <div class="container">
+        <div class="sec-head" data-reveal>
+          <div class="sec-head__title">
+            <span class="eyebrow">Related work</span>
+            <h2>From the same practice</h2>
+          </div>
+          <p class="sec-head__aside"><a class="link" href="../work.html">All fifteen projects <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></p>
+        </div>
+        <div class="work-grid" data-reveal-group="60">
+          <article class="card card--hover card--spot pcard" data-group="ai" data-search="linetrace from defect detection to defect causality. manufacturing &amp; production quality manufacturing production quality industrial ai multimodal root cause" data-reveal>
+  <a class="pcard__cover" href="../work/linetrace.html" tabindex="-1" aria-hidden="true">
+    <span class="pcard__badge">AI system</span>
+    <img src="../assets/img/cover-linetrace.svg" alt="" width="800" height="600" loading="lazy" decoding="async">
+  </a>
+  <div class="pcard__body">
+    <span class="pcard__sector">Manufacturing &amp; Production Quality</span>
+    <h3><a href="../work/linetrace.html">LineTrace</a></h3>
+    <p class="pcard__tagline">From defect detection to defect causality.</p>
+    <p>A multimodal system that correlates line video, machine telemetry, batch records and operator actions to explain why a defect happened, not merely that it did..</p>
+    <div class="pcard__foot">
+      <span class="pcard__year">2025 &middot; 10 months</span>
+      <span class="link" aria-hidden="true">Case study <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </div>
+  </div>
+</article>
+          <article class="card card--hover card--spot pcard" data-group="ai" data-search="netcause not alarm detection. failure hypothesis reduction. telecommunications &amp; network operations telecommunications network operations topology incident response" data-reveal>
+  <a class="pcard__cover" href="../work/netcause.html" tabindex="-1" aria-hidden="true">
+    <span class="pcard__badge">AI system</span>
+    <img src="../assets/img/cover-netcause.svg" alt="" width="800" height="600" loading="lazy" decoding="async">
+  </a>
+  <div class="pcard__body">
+    <span class="pcard__sector">Telecommunications &amp; Network Operations</span>
+    <h3><a href="../work/netcause.html">NetCause</a></h3>
+    <p class="pcard__tagline">Not alarm detection. Failure hypothesis reduction.</p>
+    <p>A correlation engine that turns an alarm storm into a short ranked list of probable root causes by reasoning over network topology and fault propagation rather than alarm counts..</p>
+    <div class="pcard__foot">
+      <span class="pcard__year">2025 &middot; 8 months</span>
+      <span class="link" aria-hidden="true">Case study <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </div>
+  </div>
+</article>
+          <article class="card card--hover card--spot pcard" data-group="ai" data-search="pipeintegrity from a single inspection to longitudinal asset integrity. oil &amp; gas · asset integrity oil &amp; gas energy asset integrity computer vision geospatial" data-reveal>
+  <a class="pcard__cover" href="../work/pipeintegrity.html" tabindex="-1" aria-hidden="true">
+    <span class="pcard__badge">AI system</span>
+    <img src="../assets/img/cover-pipeintegrity.svg" alt="" width="800" height="600" loading="lazy" decoding="async">
+  </a>
+  <div class="pcard__body">
+    <span class="pcard__sector">Oil &amp; Gas · Asset Integrity</span>
+    <h3><a href="../work/pipeintegrity.html">PipeIntegrity</a></h3>
+    <p class="pcard__tagline">From a single inspection to longitudinal asset integrity.</p>
+    <p>A vision system that detects and localises pipeline deterioration, then tracks each defect across inspection cycles so maintenance is prioritised by progression rather than by appearance..</p>
+    <div class="pcard__foot">
+      <span class="pcard__year">2024 &middot; 9 months</span>
+      <span class="link" aria-hidden="true">Case study <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </div>
+  </div>
+</article>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <nav class="projnav" aria-label="Project navigation">
+          <a href="../work/stockreconcile.html">
+            <span class="kicker"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg> Previous</span>
+            <strong>StockReconcile</strong>
+            <span class="desc">From box counting to continuous reconciliation.</span>
+          </a>
+          <a class="is-next" href="../work/clinicalinsight.html">
+            <span class="kicker">Next <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            <strong>ClinicalInsight</strong>
+            <span class="desc">From image finding to evidence-linked insight.</span>
+          </a>
+        </nav>
+      </div>
+    </section>
+    <section class="section section--flush-top">
+      <div class="container">
+        <div class="band" data-reveal>
+          <div>
+            <span class="eyebrow on-dark-accent">Something similar?</span>
+            <h2 class="mt-4">Running into the same problem RoadCondition solved?</h2>
+            <p>
+              Tell us what you run. We will reply within two business days with what we would build for your
+              situation — and, just as usefully, what we would leave out.
+            </p>
+          </div>
+          <div class="band__actions">
+            <a class="btn btn--on-dark btn--lg" href="../contact.html?type=ai-vision&amp;ref=RoadCondition">Start a conversation <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a class="btn btn--outline-light btn--lg" href="../work.html">More work</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a class="logo logo--footer" href="../index.html" aria-label="Aureza Labs — home">
+        <svg class="logo__mark" width="34" height="34" viewBox="0 0 40 40" fill="none" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="lmf-g" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#12a08f"/><stop offset="1" stop-color="#0a5a51"/>
+    </linearGradient>
+  </defs>
+  <rect width="40" height="40" rx="11" fill="url(#lmf-g)"/>
+  <path d="M11 29.5 20 10.5l9 19" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M15.4 23.2h7.4" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".92"/>
+  <circle cx="27.4" cy="23.2" r="1.9" fill="#6fe3cf"/>
+</svg>
+        <span class="logo__type">
+          <span class="logo__name">Aureza Labs</span>
+          <span class="logo__sub">Product &amp; Applied AI</span>
+        </span>
+      </a>
+          <p class="footer__blurb">Digital products and multimodal AI systems — from first sketch to production. Remote, working worldwide.</p>
+          <div class="socials">
+            <a href="https://www.linkedin.com" aria-label="Aureza Labs on LinkedIn" rel="noopener"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1-.02 5 2.5 2.5 0 0 1 .02-5zM3 9h4v12H3zM9 9h3.8v1.7h.06c.53-1 1.83-2.2 3.77-2.2 4.03 0 4.77 2.65 4.77 6.1V21h-4v-5.6c0-1.34-.02-3.06-1.87-3.06-1.87 0-2.16 1.46-2.16 2.96V21H9z"/></svg></a>
+            <a href="https://x.com" aria-label="Aureza Labs on X" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.8 2h3l-7.4 8.5L22 22h-6.6l-5-6.5L4.6 22h-3l7.9-9.1L1.5 2h6.8l4.5 6z"/></svg></a>
+            <a href="https://github.com" aria-label="Aureza Labs on GitHub" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg></a>
+            <a href="mailto:hello@aurezalabs.com" aria-label="Email Aureza Labs"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="3"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></svg></a>
+          </div>
+        </div>
+        <div class="footer__col">
+          <h4>Company</h4>
+          <a href="../about.html">About</a>
+          <a href="../process.html">How we work</a>
+          <a href="../services.html">Services</a>
+          <a href="../contact.html">Contact</a>
+        </div>
+        <div class="footer__col">
+          <h4>Work</h4>
+          <a href="../work.html">All projects</a>
+          <a href="../work.html?filter=product">Product engineering</a>
+          <a href="../work.html?filter=ai">AI systems</a>
+          <a href="../work/linetrace.html">Featured: LineTrace</a>
+        </div>
+        <div class="footer__col">
+          <h4>Contact</h4>
+          <a href="mailto:hello@aurezalabs.com">hello@aurezalabs.com</a>
+          <a href="../contact.html">Project brief form</a>
+          <a href="../contact.html#faq">Working with us</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; <span data-year>2026</span> Aureza Labs. All rights reserved.</span>
+        <span>Mobile &middot; Web &middot; Platform &middot; AI</span>
+      </div>
+    </div>
+  </footer>
+
+  <button class="to-top" data-to-top type="button" aria-label="Back to top">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+  </button>
+
+  <div class="toast" data-toast role="status" aria-live="polite">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>
+    <span></span>
+  </div>
+
+  <script src="../assets/js/app.js" defer></script>
+</body>
+</html>
