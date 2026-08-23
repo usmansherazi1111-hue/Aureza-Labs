@@ -18,11 +18,12 @@
   --teal-950: #04231f;
 
   /* ---- Accent ramp: Ember. Used sparingly for data + emphasis ---- */
-  --ember-100: #fdefdc;
-  --ember-300: #f3c684;
-  --ember-500: #e19334;
-  --ember-600: #c97a1f;
-  --ember-700: #a45f16;
+  /* Clay — the one warm note. Used for emphasis on data, nothing else. */
+  --clay-100: #f7ece5;
+  --clay-300: #dfae90;
+  --clay-500: #c07d55;
+  --clay-600: #a86339;
+  --clay-700: #8a4e2c;
 
   /* ---- Support hues for charts / status ---- */
   --violet-500: #6d5ce0;
@@ -33,18 +34,18 @@
   --sky-300:    #9ecbe3;
 
   /* ---- Neutral ramp: green-shifted greys, never pure grey ---- */
-  --ink-950: #060d0c;
-  --ink-900: #0b1614;
-  --ink-800: #13221f;
-  --ink-700: #1d302c;
-  --ink-600: #334742;
-  --ink-500: #4e6560;
-  --ink-400: #6d8480;
-  --ink-300: #97aaa6;
-  --ink-200: #c4d2ce;
-  --ink-100: #e2eae7;
-  --ink-50:  #f1f6f4;
-  --paper:   #fcfdfc;
+  --ink-950: #0a0f0f;
+  --ink-900: #121818;
+  --ink-800: #1c2423;
+  --ink-700: #28312f;
+  --ink-600: #3d4846;
+  --ink-500: #57625f;
+  --ink-400: #78827f;
+  --ink-300: #a2aaa8;
+  --ink-200: #cbd1cf;
+  --ink-100: #e6e9e8;
+  --ink-50:  #f4f6f5;
+  --paper:   #fdfdfc;
 
   /* ---- Semantic (light is the default document theme) ---- */
   --bg:            var(--paper);
@@ -52,19 +53,23 @@
   --bg-raised:     #ffffff;
   --bg-inverse:    var(--ink-950);
   --surface-tint:  var(--teal-50);
+  --surface-quiet: #f2f5f4;
 
   --text:          var(--ink-900);
   --text-soft:     var(--ink-500);
-  --text-faint:    var(--ink-400);
+  --text-faint:    #5c716d;
   --text-inverse:  #f4faf8;
   --text-inverse-soft: rgba(244, 250, 248, 0.66);
 
-  --brand:         var(--teal-600);
+  --brand:         var(--teal-600);        /* fills, borders, marks */
+  --brand-text:    var(--teal-700);        /* brand-coloured TEXT on light grounds */
   --brand-hover:   var(--teal-700);
   --brand-soft:    var(--teal-50);
   --brand-on-dark: #4ecdb9;
-  --accent:        var(--ember-600);
-  --accent-soft:   var(--ember-100);
+  --accent:        var(--clay-500);
+  --accent-text:   var(--clay-700);
+  --rose-text:     #a82f40;
+  --accent-soft:   var(--clay-100);
 
   --line:          #dfe9e6;
   --line-strong:   #c6d6d2;
@@ -73,12 +78,12 @@
   --focus:         var(--teal-500);
 
   /* ---- Elevation. Layered, tinted — not black blur ---- */
-  --shadow-xs: 0 1px 2px rgba(6, 13, 12, .05);
-  --shadow-sm: 0 1px 2px rgba(6, 13, 12, .05), 0 2px 6px -2px rgba(6, 13, 12, .06);
-  --shadow-md: 0 2px 4px rgba(6, 13, 12, .04), 0 10px 24px -10px rgba(6, 13, 12, .13);
-  --shadow-lg: 0 4px 8px rgba(6, 13, 12, .04), 0 24px 48px -20px rgba(6, 13, 12, .20);
-  --shadow-xl: 0 8px 16px rgba(6, 13, 12, .05), 0 44px 88px -32px rgba(6, 13, 12, .26);
-  --shadow-brand: 0 12px 32px -12px rgba(14, 127, 114, .42);
+  --shadow-xs: 0 1px 2px rgba(10, 15, 15, .06);
+  --shadow-sm: 0 1px 2px rgba(10, 15, 15, .07), 0 3px 8px -3px rgba(10, 15, 15, .09);
+  --shadow-md: 0 2px 4px rgba(10, 15, 15, .06), 0 8px 20px -8px rgba(10, 15, 15, .16);
+  --shadow-lg: 0 4px 8px rgba(10, 15, 15, .06), 0 18px 36px -14px rgba(10, 15, 15, .22);
+  --shadow-xl: 0 8px 16px rgba(10, 15, 15, .07), 0 36px 64px -26px rgba(10, 15, 15, .28);
+  --shadow-brand: 0 8px 20px -8px rgba(14, 127, 114, .38);
 
   /* ---- Radii ---- */
   --r-xs: 5px;
@@ -102,11 +107,11 @@
   --t-md:   1rem;
   --t-lg:   clamp(1.0625rem, 0.99rem + 0.36vw, 1.1875rem);
   --t-xl:   clamp(1.1875rem, 1.09rem + 0.49vw, 1.375rem);
-  --t-h4:   clamp(1.25rem, 1.14rem + 0.55vw, 1.5rem);
-  --t-h3:   clamp(1.4375rem, 1.24rem + 0.98vw, 1.875rem);
-  --t-h2:   clamp(1.875rem, 1.49rem + 1.93vw, 2.9375rem);
-  --t-h1:   clamp(2.375rem, 1.72rem + 3.27vw, 4rem);
-  --t-hero: clamp(2.75rem, 1.72rem + 5.15vw, 5.25rem);
+  --t-h4:   clamp(1.2rem, 1.12rem + 0.4vw, 1.375rem);
+  --t-h3:   clamp(1.3125rem, 1.16rem + 0.7vw, 1.625rem);
+  --t-h2:   clamp(1.625rem, 1.36rem + 1.3vw, 2.3125rem);
+  --t-h1:   clamp(1.9375rem, 1.56rem + 1.9vw, 2.9375rem);
+  --t-hero: clamp(2.1875rem, 1.62rem + 2.85vw, 3.625rem);
 
   --lh-tight: 1.06;
   --lh-snug: 1.18;
@@ -158,6 +163,7 @@
     --bg-raised:    var(--ink-900);
     --bg-inverse:   var(--ink-50);
     --surface-tint: rgba(14, 127, 114, .10);
+    --surface-quiet: #101615;
 
     --text:         #e8f2ef;
     --text-soft:    #9db0ac;
@@ -166,10 +172,13 @@
     --text-inverse-soft: rgba(6, 13, 12, .68);
 
     --brand:        #35b5a2;
+  --brand-text:   #4ecdb9;
     --brand-hover:  #4ecdb9;
     --brand-soft:   rgba(14, 127, 114, .14);
-    --accent:       var(--ember-300);
-    --accent-soft:  rgba(225, 147, 52, .14);
+    --accent:       var(--clay-300);
+  --accent-text:  var(--clay-300);
+  --rose-text:    var(--rose-300);
+    --accent-soft:  rgba(192, 125, 85, .16);
 
     --line:         rgba(255, 255, 255, .09);
     --line-strong:  rgba(255, 255, 255, .17);
@@ -193,6 +202,7 @@
   --bg-raised:    var(--ink-900);
   --bg-inverse:   var(--ink-50);
   --surface-tint: rgba(14, 127, 114, .10);
+  --surface-quiet: #101615;
 
   --text:         #e8f2ef;
   --text-soft:    #9db0ac;
@@ -201,9 +211,12 @@
   --text-inverse-soft: rgba(6, 13, 12, .68);
 
   --brand:        #35b5a2;
+  --brand-text:   #4ecdb9;
   --brand-hover:  #4ecdb9;
   --brand-soft:   rgba(14, 127, 114, .14);
-  --accent:       var(--ember-300);
+  --accent:       var(--clay-300);
+  --accent-text:  var(--clay-300);
+  --rose-text:    var(--rose-300);
   --accent-soft:  rgba(225, 147, 52, .14);
 
   --line:         rgba(255, 255, 255, .09);
