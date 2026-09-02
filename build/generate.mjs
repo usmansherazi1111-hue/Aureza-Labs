@@ -33,7 +33,7 @@ let written = 0;
 
 /** Case-study titles must clear the 70-character budget once the brand suffix lands. */
 function shortTitle(p) {
-  const full = `${p.name} — ${p.sector}`;
+  const full = `${p.name} | ${p.sector}`;
   return full.length <= 52 ? full : p.name;
 }
 

@@ -251,7 +251,7 @@
         return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()) || "Please enter a valid email address.";
       },
       message: function (v) {
-        return v.trim().length >= 20 || "Tell us a little more — around 20 characters or so.";
+        return v.trim().length >= 20 || "Please tell us a little more, around 20 characters or so.";
       }
     };
 

@@ -70,7 +70,7 @@ export function ctaBand(prefix = "", o = {}) {
   const title = o.title || "Tell us what you run.";
   const body =
     o.body ||
-    "A 30-minute call. We will tell you what we would build, roughly what it costs, and — usually the more useful part — what we would cut.";
+    "A 30-minute call. We will tell you what we would build, roughly what it costs and, more usefully, what we would cut.";
   return `<section class="section">
   <div class="container">
     <div class="band" data-reveal>

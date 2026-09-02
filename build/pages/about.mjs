@@ -33,12 +33,12 @@ const VALUES = [
 ];
 
 const DISCIPLINE_LIST = [
-  { n: "01", t: "Product design & UX", d: "Flows, prototypes and design systems — including the empty, error and offline states most teams skip." },
+  { n: "01", t: "Product design & UX", d: "Flows, prototypes and design systems, including the empty, error and offline states most teams skip." },
   { n: "02", t: "Mobile engineering", d: "React Native and native iOS and Android, built offline-first where the environment demands it." },
   { n: "03", t: "Frontend engineering", d: "React and TypeScript, accessible to WCAG 2.2 AA and held to performance budgets in CI." },
   { n: "04", t: "Backend & platform", d: "APIs, data models, tenancy and permissions, designed to survive the second and third customer." },
   { n: "05", t: "Data engineering", d: "Pipelines, warehouses and reconciliation, so the reporting layer agrees with the source systems." },
-  { n: "06", t: "Applied AI & vision", d: "Multimodal models, retrieval and evaluation harnesses — always with the evidence path attached." },
+  { n: "06", t: "Applied AI & vision", d: "Multimodal models, retrieval and evaluation harnesses, always with the evidence path attached." },
   { n: "07", t: "Infrastructure & edge", d: "Cloud, on-premise and industrial edge deployment, defined as code and handed over in full." },
   { n: "08", t: "QA & release", d: "Automated suites, device matrices, load testing and staged rollout with a rollback plan." }
 ];
@@ -50,7 +50,7 @@ export function aboutPage(projects) {
         <span class="eyebrow">About Aureza Labs</span>
         <h1>One team, from sketch to production.</h1>
         <p class="lead">
-          We build software that solves operational, financial and communication problems — and AI that explains
+          We build software that solves operational, financial and communication problems, and AI that explains
           causes rather than only detecting events. Fifteen products, ten industries, one standard.
         </p>
         <dl class="page-head__meta">
@@ -67,7 +67,7 @@ export function aboutPage(projects) {
         <div class="split">
           <div data-reveal="left">
             <span class="eyebrow">What we actually do</span>
-            <h2 class="mt-5">We take the awkward projects — the ones with a warehouse, a regulator or a plant floor attached.</h2>
+            <h2 class="mt-5">We take the awkward projects: the ones with a warehouse, a regulator or a plant floor attached.</h2>
             <p class="lead mt-6">
               Consumer apps are well served. What is underserved is the operational middle: a recycling facility
               running on paper travellers, a NOC drowning in alarms, a quality unit reconstructing an investigation
@@ -84,7 +84,7 @@ export function aboutPage(projects) {
             ${device(projects.find((p) => p.slug === "batchresolve").screens[1])}
             <p class="screen-note">
               <b>BatchResolve &middot; audit trail</b>
-              In a regulated environment every retrieval, proposal and acceptance is recorded immutably — designed
+              In a regulated environment every retrieval, proposal and acceptance is recorded immutably, designed
               to be handed to an inspector rather than reconstructed for one.
             </p>
           </div>

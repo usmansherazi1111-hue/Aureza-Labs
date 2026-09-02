@@ -22,11 +22,11 @@ projects.push({
   summary:
     "A mobile-first ERP for warehouse and e-waste operations that replaced a decade of spreadsheets, paper travellers and radio calls with a single connected system that works on the floor.",
   challenge: [
-    "The client processed thousands of end-of-life IT assets a month across three facilities. Every movement — goods-in, triage, teardown, resale, destruction — was written on a paper traveller, then keyed into a shared spreadsheet by an admin team the following morning.",
+    "The client processed thousands of end-of-life IT assets a month across three facilities. Every movement, from goods-in and triage through teardown, resale and destruction, was written on a paper traveller, then keyed into a shared spreadsheet by an admin team the following morning.",
     "The result was a permanent 24-hour blind spot. Stock counts drifted, certificates of destruction were reconstructed from memory, and nobody could answer the question auditors always asked: <strong>where is serial number X right now, and who touched it?</strong>"
   ],
   approach: [
-    "We started on the floor, not in Figma. Two weeks of shadowing goods-in, teardown and dispatch produced a movement model with six verbs — receive, move, process, hold, ship, destroy — that every physical action maps onto. Everything else in the product is a projection of that ledger.",
+    "We started on the floor, not in Figma. Two weeks of shadowing goods-in, teardown and dispatch produced a movement model built on six verbs: receive, move, process, hold, ship and destroy. Every physical action maps onto one of them. Everything else in the product is a projection of that ledger.",
     "The mobile app was designed for gloved hands, poor Wi-Fi and steel racking. Targets are large, the primary action is always the scanner, and every write is queued locally then reconciled server-side, so a dead zone in aisle C never stops a shift."
   ],
   pullquote: "The warehouse stopped reporting yesterday and started reporting now.",
@@ -839,7 +839,7 @@ projects.push({
     "Existing camera systems detected a person in a restricted zone after entry. By then the useful window for intervention had closed. The client wanted to know about the convergence, not the collision."
   ],
   approach: [
-    "We model motion rather than presence. Workers, forklifts and machinery are tracked as trajectories, and risk is computed from projected paths — where these bodies will be in three seconds, given where they are heading now.",
+    "We model motion rather than presence. Workers, forklifts and machinery are tracked as trajectories, and risk is computed from projected paths, meaning where those bodies will be in three seconds given where they are heading now.",
     "Near misses became first-class data. Every convergence that came within a defined margin is recorded automatically, giving the safety team a dense stream of leading indicators instead of a sparse trickle of lagging ones."
   ],
   pullquote: "Waiting for an incident to learn from is the most expensive possible training set.",
@@ -1195,7 +1195,7 @@ projects.push({
     "Formal condition surveys existed but were manual, expensive and infrequent. By the time a survey was processed, the programme it informed was already a year behind the road."
   ],
   approach: [
-    "We made survey capture cheap enough to repeat. Cameras mounted on vehicles already driving the network — inspection vans, gritters, refuse trucks — produce continuous imagery with no dedicated survey run.",
+    "We made survey capture cheap enough to repeat. Cameras mounted on vehicles already driving the network, such as inspection vans, gritters and refuse trucks, produce continuous imagery with no dedicated survey run.",
     "The scoring model was tuned to the decision, not the defect. Individual cracks matter far less than the segment-level trajectory, so the system reports condition per maintainable segment and ranks by projected cost of deferral, which is the number an engineer builds a programme from."
   ],
   pullquote: "The cheapest repair is the one done before the segment needs rebuilding.",
@@ -1281,7 +1281,7 @@ projects.push({
     "A clinician-facing decision support system that combines medical imaging, patient history and retrieved literature into findings a radiologist reviews, with the model positioned as a second reader rather than a decision maker.",
   challenge: [
     "Imaging AI tends to fail in the same way. A model outputs a probability for a finding, the clinician has no way to interrogate it, and it becomes another number to either trust blindly or ignore entirely. Most are ignored.",
-    "The clinically useful work is not detection alone. It is relating a current finding to the patient's prior imaging, their history, and what the literature says about that combination — which is exactly the part that gets left to the clinician's memory at the end of a long list."
+    "The clinically useful work is not detection alone. It is relating a current finding to the patient's prior imaging, their history, and what the literature says about that combination, which is exactly the part that gets left to the clinician's memory at the end of a long list."
   ],
   approach: [
     "We designed the system as a second reader that shows its working. Every finding comes with the region it rests on, the comparison against prior studies, the relevant history, and the literature that informs interpretation, all inspectable before the clinician forms a view.",

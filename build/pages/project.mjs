@@ -64,7 +64,7 @@ function projHero(p) {
             </dl>
           </div>
           <div data-reveal="right">
-            <img src="${P}assets/img/cover-${p.slug}.svg" alt="${p.name} — visual identity for the case study"
+            <img src="${P}assets/img/cover-${p.slug}.svg" alt="Visual identity for the ${p.name} case study"
                  width="800" height="600" class="cover-figure">
           </div>
         </div>
@@ -94,14 +94,14 @@ function projNarrative(p) {
   return `    <section class="section">
       <div class="container">
         <div class="narrative flush" data-reveal>
-          <p class="narrative__label">01 — The problem</p>
+          <p class="narrative__label">01 &middot; The problem</p>
           <div class="narrative__body">
             ${p.challenge.map((c) => `<p>${c}</p>`).join("\n            ")}
           </div>
         </div>
 
         <div class="narrative" data-reveal>
-          <p class="narrative__label">02 — What we did</p>
+          <p class="narrative__label">02 &middot; What we did</p>
           <div class="narrative__body">
             ${p.approach.map((c) => `<p>${c}</p>`).join("\n            ")}
             <blockquote class="pullquote">${p.pullquote}</blockquote>
@@ -180,7 +180,7 @@ function projArchitecture(p) {
             <span class="eyebrow">Architecture</span>
             <h2>How it is put together</h2>
           </div>
-          <p class="sec-head__aside">Layer by layer, with the reason each one exists — because the reason is usually the interesting part.</p>
+          <p class="sec-head__aside">Layer by layer, with the reason each one exists, because the reason is usually the interesting part.</p>
         </div>
         <div class="layers" data-reveal>
           ${p.architecture
@@ -316,7 +316,7 @@ function projCta(p) {
             <h2 class="mt-4">Running into the same problem ${p.name} solved?</h2>
             <p>
               Tell us what you run. We will reply within two business days with what we would build for your
-              situation — and, just as usefully, what we would leave out.
+              situation and, just as usefully, what we would leave out.
             </p>
           </div>
           <div class="band__actions">

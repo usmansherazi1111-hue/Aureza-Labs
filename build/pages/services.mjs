@@ -40,14 +40,14 @@ const DISCIPLINES = [
 DISCIPLINES.push(
   {
     no: "05", kind: "blockchain", title: "Blockchain Applications",
-    lede: "Wallet identity, encrypted messaging and on-chain records — where they genuinely earn their place.",
-    body: "Most problems presented as blockchain problems are database problems, and we will tell you when that is the case. Where a chain does help — verifiable existence, keyless identity, multi-party records with no trusted operator — we build it properly and get the cryptography reviewed.",
+    lede: "Wallet identity, encrypted messaging and on-chain records, where they genuinely earn their place.",
+    body: "Most problems presented as blockchain problems are database problems, and we will tell you when that is the case. Where a chain genuinely helps, in verifiable existence, keyless identity and multi-party records with no trusted operator, we build it properly and have the cryptography reviewed.",
     deliver: ["Threat model written before any contract is", "Client-side cryptography with audited primitives", "Contracts with external review", "Clear separation of on-chain and off-chain data"],
     tech: ["Solidity", "viem", "libsodium", "Hardhat", "IPFS"]
   },
   {
     no: "06", kind: "data", title: "Data & Analytics",
-    lede: "Pipelines, warehouses and the reporting layer above them — with numbers that reconcile.",
+    lede: "Pipelines, warehouses and the reporting layer above them, with numbers that reconcile.",
     body: "A dashboard nobody trusts is worse than no dashboard, because it generates arguments instead of decisions. We instrument lineage and reconciliation first, so when a number looks wrong you can find out in minutes whether it is.",
     deliver: ["Ingestion with schema contracts and lineage", "Modelled warehouse layer with tested transformations", "Reconciliation against source systems", "Self-serve reporting the team can extend"],
     tech: ["dbt", "Airflow", "TimescaleDB", "Kafka", "DuckDB"]
@@ -76,7 +76,7 @@ export function servicesPage() {
         <h1>Eight disciplines, one accountable team.</h1>
         <p class="lead">
           We take products from first sketch to production without handing you between agencies. Below is what
-          each discipline actually delivers — not a capability list, but the artefacts you end up owning.
+          each discipline actually delivers: not a capability list, but the artefacts you end up owning.
         </p>
         <dl class="page-head__meta">
           <div><dt>Engagement</dt><dd>Project or embedded team</dd></div>

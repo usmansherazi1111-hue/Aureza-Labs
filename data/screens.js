@@ -28,7 +28,7 @@ screens["razor-erp"] = [
     frame: "browser",
     label: "Supervisor console",
     url: "razor.aurezalabs.com/inventory",
-    caption: { title: "Exception-first console", body: "The web console leads with what needs a decision — variances, holds, aging stock — rather than a wall of totals nobody reads." },
+    caption: { title: "Exception-first console", body: "The web console leads with what needs a decision, such as variances, holds and aging stock, rather than a wall of totals nobody reads." },
     html: `<div class="ui">
 <div class="ui__head"><span class="ui__title">Inventory &middot; Facility 02</span><span class="ui__pill ui__pill--warn">3 EXCEPTIONS</span></div>
 <div class="ui__grid2">

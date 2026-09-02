@@ -15,8 +15,8 @@ export function workPage(projects) {
         <span class="eyebrow">Portfolio</span>
         <h1>Fifteen products, built for the real world.</h1>
         <p class="lead">
-          Two practices, one standard. Product engineering for mobile, web and platform — and multimodal AI that
-          connects what happened with why it happened. Every project below has a full case study.
+          Two practices, one standard. Product engineering for mobile, web and platform, alongside multimodal AI
+          that connects what happened with why it happened. Every project below has a full case study.
         </p>
 
         <div class="filters" role="group" aria-label="Filter projects by practice">
@@ -56,7 +56,7 @@ export function workPage(projects) {
           </div>
           <p class="soft measure group-head__note">
             Systems that correlate video, telemetry, documents and history to turn raw signal into answers you can
-            check — each one carrying the evidence that produced it.
+            check, each one carrying the evidence that produced it.
           </p>
           <div class="work-grid" data-reveal-group="60">
             ${ai.map((p) => projectCard(p, "")).join("\n            ")}

@@ -7,11 +7,11 @@ import { device, secHead, ctaBand } from "../partials.mjs";
 import { serviceArt } from "../cover.mjs";
 
 const SERVICES = [
-  { no: "01", kind: "mobile", title: "Mobile Applications", desc: "Native-quality iOS and Android built for the field, the floor and the warehouse — including the parts with no signal.", meta: ["React Native", "Offline-first", "Device hardware"] },
+  { no: "01", kind: "mobile", title: "Mobile Applications", desc: "Native-quality iOS and Android built for the field, the floor and the warehouse, including the parts with no signal.", meta: ["React Native", "Offline-first", "Device hardware"] },
   { no: "02", kind: "web", title: "Web Applications", desc: "Dashboards, portals and customer-facing product that stay fast as the data grows and accessible as the team does.", meta: ["React", "TypeScript", "WCAG 2.2"] },
   { no: "03", kind: "ai", title: "AI-Powered Products", desc: "Vision, document intelligence and root-cause engines that ship with evidence attached, never a bare probability.", meta: ["Multimodal", "RAG", "Evaluation"] },
   { no: "04", kind: "saas", title: "SaaS & Enterprise Platforms", desc: "Multi-tenant platforms with roles, billing, analytics and the integrations your operation already runs on.", meta: ["Multi-tenant", "SSO", "Billing"] },
-  { no: "05", kind: "blockchain", title: "Blockchain Applications", desc: "Wallet identity, encrypted messaging and on-chain records — used where they genuinely help, not as decoration.", meta: ["EVM", "Cryptography", "Audited"] },
+  { no: "05", kind: "blockchain", title: "Blockchain Applications", desc: "Wallet identity, encrypted messaging and on-chain records, used where they genuinely help rather than as decoration.", meta: ["EVM", "Cryptography", "Audited"] },
   { no: "06", kind: "data", title: "Data & Analytics", desc: "Pipelines, warehouses and the reporting layer above them, built so the numbers reconcile with the source systems.", meta: ["Pipelines", "Warehouse", "dbt"] }
 ];
 
@@ -37,8 +37,8 @@ export function homePage(projects) {
             on it.
           </h1>
           <p class="lead hero__lead">
-            Aureza Labs builds <strong>mobile, web and platform applications</strong> — and multimodal AI systems
-            that connect what happened with <strong>why it happened</strong>. Fifteen products shipped into
+            Aureza Labs builds <strong>mobile, web and platform applications</strong>, alongside multimodal AI
+            systems that connect what happened with <strong>why it happened</strong>. Fifteen products shipped into
             warehouses, hospitals, plants and trading desks.
           </p>
           <div class="hero__actions">
@@ -117,7 +117,7 @@ export function homeRest(projects) {
           eyebrow: "What we build",
           title: "Eight disciplines, one team",
           aside:
-            "Design, mobile, web, backend, data, AI, infrastructure and QA sit under one roof — so nothing gets lost in the handover between three agencies.",
+            "Design, mobile, web, backend, data, AI, infrastructure and QA sit under one roof, so nothing gets lost in the handover between three agencies.",
           link: { href: "services.html", label: "All services" }
         })}
         <div class="svc-grid" data-reveal-group="60">
@@ -149,7 +149,7 @@ export function homeRest(projects) {
             <h2 class="mt-5">Most systems tell you <em class="editorial">what</em> happened. The useful ones tell you <em class="editorial">why</em>.</h2>
             <p class="lead mt-6">
               A vision system that flags a defective unit has done a fraction of the job. The expensive question is
-              what changed twelve seconds earlier — and answering it means putting video, telemetry, batch records
+              what changed twelve seconds earlier, and answering it means putting video, telemetry, batch records
               and operator actions on one clock.
             </p>
             <p class="soft mt-5 measure">
@@ -163,8 +163,8 @@ export function homeRest(projects) {
             ${device(projects.find((p) => p.slug === "netcause").screens[0])}
             <p class="screen-note">
               <b>NetCause &middot; incident view</b>
-              Eleven thousand alarms reduced to three ranked hypotheses — each scored on how much of the observed
-              alarm set it explains, and what it leaves unaccounted for.
+              Eleven thousand alarms reduced to three ranked hypotheses, each scored on how much of the observed
+              alarm set it explains and what it leaves unaccounted for.
             </p>
           </div>
         </div>

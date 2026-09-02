@@ -23,11 +23,11 @@ const BUDGETS = [
 ];
 
 const FAQ = [
-  { q: "What should I put in the brief?", a: "The operational problem in plain language, who lives with it day to day, what systems are already in place, and what happens if nothing changes. You do not need a specification — if you had one, you would need us less." },
+  { q: "What should I put in the brief?", a: "The operational problem in plain language, who lives with it day to day, what systems are already in place, and what happens if nothing changes. You do not need a specification; if you had one, you would need us less." },
   { q: "Do you sign NDAs?", a: "Yes, on request and before anything substantive is shared. Send the brief at whatever level of detail you are comfortable with, ask for an NDA in it, and we will have one back to you the same day." },
   { q: "Do you take on small projects?", a: "Sometimes. If the work is genuinely small we will often say so and point you at a simpler answer, including one that does not involve hiring us. Discovery is the honest starting point for anything either side is unsure about." },
   { q: "Can you work with our in-house team?", a: "Yes. We run as an embedded team alongside client engineers on roughly half our projects. Where your team will own the result afterwards, handover and training go into the schedule rather than getting bolted on at the end." },
-  { q: "What if we already started and it is going badly?", a: "That is a common first conversation. We will review what exists and tell you honestly whether it is worth continuing, refactoring or replacing — including when the answer is that your existing team should finish it." }
+  { q: "What if we already started and it is going badly?", a: "That is a common first conversation. We will review what exists and tell you honestly whether it is worth continuing, refactoring or replacing, including when the answer is that your existing team should finish it." }
 ];
 
 export function contactPage() {
@@ -37,8 +37,8 @@ export function contactPage() {
         <span class="eyebrow">Contact</span>
         <h1>Tell us what you run.</h1>
         <p class="lead">
-          A paragraph is enough to start. We read every brief ourselves and reply within two business days — with a
-          view, not a calendar link.
+          A paragraph is enough to start. We read every brief ourselves and reply within two business days with a
+          considered view, not a calendar link.
         </p>
       </div>
     </section>
@@ -52,7 +52,7 @@ export function contactPage() {
               <li class="tl-item"><span class="tl-item__when">Day 0</span><div class="tl-item__body"><h4>You send a brief</h4><p>The problem, who lives with it, and any constraint you already know about. Rough is fine.</p></div></li>
               <li class="tl-item"><span class="tl-item__when">Within 2 days</span><div class="tl-item__body"><h4>We reply with a view</h4><p>What we think you should build, what we would cut, and whether we are the right team for it.</p></div></li>
               <li class="tl-item"><span class="tl-item__when">Week 1</span><div class="tl-item__body"><h4>A 30-minute call</h4><p>No deck. We ask about the environment, the systems already in place, and what happens if nothing changes.</p></div></li>
-              <li class="tl-item"><span class="tl-item__when">Week 2</span><div class="tl-item__body"><h4>Scoped proposal</h4><p>Discovery scope, timeline and price — fixed, with a written output you keep regardless of what follows.</p></div></li>
+              <li class="tl-item"><span class="tl-item__when">Week 2</span><div class="tl-item__body"><h4>Scoped proposal</h4><p>Fixed discovery scope, timeline and price, with a written output you keep regardless of what follows.</p></div></li>
             </ol>
 
             <div class="contact-list">
@@ -66,7 +66,7 @@ export function contactPage() {
               </div>
               <div class="contact-item">
                 <span class="contact-item__icon">${icon.globe}</span>
-                <span class="contact-item__body"><b>Where we work</b><span>Remote, worldwide — overlapping hours agreed up front</span></span>
+                <span class="contact-item__body"><b>Where we work</b><span>Remote, worldwide, with overlapping hours agreed up front</span></span>
               </div>
               <div class="contact-item">
                 <span class="contact-item__icon">${icon.doc}</span>
@@ -133,7 +133,7 @@ export function contactPage() {
                 <path d="M17 29l7.5 7.5L39 21" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
               <h3>Brief received.</h3>
-              <p>Thanks — we read every one ourselves. You will hear back within two business days.</p>
+              <p>Thank you. We read every brief ourselves, and you will hear back within two business days.</p>
               <button class="btn btn--ghost" type="button" data-form-reset>Send another</button>
             </div>
           </div>
