@@ -315,7 +315,7 @@ function projCta(p) {
             <span class="eyebrow on-dark-accent">Something similar?</span>
             <h2 class="mt-4">Running into the same problem ${p.name} solved?</h2>
             <p>
-              Tell us what you run. We will reply within two business days with what we would build for your
+              Tell us what you run. We will get back to you as soon as possible with what we would build for your
               situation and, just as usefully, what we would leave out.
             </p>
           </div>

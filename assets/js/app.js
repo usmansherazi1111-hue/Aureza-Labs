@@ -12,6 +12,75 @@
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   /* --------------------------------------------------------
+     EmailJS delivery for the project brief form.
+
+     Briefs are delivered to the inbox below through the Gmail
+     service connected in the EmailJS dashboard. The public key
+     belongs in client code by design; it is restricted to our
+     own domains under Account > Security > Allow-list, so it
+     cannot be used to send from anywhere else.
+
+     If any of the three ids is missing the form refuses to
+     fake a send and points people at the inbox instead.
+     -------------------------------------------------------- */
+
+  var EMAILJS = {
+    publicKey: "peRgVjBxQI2OzI_x0",
+    serviceId: "service_m5zlfll",
+    templateId: "template_1q9bzoj",
+    inbox: "aurezalabs@gmail.com"
+  };
+
+  var emailjsStarted = false;
+
+  function isPlaceholder(v) {
+    return !v || v.indexOf("YOUR_") === 0;
+  }
+
+  function emailjsReady() {
+    if (isPlaceholder(EMAILJS.publicKey)) return false;
+    if (isPlaceholder(EMAILJS.serviceId)) return false;
+    if (isPlaceholder(EMAILJS.templateId)) return false;
+    if (!window.emailjs) return false;
+    if (!emailjsStarted) {
+      window.emailjs.init({ publicKey: EMAILJS.publicKey });
+      emailjsStarted = true;
+    }
+    return true;
+  }
+
+  /* Map the form into the variables the EmailJS template expects. */
+  function briefParams(form) {
+    function val(name) {
+      var el = form.querySelector('[name="' + name + '"]');
+      return el ? String(el.value).trim() : "";
+    }
+
+    var type = form.querySelector('input[name="project-type"]:checked');
+    var typeLabel = "";
+    if (type) {
+      var lab = form.querySelector('label[for="' + type.id + '"]');
+      typeLabel = lab ? lab.textContent.trim() : type.value;
+    }
+
+    var budget = form.querySelector('[name="budget"]');
+    var budgetLabel =
+      budget && budget.selectedIndex >= 0 ? budget.options[budget.selectedIndex].text : "";
+
+    return {
+      to_email: EMAILJS.inbox,
+      from_name: val("name"),
+      from_email: val("email"),
+      reply_to: val("email"),
+      company: val("company") || "Not given",
+      budget: budgetLabel,
+      project_type: typeLabel,
+      message: val("message"),
+      page_url: window.location.href
+    };
+  }
+
+  /* --------------------------------------------------------
      Theme — persisted, respects system default until chosen
      -------------------------------------------------------- */
 
@@ -302,10 +371,54 @@
         return;
       }
 
-      if (status) status.textContent = "";
-      if (card) card.classList.add("is-sent");
-      showToast("Brief received. We will reply within two business days.");
-      form.reset();
+      var btn = form.querySelector('button[type="submit"]');
+      var btnHtml = btn ? btn.innerHTML : "";
+
+      function restore() {
+        if (btn) {
+          btn.disabled = false;
+          btn.innerHTML = btnHtml;
+        }
+        if (status) status.classList.remove("form__status--busy");
+      }
+
+      function fail(lead) {
+        restore();
+        if (status) {
+          status.innerHTML =
+            lead + ' <a class="link" href="mailto:' + EMAILJS.inbox + '">' + EMAILJS.inbox + "</a>";
+        }
+      }
+
+      function sent() {
+        restore();
+        if (status) status.textContent = "";
+        if (card) card.classList.add("is-sent");
+        showToast("Brief received. We will get back to you as soon as possible.");
+        form.reset();
+      }
+
+      if (!emailjsReady()) {
+        fail("The brief form is not connected yet. Please email us directly at");
+        return;
+      }
+
+      if (btn) {
+        btn.disabled = true;
+        btn.textContent = "Sending\u2026";
+      }
+      if (status) {
+        status.classList.add("form__status--busy");
+        status.textContent = "Sending your brief\u2026";
+      }
+
+      window.emailjs
+        .send(EMAILJS.serviceId, EMAILJS.templateId, briefParams(form))
+        .then(sent)
+        .catch(function (err) {
+          if (window.console && console.error) console.error("EmailJS send failed:", err);
+          fail("Something went wrong sending your brief. Please try again, or email us at");
+        });
     });
 
     var again = document.querySelector("[data-form-reset]");

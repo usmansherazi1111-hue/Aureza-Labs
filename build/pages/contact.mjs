@@ -37,7 +37,7 @@ export function contactPage() {
         <span class="eyebrow">Contact</span>
         <h1>Tell us what you run.</h1>
         <p class="lead">
-          A paragraph is enough to start. We read every brief ourselves and reply within two business days with a
+          A paragraph is enough to start. We read every brief ourselves and get back to you as soon as we can with a
           considered view, not a calendar link.
         </p>
       </div>
@@ -50,7 +50,7 @@ export function contactPage() {
             <h2 class="t-h3">What happens next</h2>
             <ol class="timeline mt-6">
               <li class="tl-item"><span class="tl-item__when">Day 0</span><div class="tl-item__body"><h4>You send a brief</h4><p>The problem, who lives with it, and any constraint you already know about. Rough is fine.</p></div></li>
-              <li class="tl-item"><span class="tl-item__when">Within 2 days</span><div class="tl-item__body"><h4>We reply with a view</h4><p>What we think you should build, what we would cut, and whether we are the right team for it.</p></div></li>
+              <li class="tl-item"><span class="tl-item__when">Shortly after</span><div class="tl-item__body"><h4>We reply with a view</h4><p>What we think you should build, what we would cut, and whether we are the right team for it.</p></div></li>
               <li class="tl-item"><span class="tl-item__when">Week 1</span><div class="tl-item__body"><h4>A 30-minute call</h4><p>No deck. We ask about the environment, the systems already in place, and what happens if nothing changes.</p></div></li>
               <li class="tl-item"><span class="tl-item__when">Week 2</span><div class="tl-item__body"><h4>Scoped proposal</h4><p>Fixed discovery scope, timeline and price, with a written output you keep regardless of what follows.</p></div></li>
             </ol>
@@ -62,7 +62,7 @@ export function contactPage() {
               </a>
               <div class="contact-item">
                 <span class="contact-item__icon">${icon.clock}</span>
-                <span class="contact-item__body"><b>Response time</b><span>Within two business days, every brief</span></span>
+                <span class="contact-item__body"><b>Response time</b><span>As soon as we can, on every brief</span></span>
               </div>
               <div class="contact-item">
                 <span class="contact-item__icon">${icon.globe}</span>
@@ -133,7 +133,7 @@ export function contactPage() {
                 <path d="M17 29l7.5 7.5L39 21" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
               <h3>Brief received.</h3>
-              <p>Thank you. We read every brief ourselves, and you will hear back within two business days.</p>
+              <p>Thank you. We read every brief ourselves, and you will hear back from us as soon as possible.</p>
               <button class="btn btn--ghost" type="button" data-form-reset>Send another</button>
             </div>
           </div>

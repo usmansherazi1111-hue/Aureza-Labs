@@ -112,9 +112,10 @@ write(
   "contact.html",
   page({
     title: "Contact",
-    desc: "Send a project brief. We read every one ourselves and reply within two business days with a view, not a calendar link.",
+    desc: "Send a project brief. We read every one ourselves and reply as soon as we can with a view, not a calendar link.",
     active: "contact",
-    body: contactPage()
+    body: contactPage(),
+    scripts: ["https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"]
   })
 );
 

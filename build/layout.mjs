@@ -140,7 +140,10 @@ function footer(prefix) {
 export function page(o) {
   const prefix = o.prefix || "";
   const scripts = (o.scripts || [])
-    .map((s) => `\n  <script src="${prefix}${s}" defer></script>`)
+    .map((s) => {
+      const src = /^https?:\/\//.test(s) ? s : `${prefix}${s}`;
+      return `\n  <script src="${src}" defer></script>`;
+    })
     .join("");
 
   return `<!DOCTYPE html>

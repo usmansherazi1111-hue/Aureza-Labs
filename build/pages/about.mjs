@@ -135,7 +135,7 @@ export function aboutPage(projects) {
 
     ${ctaBand("", {
       title: "Tell us what you run.",
-      body: "Describe the operational problem in a paragraph. We will reply within two business days with what we would build, roughly what it costs, and what we would cut."
+      body: "Describe the operational problem in a paragraph. We will get back to you as soon as possible with what we would build, roughly what it costs, and what we would cut."
     })}
 `;
 }
